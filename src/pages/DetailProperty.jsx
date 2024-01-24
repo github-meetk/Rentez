@@ -61,6 +61,7 @@ const DetailProperty = () => {
   return (
     <>
       <Navbar />
+      <div className="detail-property-bg">
       <div className="detail-property-wrapper">
         <div className="property-image-section">
           <div className="active-image">
@@ -166,6 +167,7 @@ const DetailProperty = () => {
             </form>
           </div>
         </div>
+      </div>
       </div>
       <Footer />
     </>

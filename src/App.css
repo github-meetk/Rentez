@@ -1886,6 +1886,11 @@ body::-webkit-scrollbar-thumb {
 
 /* Property Detail Section   */
 
+.detail-property-bg {
+  width: 100%;
+  background: var(--hero-section-background);
+}
+
 .detail-property-wrapper {
   width: 80%;
   margin: auto;
@@ -1899,7 +1904,7 @@ body::-webkit-scrollbar-thumb {
   /* flex-direction: column; */
   align-items: center;
   gap: 30px;
-  background-color: white;
+  background : transparent;
 }
 
 .active-image {
@@ -1911,6 +1916,7 @@ body::-webkit-scrollbar-thumb {
   padding: 30px;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   border-radius: 30px;
+  background-color: white;
 }
 
 .active-image img {
@@ -1919,14 +1925,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 .non-active-images {
-  /* max-height: 600px; */
+  max-height: 600px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 20px;
+  padding: 10px;
+  padding-right: 22px;
   border-radius: 15px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  /* overflow-y: scroll; */
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  overflow-x: scroll;
+  overflow: hidden;
+  background-color: white;
 }
 
 .non-active-images img {
@@ -1943,12 +1952,8 @@ body::-webkit-scrollbar-thumb {
   gap: 40px;
   font-size: larger;
   align-items: flex-start;
-  margin-block: 30px;
-  padding: 30px 30px;
-  /* border: 3px solid #000; */
-  border-radius: 20px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  background-color: white;
+  margin-block: 60px;
+  background : transparent;
 }
 
 .property-details {
@@ -1956,11 +1961,12 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   align-items: flex-start;
   /* border: 2px solid black; */
-  border-radius: 10px;
+  border-radius: 20px;
   width: 100%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   gap: 15px;
   padding: 40px;
+  background-color: white;
 }
 
 .property-details-section-left {
@@ -1968,9 +1974,8 @@ body::-webkit-scrollbar-thumb {
   width: 60%;
   flex-direction: column;
   gap: 30px;
-  font-size: larger;
   align-items: flex-start;
-  border-radius: 20px;
+  background : transparent;
 }
 
 .property-details-price {
@@ -1995,18 +2000,19 @@ body::-webkit-scrollbar-thumb {
 }
 
 .property-details h2 {
-  font-weight: 500;
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
 }
 
 .property-details h3 {
-  font-weight: 400;
+  font-weight: 200;
+  font-size: 1.3rem;
 
 }
 
 .property-details p{
   font-weight: 100;
-  font-size: large;
+  font-size: 1.3rem;
 }
 
 .property-details h1 {
@@ -2019,10 +2025,11 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   width: 100%;
   align-items: flex-start;
-  border-radius: 10px;
+  border-radius: 20px;
   /* border: 2px solid black; */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   padding: 40px;
+  background-color: white;
 }
 
 .seller-details h1 {
@@ -2060,11 +2067,20 @@ body::-webkit-scrollbar-thumb {
   color: var(--special-color);
 }
 
+.seller-detail-right p {
+  font-size: large;
+  font-weight: 200;
+}
+
 .property-details-section-right {
   width: 40%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   align-items: flex-start;
   padding: 40px 20px;
+  position: sticky;
+  top: 100px;
+  background-color: white;
+  border-radius: 20px;
 }
 
 .property-details-section-right form {

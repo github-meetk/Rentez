@@ -131,10 +131,10 @@ exports.getAllListings = async (req, res) => {
             queryObject.bathrooms = { $regx: bathrooms , $options : "i"};
         }
         if(city){
-            queryObject.city = { $regx: city , $options : "i"};
+            queryObject.city =city;
         }
         if(state){
-            queryObject.state = { $regx: state , $options : "i"};
+            queryObject.state =  state;
         }
         // console.log(queryObject);
 
