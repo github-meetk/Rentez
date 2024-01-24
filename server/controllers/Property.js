@@ -117,24 +117,31 @@ exports.createListing = async (req, res) => {
 
 exports.getAllListings = async (req, res) => {
     try {
-        const {propertyType, bhk, bathrooms, city, state} = req.query;
+        const {propertyType, bhk, bathrooms, city, state, priceMin, priceMax} = req.query;
 
         let queryObject = {};
 
+        if (priceMin || priceMax) {
+          queryObject.price = {};
+          if (priceMin) queryObject.price.$gte = parseFloat(priceMin);
+          if (priceMax) queryObject.price.$lte = parseFloat(priceMax);
+        }
+
         if(propertyType){
-            queryObject.propertyType = { $regx: propertyType , $options : "i"};
+            queryObject.propertyType = { $regex: propertyType , $options : "i"};
         }
         if(bhk){
-            queryObject.bhk = { $regx: bhk , $options : "i"};
+            queryObject.bhk = { $eq: bhk };
+          
         }
         if(bathrooms){
-            queryObject.bathrooms = { $regx: bathrooms , $options : "i"};
+            queryObject.bathrooms = { $eq: bathrooms };
         }
         if(city){
-            queryObject.city =city;
+            queryObject.city = { $regex: city , $options : "i"};
         }
         if(state){
-            queryObject.state =  state;
+            queryObject.state = { $regex: state , $options : "i"};
         }
         // console.log(queryObject);
 
@@ -277,4 +284,4 @@ exports.notifySeller = async (req, res) => {
         message: `Failed Please Try Again`,
       })
     }
-  }
+}
