@@ -127,9 +127,10 @@ exports.getAllListings = async (req, res) => {
           if (priceMax) queryObject.price.$lte = parseFloat(priceMax);
         }
 
-        if(propertyType){
-            queryObject.propertyType = { $regex: propertyType , $options : "i"};
+        if (propertyType) {
+          queryObject.propertyType = { $in: propertyType };
         }
+
         if(bhk){
             queryObject.bhk = { $eq: bhk };
           

@@ -16,10 +16,10 @@ const Properties = () => {
   const [loading, setLoading] = useState(true);
   const [filterModal, setFilterModal] = useState(null);
 
-  const { filter } = useSelector((state) => state.filter);
-
+  const { filterData } = useSelector((state) => state.filter);
+  
   const api = async () => {
-    const response = await getAllProperty(filter);
+    const response = await getAllProperty(filterData);
     setProperties(response);
   };
 
@@ -27,7 +27,7 @@ const Properties = () => {
     setLoading(true);
     api();
     setLoading(false);
-  }, [filter]);
+  }, [filterData]);
 
   return (
     <>

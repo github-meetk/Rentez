@@ -2164,3 +2164,149 @@ body::-webkit-scrollbar-thumb {
   border-radius: 15px;
   color: var(--secondary-dark-color);
 }
+
+/* Filter modal  */
+
+.filter-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* backdrop-filter: blur(20px); */
+  background-color: rgba(36,34,38,0.8);;
+  z-index: 3;
+}
+
+.filter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 0px 30px 0px;
+  align-items: center;
+  height: 96vh;
+  overflow-y: auto;
+}
+
+.filter::-webkit-scrollbar {
+  background-color: transparent;
+  width: 15px;
+}
+.filter::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.filter::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 4px solid transparent;
+  background-color: rgba(0,0,0,0.2);
+  background-clip: content-box;
+}
+
+.filter h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  background-color: white;
+  position: sticky;
+  text-align: center;
+  top: 0px;
+}
+
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  display: 90%;
+  margin: auto;
+}
+
+.filter-form-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-form-bottom label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: large;
+  font-weight: 500;
+}
+
+.filter-form-bottom input {
+  padding: 10px;
+  font-size: medium;
+  border: 1px solid rgb(126, 125, 125);
+  border-radius: 8px;
+  width: 300px;
+}
+
+.filter-price {
+  display: flex;
+  gap: 20px;
+}
+
+.filter-checkbox {
+  display: flex;
+  gap: 15px;
+  font-size: medium;
+  font-weight: 400;
+}
+
+hr {
+  width: 90%;
+  margin: 20px;
+  border: 0.05px solid #cac9c9b3;
+}
+
+.filter-form-top {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: larger;
+  font-weight: 500;
+}
+
+.filter-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  bottom: 0px;
+  background-color: white;
+  padding: 20px 0px;
+}
+
+.clear-filter-btn {
+  padding: 13px 10px;
+  font-size: medium;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.clear-filter-btn:hover {
+  background-color: whitesmoke;
+}
+
+.search-filter-btn {
+  padding: 13px 25px;
+  font-size: medium;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}

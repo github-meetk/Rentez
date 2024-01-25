@@ -5,10 +5,10 @@ import {profileEndpoints, propertyEndpoints} from '../apis';
 const { GET_ALL_LISTINGS_API , CREATE_LISTING_API, GET_PROPERTY_DETAIL_API, NOTIFY_SELLER_API } = propertyEndpoints;
 const { GET_SELLERS_LISTINGS } = profileEndpoints;
 
-export const getAllProperty = async() => {
+export const getAllProperty = async(filterData) => {
     let result = [];
     try {
-        const response = await apiConnector("GET", GET_ALL_LISTINGS_API);
+        const response = await apiConnector("GET", GET_ALL_LISTINGS_API, null, null, filterData);
 
         if(!response.data.success){
             throw new Error("Could Not fetch Featured Properties")
