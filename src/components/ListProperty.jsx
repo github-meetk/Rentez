@@ -40,26 +40,39 @@ const ListProperty = () => {
 
   const handlePropertyTypeChange = (e) => {
     const { value } = e.target;
-    setFormData({ propertyType: value }); // Clear other form data when propertyType changes
-    setPropertyTypeSelected(!!value); // Set to true if propertyType is selected, false otherwise
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      propertyType: value,
+    }));
+    setPropertyTypeSelected(!!value);
   };
-
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   };
-
+  
   const handleFileChange = (e) => {
     const { name, files } = e.target;
-    setFormData({ ...formData, [name]: files[0] });
-    toast.success("Thubnail Uploades");
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: files[0],
+    }));
+    toast.success("Thumbnail Uploaded");
   };
-
+  
   const handlePhotosChange = (e) => {
     const { name, files } = e.target;
-    setFormData({ ...formData, [name]: files });
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: files,
+    }));
     toast.success("Photos Uploaded");
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -222,13 +235,13 @@ const ListProperty = () => {
             </label>
             <label className="custom-file-upload">
               Thumbnail:
-              <button onClick={handleFileClick} className="profile-edit-button">Upload Thumbnail Image</button>
+              <button type="button" onClick={handleFileClick} className="profile-edit-button">Upload Thumbnail Image</button>
               <input type="file" ref={fileInputRef} id="inp" name="thumbnail" onChange={handleFileChange} />
               
             </label>
             <label className="custom-file-upload">
               Photos:
-              <button onClick={handlePhotosClick} className="profile-edit-button">Upload Other Photos</button>
+              <button type="button" onClick={handlePhotosClick} className="profile-edit-button">Upload Other Photos</button>
               <input
                 type="file"
                 id="inp"

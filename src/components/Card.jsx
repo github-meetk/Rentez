@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaBath } from "react-icons/fa";
 import { IoBedSharp } from "react-icons/io5";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import { RiDeleteBinLine } from "react-icons/ri";
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteProperty } from '../services/operations/propertyAPI';
+import ConfirmationModal from './ConfirmationModal';
 
-const Card = ({img, city, state, bhk, size, bath, price, pricePer, type, propertyId}) => {
 
+const Card = ({img, city, state, bhk, size, bath, price, pricePer, type, propertyId, isSeller=false}) => {
+  const {token} = useSelector((state) => state.auth);
+  const [confirmationModal, setConfirmationModal] = useState(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <div className='card'>
@@ -22,8 +29,28 @@ const Card = ({img, city, state, bhk, size, bath, price, pricePer, type, propert
             <span><FaExternalLinkSquareAlt/>{size}sqft</span>
             <span>| {type}</span>
         </div>
-        <button className='card-button' onClick={ () => navigate(`/property/${propertyId}`)}>View Details</button>
+        {
+          !isSeller ? (
+            <button className='card-button' onClick={ () => navigate(`/property/${propertyId}`)}>View Details</button>
+          ) : (
+            <div className='card-buttons'>
+              <button className='card-button' onClick={ () => navigate(`/property/${propertyId}`)}>View Details</button>
+              <button className='card-delete-btn' onClick={() => setConfirmationModal({
+                text1: "Are you sure?",
+                text2: "After this you cannot access this Listing.",
+                btn1Text: "Delete",
+                btn2Text: "Cancel",
+                btn1Handler: () => dispatch(deleteProperty(token, propertyId)),
+                btn2Handler: () => setConfirmationModal(null),
+            }    
+        )}><RiDeleteBinLine/></button>
+            </div>
+          )
+        }
       </div>
+      {
+        confirmationModal && <ConfirmationModal modalData={confirmationModal} />
+    }
     </div>
   )
 }

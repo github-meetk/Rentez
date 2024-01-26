@@ -1300,15 +1300,38 @@ body::-webkit-scrollbar-thumb {
   gap: 10px;
 }
 
+.card-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .card-button {
   font-size: larger;
-  padding: 10px 0;
+  padding: 10px 40px;
   border: none;
   border-radius: 10px;
   background: var(--button-background);
   color: var(--light-color);
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-delete-btn {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 0, 0);
+  border: 1px solid red;
+  border-radius: 7px;
+  padding: 0px 10px;
+  font-size: 2rem;
+}
+
+.card-delete-btn:hover {
+  background-color: red;
+  color: white;
+  border: none;
 }
 
 .card-button:hover {

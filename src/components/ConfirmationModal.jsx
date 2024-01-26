@@ -11,14 +11,17 @@ export default function ConfirmationModal({modalData}){
     },[])
 
     return (
-        <div className="modal-wrapper">
+        <div className="modal-wrapper" onClick={modalData.btn2Handler}>
             <div className="modal">
                 <div  className="modal-text">
                     <h2>{modalData.text1}</h2>
                     <p>{modalData.text2}</p>
                 </div>
                 <div className="modal-buttons">
-                    <button onClick={modalData.btn1Handler} className="modal-button-1">{modalData.btn1Text}</button>
+                    <button onClick={ () => { 
+                        modalData.btn1Handler()
+                        modalData.btn2Handler()
+                    }} className="modal-button-1">{modalData.btn1Text}</button>
                     <button onClick={modalData.btn2Handler} className="modal-button-2">{modalData.btn2Text}</button>
                 </div>
             </div>

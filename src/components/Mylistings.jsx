@@ -31,6 +31,8 @@ const Mylistings = () => {
               return (
                 <Card
                   key={index}
+                  isSeller="true"
+                  propertyId={property._id}
                   img={property.thumbnail}
                   bhk={property.bhk}
                   bath={property.bathrooms}

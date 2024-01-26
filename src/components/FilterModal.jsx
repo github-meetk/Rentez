@@ -64,7 +64,7 @@ export default function FilterModal({ modalData }) {
   }
 
   return (
-    <div className="filter-wrapper">
+    <div className="filter-wrapper" onClick={modalData.cancelBtnHandler}>
       <div className="filter" >
       <h2>Filters<hr/></h2>
       

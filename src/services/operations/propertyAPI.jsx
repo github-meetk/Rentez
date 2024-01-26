@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 import { apiConnector } from "../apiconnector";
 import {profileEndpoints, propertyEndpoints} from '../apis';
 
-const { GET_ALL_LISTINGS_API , CREATE_LISTING_API, GET_PROPERTY_DETAIL_API, NOTIFY_SELLER_API } = propertyEndpoints;
+const { GET_ALL_LISTINGS_API , CREATE_LISTING_API, GET_PROPERTY_DETAIL_API, NOTIFY_SELLER_API, DELETE_LISTING_API } = propertyEndpoints;
 const { GET_SELLERS_LISTINGS } = profileEndpoints;
 
 export const getAllProperty = async(filterData) => {
@@ -102,3 +102,25 @@ export const notifySeller = async(sellerEmail, custEmail, fullName, contactNumbe
     }
     toast.dismiss(toastId);
 }
+
+export function deleteProperty(token, propertyId) {
+    return async (dispatch) => {
+      // const toastId = toast.loading("Loading...")
+      try {
+        const response = await apiConnector("DELETE", DELETE_LISTING_API, {propertyId}, {
+          Authorization: `Bearer ${token}`,
+        })
+        console.log("DELETE_PROFILE_API API RESPONSE............", response)
+  
+        if (!response.data.success) {
+          throw new Error(response.data.message)
+        }
+        toast.success("Listing Deleted Successfully")
+        // dispatch(logout(navigate))
+      } catch (error) {
+        console.log("DELETE_PROFILE_API API ERROR............", error)
+        toast.error("Could Not Delete Property")
+      }
+      // toast.dismiss(toastId)
+    }
+  }
