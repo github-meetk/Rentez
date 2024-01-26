@@ -1876,7 +1876,7 @@ body::-webkit-scrollbar-thumb {
 /* Propeties Page  */
 
 .properties-filter-section-wrapper {
-  width: 80%;
+  width: 100%;
   margin: 50px auto;
   background-image: url("./assets/filter.avif");
   border-radius: 10px;
@@ -1895,6 +1895,23 @@ body::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 10px;
   padding: 20px 30px;
+}
+
+.properties-sort-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 10px;
+}
+
+.properties-sort-section h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.filter-select {
+  padding: 10px 20px;
 }
 
 .properties-filter-section h2 {
@@ -1926,9 +1943,6 @@ body::-webkit-scrollbar-thumb {
 .filter-btn:hover {
   opacity: 0.8;
 }
-
-
-
 
 
 .properties-section-wrapper {
