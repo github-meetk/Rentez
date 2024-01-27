@@ -13,11 +13,12 @@ import no2 from "../assets/no2.svg";
 import no3 from "../assets/no3.svg";
 import no4 from "../assets/no4.svg";
 import Footer from "../components/Footer";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { getAllProperty } from "../services/operations/propertyAPI";
 import Card from "../components/Card";
 import { useSelector } from "react-redux";
+import Subscibe from "../components/Subscibe";
 
 const Home = () => {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -34,7 +35,6 @@ const Home = () => {
     api();
   }, []);
 
-  const navigate = useNavigate();
   return (
     <>
       {loading ? (
@@ -190,14 +190,7 @@ const Home = () => {
               <div className="home-info-section-right2"></div>
             </div>
           </div>
-          <div className="home-signup-section-wrapper">
-            <div className="home-signup-section">
-              <h1>Get started with Rentez</h1>
-              <button onClick={() => navigate("/signup")}>
-                Signup for free
-              </button>
-            </div>
-          </div>
+          <Subscibe />
           <Footer />
         </div>
       )}
