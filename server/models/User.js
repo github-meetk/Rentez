@@ -39,7 +39,10 @@ const userSchema = new mongoose.Schema({
     ],
     subscriptionExpires : {
         type: Date,
-        default : Date.now() - 6000,
+        default : new Date(Date.now()),
+    },
+    planType : {
+        type :String,
     },
     image : {
         type : String,

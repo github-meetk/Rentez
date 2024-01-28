@@ -44,15 +44,37 @@ exports.createListing = async (req, res) => {
               })
         }
 
-        const sellerDetails = await User.findById(userId, {
-            accountType: "Seller",
-          })
-      
-          if (!sellerDetails) {
+        const sellerDetails = await User.findById(userId);
+        console.log(sellerDetails)
+          if (sellerDetails.accountType !== "Seller") {
             return res.status(404).json({
               success: false,
-              message: "Seller Details Not Found",
+              message: "Only Seller can add Listing",
             })
+          }
+
+          if(sellerDetails.subscriptionExpires.getTime() <= new Date(Date.now()).getTime()){
+            return res.status(404).json({
+              success: false,
+              message: "You have not Purchased our Subsciption!! Please Subscribe"
+            })
+          }
+
+          if(sellerDetails.planType === "Standard"){
+            if(sellerDetails.properties.length >= 20){
+              return res.status(404).json({
+                    success: false,
+                    message: "You have Reached your Limit"
+                  })
+            }
+          }
+          else if(sellerDetails.planType === "Premium"){
+            if(sellerDetails.properties.length >= 50){
+              return res.status(404).json({
+                    success: false,
+                    message: "You have Reached your Limit"
+                  })
+            }
           }
 
         const thumbnailImage = await uploadImageToCloudinary(
