@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { setFilterData } from "../slices/filterSlice";
+import { IoClose } from "react-icons/io5";
+
 
 export default function FilterModal({ modalData }) {
 
@@ -64,9 +66,13 @@ export default function FilterModal({ modalData }) {
   }
 
   return (
-    <div className="filter-wrapper" onClick={modalData.cancelBtnHandler}>
+    <div className="filter-wrapper">
       <div className="filter" >
-      <h2>Filters<hr/></h2>
+        <div className="filter-heading">
+          <h2>Filters <IoClose onClick={() => modalData.cancelBtnHandler()} className="filter-close-btn"/></h2>
+          <hr/>
+        </div>
+      
       
       <form className="filter-form" onSubmit={handleOnSubmit}>
         <div className="filter-form-top">
