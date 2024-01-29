@@ -16,6 +16,15 @@ const Signup = () => {
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.auth);
 
+  const tab = [
+    {
+      name : "Customer",
+    },
+    {
+      name : "Seller"
+    }
+  ]
+
   // student or instructor
   const [accountType, setAccountType] = useState(ACCOUNT_TYPE.CUSTOMER);
   const [showPassword, setShowPassword] = useState(false);
@@ -77,7 +86,7 @@ const Signup = () => {
         <div className="signup-box">
           <img src={logo} alt=""></img>
           <h2>Sign up</h2>
-          <Tab field={accountType} setField={setAccountType} />
+          <Tab field={accountType} setField={setAccountType} tab={tab}/>
           <form onSubmit={handleOnSubmit} autoComplete="off">
             <input
               required

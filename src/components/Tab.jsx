@@ -1,15 +1,6 @@
 import React from 'react'
 
-const Tab = ({field, setField}) => {
-  const tab = [
-    {
-      name : "Customer",
-    },
-    {
-      name : "Seller"
-    }
-  ]
-
+const Tab = ({field, setField, tab}) => {
   const currentTab = [
     {
       background : "linear-gradient(90deg,#8d49f7,#6b53ff)",

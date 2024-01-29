@@ -10,6 +10,7 @@ const { paymentSuccessEmail } = require("../mail/templates/ paymentSuccessEmail"
 // Capture the payment and initiate the Razorpay order
 exports.capturePayment = async (req, res) => {
   const userId = req.user.id
+  console.log(userId)
   const {plan} = req.body;
   if (!userId) {
     return res.json({ success: false, message: "Please Provide User ID" })
@@ -18,7 +19,7 @@ exports.capturePayment = async (req, res) => {
   let total_amount = plan;
 
     try {
-        const user = await User.findOne(userId);
+        const user = await User.findOne({_id : userId});
       if (user.subscriptionExpires.getTime() > new Date(Date.now()).getTime()) {
         return res
           .status(200)
@@ -27,7 +28,7 @@ exports.capturePayment = async (req, res) => {
 
     } catch (error) {
       console.log(error)
-      return res.status(500).json({ success: false, message: error.message })
+      return res.status(500).json({ success: false, message: error })
     }
   
 

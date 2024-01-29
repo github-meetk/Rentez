@@ -888,6 +888,7 @@ body::-webkit-scrollbar-thumb {
 
 .tab-box {
   display: flex;
+  width: fit-content;
   gap: 5px;
   background-color: var(--light-color);
   padding: 4px 4px;
@@ -1093,7 +1094,7 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   height: 70px;
   background: var(--hero-section-background);
-  z-index: 2;
+  z-index: 3;
   user-select: none;
 }
 
@@ -2576,4 +2577,99 @@ hr {
 .subscription-section-wrapper img {
   margin: auto;
   width: 70%;
+}
+
+/* Plan Page */
+
+.plan-section-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 50px 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  background: var(--hero-section-background);
+}
+
+.plan-heading {
+  font-size: 5rem;
+  color: var(--light-color);
+}
+
+.pricing-discount {
+  font-weight: 500;
+  color: yellow;
+}
+
+.pricing-cards {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 2;
+}
+
+.pricing-card {
+  background-color: var(--light-color);
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 15px;
+  padding: 30px 30px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.pricing-card h3 {
+  font-weight: 400;
+  color: var(--secondary-dark-color);
+}
+
+.standard {
+  color: var(--primary-dark-color);
+}
+
+.premium {
+  color: var(--special-color);
+}
+
+.gold {
+  color: gold;
+}
+
+.price-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-card h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.price-card p {
+  font-size: small;
+}
+
+.pricing-card p {
+  font-weight: 300;
+}
+
+.pricing-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: var(--light-color);
+  background: var(--button-background);
+  font-weight: 400;
+  font-size: larger;
+  cursor: pointer;
+}
+
+.pricing-btn:hover {
+  background: var(--hero-section-background);
 }
