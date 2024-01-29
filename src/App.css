@@ -102,7 +102,7 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   min-height: 100vh;
   background-color: #ffffff;
-  background: linear-gradient(to top, #FFFFFF 30%, #F4F4F4 100%);
+  background: linear-gradient(to top, #FFFFFF 65%, #F4F4F4 100%);
 }
 
 /* homepage */
@@ -193,7 +193,7 @@ body::-webkit-scrollbar-thumb {
   width: 40%;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   color: var(--secondary-dark-color);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
@@ -213,7 +213,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .hero-section-box button {
-  background-color: rgba(345, 255, 255, 0.2);
+  background-color: rgba(345, 255, 255, 0.1);
   color: var(--light-color);
   font-weight: 500;
   font-size: 1.5rem;
@@ -238,7 +238,7 @@ body::-webkit-scrollbar-thumb {
 .steps-section-wrapper {
   user-select: none;
   width: 80%;
-  margin: auto;
+  margin: 30px auto auto;
 }
 
 .steps-section {
@@ -289,11 +289,9 @@ body::-webkit-scrollbar-thumb {
 .steps-section-right {
   width: 50%;
   height: 500px;
-  background-image: url("./assets/house1.jpeg");
+  background-image: url("./assets/benefit.avif");
   background-size: cover;
   border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-  opacity: 0.8;
 }
 
 .numbers-section-wrapper {

@@ -9,7 +9,7 @@ import { LuListFilter } from "react-icons/lu";
 import { ImSearch } from "react-icons/im";
 
 const Properties = () => {
-  document.body.scrollTop = document.documentElement.scrollTop = 200;
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
 
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
