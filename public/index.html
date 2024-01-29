@@ -20,6 +20,18 @@
         }
       }
     });
+
+    document.addEventListener("scroll", () => {
+        const Navbar = document.querySelector(".navbar-wrapper-light");
+        // console.log(Navbar)
+        if(Navbar !== null){
+        if (window.scrollY > 0) {
+          Navbar.classList.add("navbar-wrapper-shadow");
+        } else {
+          Navbar.classList.toggle("navbar-wrapper-shadow");
+        }
+      }
+    });
     </script>
   </body>
   

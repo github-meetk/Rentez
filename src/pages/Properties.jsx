@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { getAllProperty } from "../services/operations/propertyAPI";
 import Card from "../components/Card";
@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import FilterModal from "../components/FilterModal";
 import { LuListFilter } from "react-icons/lu";
 import { ImSearch } from "react-icons/im";
+import NavbarLight from "../components/NavbarLight";
 
 const Properties = () => {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -52,7 +53,7 @@ const Properties = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarLight />
 
       <div className="properties-section-wrapper"> 
         {loading ? (

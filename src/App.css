@@ -1084,6 +1084,61 @@ body::-webkit-scrollbar-thumb {
   opacity: 0.8;
 }
 
+/* Navbar Light  */
+
+.navbar-wrapper-light {
+  position:sticky;
+  top: 0px;
+  width: 100%;
+  height: 70px;
+  background: var(--light-color);
+  z-index: 3;
+  user-select: none;
+}
+
+.navlink-light {
+  text-decoration: none;
+  color: var(--primary-dark-color);
+  font-size: 1.1rem;
+  font-weight : lighter;
+  cursor: pointer;
+}
+
+.nav-button-login-light {
+  min-width: 95px;
+  padding: 8px 20px;
+  font-weight: 400;
+  font-size: medium;
+  border-radius: 6px;
+  border: 1px solid var(--special-color);
+  user-select: none;
+  background-color: var(--light-color);
+  color: var(--special-color);
+  transition: .1s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-button-login-light:hover {
+  border: 2px solid var(--special-color);
+}
+
+.nav-button-signup-light {
+  min-width: 95px;
+  padding: 8px 20px;
+  font-weight: 400;
+  font-size: medium;
+  border-radius: 6px;
+  border: none;
+  user-select: none;
+  background: var(--button-background);
+  color: var(--light-color);
+  cursor: pointer;
+}
+
+.nav-button-signup-light:hover {
+  background: var(--hero-section-background);
+}
+
 /* Navbar Section  */
 
 .navbar-wrapper {
@@ -1097,6 +1152,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .navbar-wrapper-shadow {
+  transition: .2s ease-in-out;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
@@ -1130,10 +1186,6 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
-/* .navlink:hover {
-  color: var(--special-color);
-} */
-
 .navbar-buttons {
   height: 100%;
   display: flex;
@@ -1141,13 +1193,13 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
-.nav-button-login {
+.nav-button-dark {
   min-width: 95px;
   padding: 8px 20px;
-  font-weight: 400;
+  font-weight: 500;
   font-size: medium;
+  border: none;
   border-radius: 6px;
-  border: 1px solid var(--special-color);
   user-select: none;
   background-color: var(--light-color);
   color: var(--special-color);
@@ -1155,25 +1207,8 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
-.nav-button-login:hover {
-  border: 2px solid var(--special-color);
-}
-
-.nav-button-signup {
-  min-width: 95px;
-  padding: 8px 20px;
-  font-weight: 400;
-  font-size: medium;
-  border-radius: 6px;
-  border: none;
-  user-select: none;
-  background: var(--button-background);
-  color: var(--light-color);
-  cursor: pointer;
-}
-
-.nav-button-signup:hover {
-  background: var(--hero-section-background);
+.nav-button-dark:hover {
+  background-color: whitesmoke;
 }
 
 .profile-img {
@@ -1181,6 +1216,7 @@ body::-webkit-scrollbar-thumb {
   width: 60px;
   border-radius: 30px;
   cursor: pointer;
+  transition: border 0.1s ease-in-out;
 }
 
 .profile-img:hover {
