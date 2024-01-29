@@ -8,6 +8,8 @@ import {
 import { useParams } from "react-router-dom";
 
 const DetailProperty = () => {
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
+  
   const [formData, setFormData] = useState({
     email: "",
     fullName: "",
