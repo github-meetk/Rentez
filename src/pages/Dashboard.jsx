@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Sidebar from '../components/Sidebar';
 import { Outlet } from 'react-router-dom';
-import Navbar from '../components/Navbar'
+import NavbarLight from '../components/NavbarLight'
 import Footer from '../components/Footer'
 
 
@@ -21,7 +21,7 @@ const Dashboard = () => {
     }
   return (
     <div className='dashboard-wrapper'>
-      <Navbar />
+      <NavbarLight />
       <div className='dashboard'>
         <Sidebar/>
         <Outlet/>
