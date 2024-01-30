@@ -55,7 +55,7 @@ export const createListings = async(token ,formData) => {
             toast.success("Listing Added Successfully");
 
         } catch (error) {
-            toast.error(error);
+            toast.error(error.response?.data.message);
             console.log(error);
         }
     // }
@@ -72,7 +72,7 @@ export const getPropertyDetail = async(propertyId) => {
         result = response?.data?.data;
         // console.log(response?.data?.data);
     } catch (error) {
-        toast.error(error);
+        toast.error(error.response?.data.message);
         console.log(error);
     }
     return result;
@@ -97,7 +97,7 @@ export const notifySeller = async(sellerEmail, custEmail, fullName, contactNumbe
 
         
     } catch (error) {
-        toast.error(error);
+        toast.error(error.response?.data.message);
         console.log(error);
     }
     toast.dismiss(toastId);

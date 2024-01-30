@@ -83,7 +83,7 @@ const ChangePassword = () => {
           {errors.newPassword && <p>Please enter your New Password.</p>}
         </div>
         <div className="change-password-buttons">
-          <button className="profile-edit-button back-button" onClick={() => navigate("/dashboard/settings")}> <FaArrowLeftLong />Back</button>
+          <button type="button" className="profile-edit-button back-button" onClick={() => navigate("/dashboard/settings")}> <FaArrowLeftLong />Back</button>
           <button className="profile-edit-button" type="submit">Save</button>
         </div>
       </form>

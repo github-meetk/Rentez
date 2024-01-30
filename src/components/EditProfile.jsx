@@ -110,6 +110,7 @@ const EditProfile = () => {
               <input
                 type="text"
                 name="firstName"
+                id="firstName"
                 placeholder="Enter first name"
                 {...register("firstName", { required: false })}
                 defaultValue={user?.firstName}
@@ -229,7 +230,7 @@ const EditProfile = () => {
           </div>
           
           <div className='edit-profile-detail-buttons'>
-              <button className='profile-edit-button' onClick={() => navigate("/dashboard/settings")}>Cancel</button>
+              <button type='button' className='profile-edit-button' onClick={() => navigate("/dashboard/settings")}>Cancel</button>
               <button type='submit' className='profile-edit-button'>Save</button>
           </div>
           
