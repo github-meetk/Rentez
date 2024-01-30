@@ -75,7 +75,7 @@ const VerifyEmail = () => {
           />
           <div className="verify-email-button">
             <button className="verify-email-submit-btn" type="submit">Submit</button>
-            <button className="resend-btn" onClick={() => dispatch(sendOtp(signupData.email))}> Resend it</button>
+            <button type="button" className="resend-btn" onClick={() => dispatch(sendOtp(signupData.email))}> Resend it</button>
           </div>
           
         </form>
