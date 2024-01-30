@@ -26,7 +26,7 @@ const Login = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     dispatch(login(email, password, navigate));
-    // navigate("/");
+    navigate("/");
   };
   return (
     <div className="login-wrapper">
@@ -53,7 +53,7 @@ const Login = () => {
             />
           </div>
           <div className="login-button">
-            <button type="submit">Log in</button>
+            <button className="special-btn" type="submit">Log in</button>
             <Link className="login-button-link" to={"/signup"}>
               No account?Sign up
             </Link>

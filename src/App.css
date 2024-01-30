@@ -417,20 +417,22 @@ body::-webkit-scrollbar-thumb {
   align-items:flex-start;
 }
 
-.home-info-section-left2 button {
-  font-size: 1.4rem;
+.special-btn {
+  font-size: 1.2rem;
   font-weight: 500;
-  padding: 15px 40px;
+  padding: 10px 40px;
   border-radius: 10px;
-  margin-top: 10px;
   border: none;
   background: var(--button-background);
   color: var(--light-color);
   cursor: pointer;
+  scale: 1;
+  transition: all 0.2s ease-in-out;
 }
 
-.home-info-section-left2 button:hover {
+.special-btn:hover {
   background: var(--hero-section-background);
+  scale: 0.95;
 }
 
 .home-info-section-left2 h1 {
@@ -647,18 +649,6 @@ body::-webkit-scrollbar-thumb {
 
 .signup-button button{
   width: 60%;
-  border: none;
-  background: var(--button-background);
-  font-size: medium;
-  font-weight: 500;
-  padding: 10px 0px;
-  border-radius: 10px;
-  color: var(--light-color);
-  user-select: none;
-}
-
-.signup-button button:hover {
-  opacity: 0.8;
 }
 
 .signup-button-link {
@@ -750,29 +740,14 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
-.verify-email-submit-btn {
-  width: 60%;
-  border: none;
-  background: var(--button-background);
-  font-size: medium;
-  font-weight: 500;
-  padding: 10px 0px;
-  border-radius: 10px;
-  color: var(--light-color);
-  user-select: none;
-}
-
-.verify-email-submit-btn:hover {
-  opacity: 0.8;
-}
-
 .resend-btn {
   background-color: transparent;
   width: 60%;
   border: none;
   font-size: medium;
-  text-decoration: underline;
+  text-decoration: none;
   color: var(--special-color);
+  cursor: pointer;
 } 
 
 .resend-btn:hover {
@@ -829,7 +804,7 @@ body::-webkit-scrollbar-thumb {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.login input:focus {
+input:focus {
   outline: none;
   border: 2px solid;
   border-color: var(--special-color);
@@ -847,14 +822,6 @@ body::-webkit-scrollbar-thumb {
 
 .login-button button {
   width: 100%;
-  border: none;
-  background: var(--button-background);
-  font-size: medium;
-  font-weight: 500;
-  padding: 10px 0px;
-  border-radius: 10px;
-  color: var(--light-color);
-  user-select: none;
 }
 
 .login-button-link {
@@ -865,10 +832,6 @@ body::-webkit-scrollbar-thumb {
 .login-button-link:hover {
   color: black;
   text-decoration: underline;
-}
-
-.login-button button:hover {
-  opacity: 0.8;
 }
 
 .login img {
@@ -972,18 +935,8 @@ body::-webkit-scrollbar-thumb {
 
 .forgot-password-box button {
   width: 100%;
-  background: var(--button-background);
-  color: var(--light-color);
-  font-weight: 500;
-  font-size: large;
-  padding: 10px 0px;
-  border-radius: 10px;
-  border: none;
 }
 
-.forgot-password-box button:hover {
-  opacity: 0.8;
-}
 
 .forgot-password-link {
   color: var(--special-color);
@@ -1997,10 +1950,12 @@ body::-webkit-scrollbar-thumb {
   font-size: large;
   color: white;
   cursor: pointer;
+  scale: 1;
+  transition: all 0.2s ease-in-out;
 }
 
 .filter-btn:hover {
-  opacity: 0.8;
+  scale: 0.95;
 }
 
 
@@ -2017,7 +1972,7 @@ body::-webkit-scrollbar-thumb {
 
 .detail-property-bg {
   width: 100%;
-  background: var(--hero-section-background);
+  background: var(--light-color);
 }
 
 .detail-property-wrapper {
@@ -2033,7 +1988,7 @@ body::-webkit-scrollbar-thumb {
   /* flex-direction: column; */
   align-items: center;
   gap: 30px;
-  background : white;
+  background-color: whitesmoke;
   padding: 30px;
   border-radius: 30px;
 }
@@ -2082,10 +2037,13 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   /* flex-direction: column; */
   gap: 40px;
+  border-radius: 30px;
   font-size: larger;
+  padding: 30px;
   align-items: flex-start;
   margin-block: 60px;
   background : transparent;
+  background-color: whitesmoke;
 }
 
 .property-details {
@@ -2233,8 +2191,8 @@ body::-webkit-scrollbar-thumb {
   width: 90%;
   user-select: none;
   font-size: medium;
-  padding: 15px 10px;
-  text-align: center;
+  padding: 15px 30px;
+  text-align: start;
   border: 2px solid black;
   border-radius: 15px;
   color: var(--secondary-dark-color);
@@ -2528,19 +2486,6 @@ hr {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.contact-form button {
-  width: 70%;
-  user-select: none;
-  cursor: pointer;
-  padding: 15px 20px;
-  text-align: center;
-  font-size: larger;
-  border: none;
-  border-radius: 10px;
-  background: var(--button-background);
-  color: var(--light-color);
-}
-
 .contact-form button:hover {
   background: var(--hero-section-background);
 }
@@ -2600,9 +2545,17 @@ hr {
   font-size: 1.2rem;
   font-weight: 400;
   background: linear-gradient(90deg,#ffd02c,#ff9e2c);
-  color: inherit;
+  color: black;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+  scale: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.subscription-section-wrapper button:hover {
+  background: linear-gradient(90deg,#ff9e2c,#ffd02c);
+  scale: 0.95;
 }
 
 .ss {

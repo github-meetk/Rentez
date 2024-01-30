@@ -152,7 +152,7 @@ const AboutUs = () => {
                 onChange={handleOnChange}
                 placeholder="Enter your message here..."
               />
-            <button type="submit">Send Message</button>
+            <button className="special-btn" type="submit">Send Message</button>
         </form>
       </div>
       

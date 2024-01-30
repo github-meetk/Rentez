@@ -38,7 +38,7 @@ const ForgotPassword = () => {
               onChange={(e) => setemail(e.target.value)}
             />
           )}
-          <button type="submit">{!emailSent ? "Submit" : "Resend"}</button>
+          <button className="special-btn" type="submit">{!emailSent ? "Submit" : "Resend"}</button>
           <Link className="forgot-password-link" to={"/login"}>Back to Login</Link>
           </form>
         </div>

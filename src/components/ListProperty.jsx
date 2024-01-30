@@ -1,12 +1,10 @@
 import React, { useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
-// import { useNavigate } from "react-router-dom";
+import { PiUploadSimpleBold } from "react-icons/pi";
 import { createListings } from "../services/operations/propertyAPI";
 
 const ListProperty = () => {
-  // const navigate = useNavigate();
-  // const dispatch = useDispatch();
   const { token } = useSelector((state) => state.auth);
 
   const fileInputRef = useRef(null);
@@ -235,13 +233,13 @@ const ListProperty = () => {
             </label>
             <label className="custom-file-upload">
               Thumbnail:
-              <button type="button" onClick={handleFileClick} className="profile-edit-button">Upload Thumbnail Image</button>
+              <button type="button" onClick={handleFileClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Thumbnail Image</button>
               <input type="file" ref={fileInputRef} id="inp" name="thumbnail" onChange={handleFileChange} />
               
             </label>
             <label className="custom-file-upload">
               Photos:
-              <button type="button" onClick={handlePhotosClick} className="profile-edit-button">Upload Other Photos</button>
+              <button type="button" onClick={handlePhotosClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Other Photos</button>
               <input
                 type="file"
                 id="inp"
@@ -252,7 +250,7 @@ const ListProperty = () => {
               />
               
             </label>
-            <button className="profile-edit-button" type="submit">
+            <button className="special-btn" type="submit">
               Submit
             </button>
           </>

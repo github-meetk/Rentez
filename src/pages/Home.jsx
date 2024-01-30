@@ -13,7 +13,7 @@ import no2 from "../assets/no2.svg";
 import no3 from "../assets/no3.svg";
 import no4 from "../assets/no4.svg";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { getAllProperty } from "../services/operations/propertyAPI";
 import Card from "../components/Card";
@@ -25,6 +25,8 @@ const Home = () => {
 
   const [properties, setProperties] = useState([]);
   const { loading } = useSelector((state) => state.auth);
+
+  const navigate = useNavigate()
 
   const api = async () => {
     const response = await getAllProperty();
@@ -171,7 +173,7 @@ const Home = () => {
                   is untrammelled and when nothing prevents our being able to do
                   what we like best, every pleasure is to be welcomed.
                 </p>
-                <button>Get Started</button>
+                <button className="special-btn" onClick={() => navigate("/properties")} >Get Started</button>
               </div>
               <div className="home-info-section-right1"></div>
             </div>
@@ -185,7 +187,7 @@ const Home = () => {
                 <h4>✓ Find excellent deals</h4>
                 <h4>✓ Friendly UI & Fast support</h4>
                 <h4>✓ Secure payment system</h4>
-                <button>Get Started</button>
+                {/* <button>Get Started</button> */}
               </div>
               <div className="home-info-section-right2"></div>
             </div>

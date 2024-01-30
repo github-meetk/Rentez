@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
+import NavbarLight from "../components/NavbarLight";
 import Footer from "../components/Footer";
 import {
   getPropertyDetail,
@@ -60,7 +60,7 @@ const DetailProperty = () => {
   // const date = new Date(detail.createdAt).toDateString();
   return (
     <>
-      <Navbar />
+      <NavbarLight />
       <div className="detail-property-bg">
       <div className="detail-property-wrapper">
         <div className="property-image-section">
@@ -161,7 +161,7 @@ const DetailProperty = () => {
                 onChange={handleOnChange}
                 placeholder="Message"
               />
-              <button type="submit" className="profile-edit-button">
+              <button type="submit" className="special-btn">
                 Send Request
               </button>
             </form>

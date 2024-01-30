@@ -84,7 +84,7 @@ const ChangePassword = () => {
         </div>
         <div className="change-password-buttons">
           <button type="button" className="profile-edit-button back-button" onClick={() => navigate("/dashboard/settings")}> <FaArrowLeftLong />Back</button>
-          <button className="profile-edit-button" type="submit">Save</button>
+          <button className="special-btn" type="submit">Save</button>
         </div>
       </form>
     </div>

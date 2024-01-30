@@ -86,9 +86,9 @@ const Plan = () => {
             </p>
             {
               field === "Monthly" ? (
-                <button className="pricing-btn" onClick={() => handleBuyCourse(499)}>Get Started</button>
+                <button className="special-btn" onClick={() => handleBuyCourse(499)}>Get Started</button>
               ) : (
-                <button className="pricing-btn" onClick={() => handleBuyCourse(4999)}>Get Started</button>
+                <button className="special-btn" onClick={() => handleBuyCourse(4999)}>Get Started</button>
               )
             }
           </div>
@@ -117,9 +117,9 @@ const Plan = () => {
             </p>
             {
               field === "Monthly" ? (
-                <button className="pricing-btn" onClick={() => handleBuyCourse(999)}>Get Started</button>
+                <button className="special-btn" onClick={() => handleBuyCourse(999)}>Get Started</button>
               ) : (
-                <button className="pricing-btn" onClick={() => handleBuyCourse(10999)}>Get Started</button>
+                <button className="special-btn" onClick={() => handleBuyCourse(10999)}>Get Started</button>
               )
             }
           </div>
@@ -148,9 +148,9 @@ const Plan = () => {
             </p>
             {
               field === "Monthly" ? (
-                <button className="pricing-btn" onClick={ () => handleBuyCourse(1499)}>Get Started</button>
+                <button className="special-btn" onClick={ () => handleBuyCourse(1499)}>Get Started</button>
               ) : (
-                <button className="pricing-btn" onClick={ () => handleBuyCourse(13999)}>Get Started</button>
+                <button className="special-btn" onClick={ () => handleBuyCourse(13999)}>Get Started</button>
               )
             }
           </div>

@@ -80,7 +80,7 @@ const UpdatePassword = () => {
                 )}
               </span>
             </div>
-            <button type="submit">Submit</button>
+            <button className="special-btn" type="submit">Submit</button>
           </form>
         </div>
       )}

@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { updateDisplayPicture, updateProfile } from '../services/operations/SettingApi';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-const genders = ["Male", "Female", "Non-Binary", "Prefer not to say", "Other"]
+import { FaArrowLeftLong } from "react-icons/fa6";
+
 
 const EditProfile = () => {
   const navigate = useNavigate()
@@ -13,6 +14,8 @@ const EditProfile = () => {
   const [ previewSource, setPreviewSource] = useState(null);
   const [loading, setLoading] = useState(false);
   const [ saveloading, setSaveloading] = useState(false);
+
+  const genders = ["Male", "Female", "Non-Binary", "Prefer not to say", "Other"]
 
   const fileInputRef = useRef(null);
   const dispatch = useDispatch()
@@ -230,8 +233,8 @@ const EditProfile = () => {
           </div>
           
           <div className='edit-profile-detail-buttons'>
-              <button type='button' className='profile-edit-button' onClick={() => navigate("/dashboard/settings")}>Cancel</button>
-              <button type='submit' className='profile-edit-button'>Save</button>
+              <button type='button' className='profile-edit-button back-button' onClick={() => navigate("/dashboard/settings")}><FaArrowLeftLong />Back</button>
+              <button type='submit' className='special-btn'>Save</button>
           </div>
           
       </form>
