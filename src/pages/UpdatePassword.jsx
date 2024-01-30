@@ -4,7 +4,10 @@ import logo from "../assets/rentez-svg.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {resetPassword} from "../services/operations/authAPI";
-
+import image1 from "../assets/objcet_1.png";
+import image2 from "../assets/object_2.png";
+import image3 from "../assets/object_3.png";
+import image4 from "../assets/object_4.png";
 
 const UpdatePassword = () => {
     const navigate = useNavigate()
@@ -36,7 +39,11 @@ const UpdatePassword = () => {
   
 
   return (
-    <div className="update-password-wrapper">
+    <div className="auth-wrapper">
+      <img className="imge1" src={image1} alt="" />
+      <img className="imge2" src={image2} alt="" />
+      <img className="imge3" src={image3} alt="" />
+      <img className="imge4" src={image4} alt="" />
       {loading ? (
         <span className="loader"></span>
       ) : (

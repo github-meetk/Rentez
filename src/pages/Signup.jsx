@@ -10,6 +10,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { sendOtp } from "../services/operations/authAPI";
 import { setSignupData } from "../slices/authSlice";
 import { ACCOUNT_TYPE } from "../utils/constants";
+import image1 from "../assets/objcet_1.png";
+import image2 from "../assets/object_2.png";
+import image3 from "../assets/object_3.png";
+import image4 from "../assets/object_4.png";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -79,7 +83,11 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup-wrapper">
+    <div className="auth-wrapper">
+      <img className="imge1" src={image1} alt="" />
+      <img className="imge2" src={image2} alt="" />
+      <img className="imge3" src={image3} alt="" />
+      <img className="imge4" src={image4} alt="" />
       {loading ? (
         <span className="loader"></span>
       ) : (
@@ -123,7 +131,7 @@ const Signup = () => {
                 onChange={handleOnChange}
                 placeholder="Password"
               ></input>
-              <span onClick={() => setShowPassword((prev) => !prev)}>
+              <span className="eye-signup" onClick={() => setShowPassword((prev) => !prev)}>
                 {showPassword ? (
                   <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
                 ) : (
@@ -140,7 +148,7 @@ const Signup = () => {
                 onChange={handleOnChange}
                 placeholder="Confirm Password"
               ></input>
-              <span onClick={() => setShowConfirmPassword((prev) => !prev)}>
+              <span className="eye-signup" onClick={() => setShowConfirmPassword((prev) => !prev)}>
                 {showConfirmPassword ? (
                   <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
                 ) : (

@@ -3,6 +3,10 @@ import logo from "../assets/rentez-svg.svg";
 import { Link } from "react-router-dom";
 import { getPasswordResetToken } from "../services/operations/authAPI";
 import { useDispatch, useSelector } from "react-redux";
+import image1 from "../assets/objcet_1.png";
+import image2 from "../assets/object_2.png";
+import image3 from "../assets/object_3.png";
+import image4 from "../assets/object_4.png";
 
 const ForgotPassword = () => {
   const dispatch = useDispatch();
@@ -15,7 +19,11 @@ const ForgotPassword = () => {
     dispatch(getPasswordResetToken(email, setemailSent));
   };
   return (
-    <div className="forgot-password-wrapper">
+    <div className="auth-wrapper">
+      <img className="imge1" src={image1} alt="" />
+      <img className="imge2" src={image2} alt="" />
+      <img className="imge3" src={image3} alt="" />
+      <img className="imge4" src={image4} alt="" />
       {loading ? (
         <span className="loader"></span>
       ) : (
