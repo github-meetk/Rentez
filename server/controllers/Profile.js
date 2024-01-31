@@ -7,6 +7,8 @@ const mongoose = require("mongoose")
 exports.updateProfile = async (req, res) => {
   try {
     const {
+      firstName = "",
+      lastName = "",
       dateOfBirth = "",
       about = "",
       contactNumber = "",
@@ -17,6 +19,11 @@ exports.updateProfile = async (req, res) => {
     // Find the profile by id
     const userDetails = await User.findById(id)
     const profile = await Profile.findById(userDetails.additionalDetails)
+
+    userDetails.firstName = firstName
+    userDetails.lastName = lastName
+
+    await userDetails.save()
 
     // Update the profile fields
     profile.dateOfBirth = dateOfBirth

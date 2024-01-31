@@ -8,6 +8,7 @@ import step1 from "../assets/step1.svg";
 import step2 from "../assets/step2.svg";
 import step3 from "../assets/step3.svg";
 import step4 from "../assets/step4.svg";
+import house1 from "../assets/benefit.avif"
 import no1 from "../assets/no1.svg";
 import no2 from "../assets/no2.svg";
 import no3 from "../assets/no3.svg";
@@ -102,7 +103,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="steps-section-right">
-                {/* <img src={house1}></img> */}
+                <img src={house1} alt=""></img>
               </div>
             </div>
           </div>

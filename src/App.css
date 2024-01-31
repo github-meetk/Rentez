@@ -8,31 +8,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
-body {
-  --sb-track-color: #ffffff;
-  --sb-thumb-color: #6b53ff;
-  --sb-size: 8px;
-
-  scrollbar-color: var(--sb-thumb-color) 
-                   var(--sb-track-color);
-}
-
-body::-webkit-scrollbar {
-  width: var(--sb-size) 
-}
-
-body::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 1px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 1px;
-  
-  }
-
   .loader {
     margin: auto;
     width: 48px;
@@ -288,11 +263,17 @@ body::-webkit-scrollbar-thumb {
 
 .steps-section-right {
   width: 50%;
-  height: 500px;
-  background-image: url("./assets/benefit.avif");
-  background-size: cover;
+  /* background-image: url("./assets/benefit.avif"); */
+  background-image: cover;
   border-radius: 30px;
 }
+
+.steps-section-right img {
+  width: 100%;
+}
+
+/* Numbers section   */
+
 
 .numbers-section-wrapper {
   user-select: none;
@@ -367,16 +348,7 @@ body::-webkit-scrollbar-thumb {
   padding: 40px 0;
 }
 
-.home-info-section-left1 button {
-  font-size: 1.4rem;
-  font-weight: 500;
-  padding: 15px 40px;
-  border-radius: 10px;
-  border: none;
-  background: var(--button-background);
-  color: var(--light-color);
-  cursor: pointer;
-}
+
 
 .home-info-section-left1 button:hover {
   background: var(--hero-section-background);
@@ -397,7 +369,7 @@ body::-webkit-scrollbar-thumb {
 .home-info-section-right1 {
   background-image: url("./assets/house2.png");
   width: 45%;
-  height: 500px;
+  /* height: 500px; */
   border-radius: 20px;
   background-size: cover;
 }
@@ -415,6 +387,7 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   gap: 20px;
   align-items:flex-start;
+  padding: 40px 0;
 }
 
 .special-btn {
@@ -451,7 +424,6 @@ body::-webkit-scrollbar-thumb {
 .home-info-section-right2 {
   background-image: url("./assets/house3.png");
   width: 45%;
-  height: 500px;
   background-size: cover;
   border-radius: 20px;
 }
@@ -1132,6 +1104,16 @@ input:focus {
   height: 100%;
 }
 
+.humburger {
+  color: white;
+  display: none;
+}
+
+.humburger-light {
+  color: black;
+  display: none;
+}
+
 .navbar-links {
   display: flex;
   align-items: center;
@@ -1233,6 +1215,8 @@ input:focus {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+/* Card  */
 
 .card {
   margin-block: 20px;
