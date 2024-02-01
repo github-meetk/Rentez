@@ -24,14 +24,6 @@ const NavbarLight = () => {
   const humburgerHandler = () => {
     const nav = document.getElementById("nav");
     nav.classList.toggle("active");
-    // nav.classList.toggle("navbar-links")
-
-    if(!isOpen){
-      document.body.style.overflowY = "hidden";
-    }
-    else{
-      document.body.style.overflowY = "scroll";
-    }
   }
 
 

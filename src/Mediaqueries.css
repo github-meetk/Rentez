@@ -1,4 +1,14 @@
-@media (width <= 1200px) {
+@media (min-width : 1440px){
+    .properties-section-wrapper {
+        max-width: 1440px;
+    }
+
+    .container {
+        max-width: 1440px;
+    }
+}
+
+@media (max-width : 1100px) {
     .humburger {
         display: block;
     }
@@ -7,10 +17,29 @@
         display: block;
     }
 
+    .navbar-wrapper {
+        height: 80px;
+    }
+
+    .navbar-wrapper-light {
+        height: 80px;
+    }
+
+    .navbar-img {
+        width: 200px;
+    }
+
+    .nav-button-dark , .nav-button-login-light, .nav-button-signup-light   {
+        font-size: 20px;
+        padding: 12px 30px;
+    }
+
     .navbar-links {
+        padding-block: 50px;
+        gap: 40px;
         position: absolute;
         left: -100%;
-        top: 70px;
+        top: 80px;
         width: 100%;
         color: var(--primary-dark-color);
         background-color: var(--light-color);
@@ -24,6 +53,7 @@
     }
 
     .navlink {
+        font-size: 1.4rem;
         color: var(--primary-dark-color);
     }
 
@@ -31,6 +61,10 @@
         display: none;
     }
 
+    .hero-section-wrapper-shadow{
+        filter: none;
+        z-index: 0;
+    }
     .hero-section-wrapper {
         clip-path: none;
         height: min-content;
@@ -40,11 +74,11 @@
 
     .hero-section-heading{
         margin-top: 40px;
-        font-size: 3rem;
+        font-size: 50px;
     }
 
     .hero-section-para {
-        font-size: 1.2rem;
+        font-size: 20px;
         width: 600px;
     }
 
@@ -61,7 +95,7 @@
     }
 
     .steps-section-wrapper {
-        margin: 300px auto 0px;
+        margin: 230px auto 0px;
         width: 90%;
     }
 
@@ -125,9 +159,290 @@
         width: 50%;
     }
 
+    .footer-wrapper {
+        flex-direction: column;
+        gap: 50px;
+    }
 
+    .footer-left {
+        gap: 0px;
+    }
+
+    /* Auth   */
+
+    .imge1, .imge2, .imge3, .imge4 {
+        display: none;
+    }
+
+    .auth-box, .forgot-password-box, .signup-box, .verify-email-box, .update-password-box {
+        width: 60%;
+    }
+  }
+
+  @media (max-width : 770px ){
+    .navbar-img {
+      width: 150px;
+      height: 100%;
+    }
   
+    .nav-button-dark, .nav-button-login-light, .nav-button-signup-light {
+      font-size: medium;
+      padding: 8px 20px;
+    }
+  
+    .navlink {
+      font-size: 18px;
+    }
 
+    .hero-section-heading {
+        padding: 0 20px;
+    }
+
+    .hero-section-para {
+        width: 100%;
+        font-weight: 300;
+        font-size: 18px;
+        padding: 0 20px;
+    }
+
+    .hero-section-box {
+        width: 95%;
+    }
+
+    .featured-section-wrapper {
+        display: none;
+    }
+  
+    .steps-section{
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        gap: 50px;
+    }
+  
+    .steps-section-left{
+      width: 60%;
+      align-items: flex-start;
+    }
+  
+    .steps-section-right{
+      display: none;
+    }
+
+    .numbers-section-wrapper {
+        justify-content: space-around;
+    }
+
+    .number {
+        width: 40%;
+        margin-block: 20px;
+    }
+
+    .home-info-section-wrapper {
+        gap: 50px;
+    }
+
+    .home-info-section1{
+        margin-top: 50px;
+        flex-direction: column-reverse;
+        align-items: center;
+        
+    }
+
+    .home-info-section-left1{
+        padding: 30px 0;
+        width: 80%;
+    }
+
+    .home-info-section-right1{
+        width: 80%;
+        height: 500px;
+    }
+
+    .home-info-section2{
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .home-info-section-left2{
+        width: 80%;
+        padding: 0;
+    }
+
+    .home-info-section-right2{
+        width: 80%;
+        height: 500px;
+    }
+
+    .ss {
+        width: 80%;
+    }
+
+    .footer-wrapper {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .footer-left {
+        gap: 0px;
+    }
+
+    .profile-img {
+        border: 3px solid var(--special-color);
+    }
+
+    /* Properties Page   */
+
+    .properties-filter-section-wrapper {
+        width: 100%;
+    }
+
+    /* Auth   */
+
+    .auth-box, .forgot-password-box, .signup-box, .verify-email-box, .update-password-box {
+        width: 90%;
+    }
+  }
+
+  @media (max-width : 470px ){
+    .nav-button-login-light {
+        display: none;
+    }
+
+    #login {
+        display: none;
+    }
+
+    .navbar-wrapper {
+        height: 70px;
+    }
+
+    .navbar-wrapper-light {
+        height: 70px;
+    }
+
+    .navbar-links {
+        top: 70px;
+    }
+
+    .navbar-img {
+        width: 130px;
+    }
+
+    .nav-button-dark {
+        padding: 5px 10px;
+    }
+
+    .nav-button-signup-light{
+        padding: 5px 10px;
+    }
+
+    .hero-section-heading {
+        font-size: 30px;
+    }
+
+    .hero-section-box h1 {
+        font-size: 26px;
+        padding-bottom: 30px;
+    }
+
+    .hero-section-box p {
+        display: none;
+    }
+
+    .steps-section-left {
+        width: 100%;
+    }
+    
+    .step h3 {
+        font-size: 20px;
+    }
+
+    .number {
+        width: 80%;
+    }
+
+    .featured-section-wrapper {
+        display: none;
+    }
+
+    .home-info-section-wrapper {
+        gap: 0px;
+    }
+
+    .home-info-section-left1 {
+        width: 90%;
+    }
+
+    .home-info-section-left1 h1 {
+        font-size: 22px;
+    }
+
+    .home-info-section-left1 p {
+        font-size: 15px;
+    }
+
+    .home-info-section-right1 {
+        width: 100%;
+        height: 350px;
+    }
+
+    .home-info-section-left2 {
+        width: 90%;
+    }
+
+    .home-info-section-left2 h1 {
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .home-info-section-left2 p {
+        font-size: 15px;
+    }
+
+    .home-info-section-right2 {
+        width: 100%;
+        height: 350px;
+    }
+
+    .subscription-section-wrapper h1 {
+        padding:  0 10px;
+        font-size: 35px;
+    }
+
+    .profile-img {
+        border: 3px solid var(--special-color);
+    }
+
+    /* Properties PAge   */
+
+    .properties-filter-section-wrapper {
+        width: 100%;
+    }
+
+    .properties-filter-section {
+        width: 90%;
+    }
+
+    .properties-filter-section h2{
+        font-size: medium;
+        text-align: center;
+    }
+
+    .properties-sort-section h2 {
+        font-size: 22px;
+    }
+
+    .filter-select {
+        font-size: 15px;
+        padding: 10px 10px;
+      }
+
+      /* Auth  */
+
+    .auth-box, .forgot-password-box, .signup-box, .verify-email-box, .update-password-box {
+        width: 100%;
+    }
 
   }
-  

@@ -44,7 +44,6 @@ const Navbar = () => {
     nav.classList.toggle("active");
 
     if(!isOpen){
-      document.body.style.overflowY = "hidden";
       setWrapper('navbar-wrapper-light')
       setLoginbtn('nav-button-login-light')
       setSignupbtn('nav-button-signup-light')
@@ -53,7 +52,6 @@ const Navbar = () => {
       setCurr(currentNav[1]);
     }
     else{
-      document.body.style.overflowY = "scroll";
       setWrapper('navbar-wrapper')
       setLoginbtn('nav-button-dark')
       setSignupbtn('nav-button-dark')
