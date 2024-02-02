@@ -1,16 +1,19 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, matchPath, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/Nav-LOGO.svg";
 import logoLight from "../assets/rentez-svg.svg";
 import { NavbarLinks } from "../data/NavbarLinks";
 import Hamburger from 'hamburger-react'
+import { logout } from "../services/operations/authAPI";
+import ConfirmationModal from "./ConfirmationModal";
 
 const Navbar = () => {
   const { token } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.profile);
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const currentNav = [
     {
@@ -30,6 +33,7 @@ const Navbar = () => {
     return matchPath({ path: route }, location.pathname);
   };
 
+  const [confirmationModal, setConfirmationModal] = useState(null)
   const [curr, setCurr] = useState(currentNav[0])
   const[wrapper, setWrapper] = useState('navbar-wrapper')
   const[loginbtn, setLoginbtn] = useState('nav-button-dark');
@@ -75,6 +79,20 @@ const Navbar = () => {
               </Link>
             );
           })}
+          <Link 
+              className="navlink-light nav-logout"
+              onClick={() => setConfirmationModal({
+                text1: "Are you sure?",
+                text2: "You will be logged out of your account.",
+                btn1Text: "Logout",
+                btn2Text: "Cancel",
+                btn1Handler: () => dispatch(logout(navigate)),
+                btn2Handler: () => setConfirmationModal(null),
+            }    
+            )}
+            >
+            Logout
+            </Link>
         </div>
         <div className="navbar-buttons">
           {token === null && (
@@ -97,6 +115,9 @@ const Navbar = () => {
         <Link className={humburger} onClick={humburgerHandler}><Hamburger toggled={isOpen} toggle={setOpen} /></Link>
         </div>
       </div>
+      {
+        confirmationModal && <ConfirmationModal modalData={confirmationModal} />
+      }
     </div>
   );
 };

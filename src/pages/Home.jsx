@@ -8,7 +8,7 @@ import step1 from "../assets/step1.svg";
 import step2 from "../assets/step2.svg";
 import step3 from "../assets/step3.svg";
 import step4 from "../assets/step4.svg";
-import house1 from "../assets/benefit.avif"
+import house1 from "../assets/benefit.avif";
 import no1 from "../assets/no1.svg";
 import no2 from "../assets/no2.svg";
 import no3 from "../assets/no3.svg";
@@ -27,11 +27,11 @@ const Home = () => {
   const [properties, setProperties] = useState([]);
   const { loading } = useSelector((state) => state.auth);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const api = async () => {
     const response = await getAllProperty();
-    const result = response.slice(0,6);
+    const result = response.slice(0, 6);
     setProperties(result);
   };
   useEffect(() => {
@@ -69,8 +69,9 @@ const Home = () => {
                     Lorem Ipsum is simply dummy text of the printing <br /> and
                     typesetting industry.
                   </p>
-                  <button>
-                    Get Started <FaArrowRightLong />
+                  <button className="ui-btn">
+                    <span>BUTTON</span>
+                    <FaArrowRightLong />
                   </button>
                 </div>
               </div>
@@ -174,7 +175,12 @@ const Home = () => {
                   is untrammelled and when nothing prevents our being able to do
                   what we like best, every pleasure is to be welcomed.
                 </p>
-                <button className="special-btn" onClick={() => navigate("/properties")} >Get Started</button>
+                <button
+                  className="special-btn"
+                  onClick={() => navigate("/properties")}
+                >
+                  Get Started
+                </button>
               </div>
               <div className="home-info-section-right1"></div>
             </div>

@@ -23,6 +23,12 @@
     max-width: 1340px;
     margin: auto;
   }
+
+  .dashboard-wrapper {
+    max-width: 1440px;
+    margin: auto;
+  }
+
 }
 
 @media (max-width: 1100px) {
@@ -55,10 +61,10 @@
 
   .navbar-links {
     padding-block: 50px;
-    gap: 40px;
+    gap: 30px;
     position: absolute;
     left: -100%;
-    top: 80px;
+    top: 70px;
     width: 100%;
     color: var(--primary-dark-color);
     background-color: var(--light-color);
@@ -71,7 +77,7 @@
     left: 0;
   }
 
-  .navlink {
+  .navlink, .navlink-light {
     font-size: 1.4rem;
     color: var(--primary-dark-color);
   }
@@ -291,6 +297,73 @@
     width: 70%;
   }
 
+  /* Dashboard   */
+
+  .nav-dashboard-wrapper {
+    display:flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .sidebar-wrapper {
+    display: none;
+  }
+
+  .nav-logout {
+    display: block;
+  }
+
+  .my-profile-main {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .my-profile-main-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .my-profile-additional-details {
+    width: 100%;
+  }
+
+  .my-profile-main {
+    gap: 0;
+  }
+
+  .my-profile-additional-details-table {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .my-profile-additional-details-left {
+    width: 100%;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .create-listing-wrapper  {
+    width: 70%;
+  }
+
+  .settings-wrapper {
+    width: 95%;
+  }
+
+  .edit-profile-wrapper {
+    width: 95%;
+  }
+
+  .change-password-wrapper {
+    width: 90%;
+  }
+
 }
 
 @media (max-width: 770px) {
@@ -306,7 +379,7 @@
     padding: 8px 20px;
   }
 
-  .navlink {
+  .navlink, .navlink-light {
     font-size: 18px;
   }
 
@@ -503,6 +576,68 @@
 
   .filter-price {
     flex-direction: column;
+  }
+
+  /* Dashboard   */
+
+  .my-profile-wrapper {
+    width: 90%;
+  }
+
+  .create-listing-wrapper  {
+    width: 95%;
+  } 
+
+  .create-listing-wrapper h1 {
+    font-size: 30px;
+  }
+
+  .settings-wrapper {
+    width: 100%;
+  }
+
+  .edit-profile-wrapper h1 {
+    font-size: 35px;
+    font-weight: 500;
+  }
+
+  .edit-profile-picture {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .edit-profile-picture img {
+    margin: auto;
+  }
+
+  .edit-profile-details {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .edit-profile-details-column {
+    width: 80%;
+  }
+  
+  .edit-profile-detail-buttons {
+    justify-content: center;
+  }
+
+  .edit-profile-wrapper h1 {
+    font-size: 35px;
+  }
+
+  .change-password-wrapper {
+    width: 100%;
+  }
+
+  .change-password-heading h1 {
+    font-size: 35px;
+  }
+
+  .change-password-data div {
+    width: 80%;
   }
 
 }
@@ -749,5 +884,46 @@
   .filter-heading {
     padding: 0 10px;
   }
+
+  /* Dashboard   */
+
+  .my-profile-wrapper {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .my-profile-wrapper h1 {
+    font-size: 35px;
+    font-weight: 500;
+  }
+
+  .create-listing-wrapper  {
+    width: 100%;
+    padding: 30px 30px;
+  }
+
+  .create-listing-wrapper h1 {
+    font-size: 30px;
+  }
+
+  .settings-option-left p {
+    display: none;
+  }
+
+  .edit-profile-details-column {
+    width: 90%;
+  }
+
+  .edit-profile-wrapper {
+    width: 100%;
+  }
+
+  .change-password-heading h1 {
+    font-size: 30px;
+  }
+
+  .change-password-data div {
+    width: 100%;
+  } 
 
 }

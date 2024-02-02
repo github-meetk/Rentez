@@ -200,7 +200,7 @@
   text-align: center;
 }
 
-.hero-section-box button {
+/* .hero-section-box button {
   background-color: rgba(345, 255, 255, 0.1);
   color: var(--light-color);
   font-weight: 500;
@@ -219,7 +219,73 @@
   color: var(--special-color);
   background-color: rgba(345, 255, 255, 0.9);
   transition: 0.5s ease;
+} */
+
+.ui-btn {
+  width: 55%;
+  color: var(--light-color);
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: rgba(345, 255, 255, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
 }
+
+.ui-btn:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+
+.ui-btn:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+.ui-btn span {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 5px;
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+.ui-btn:hover span {
+  color: #6B53FF;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 /* step section */
 
@@ -1052,6 +1118,17 @@ input:focus {
   background: var(--hero-section-background);
 }
 
+.nav-dashboard-wrapper {
+  display: none;
+}
+
+.nav-dashboard {
+  font-size: 22px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+}
+
 /* Navbar Section  */
 
 .navbar-wrapper {
@@ -1321,6 +1398,10 @@ input:focus {
   /* padding: 10px 0; */
 }
 
+.nav-logout {
+  display: none;
+}
+
 .sidebar-wrapper {
   padding: 50px 0;
   min-width: 220px;
@@ -1405,6 +1486,7 @@ input:focus {
 .my-profile-main img {
   width: 250px;
   height: 250px;
+  border-radius: 125px;
 }
 
 .my-profile-main-details {
@@ -1457,7 +1539,7 @@ input:focus {
 
 .my-profile-additional-details-table {
   display: flex;
-  width: 60%;
+  width: 100%;
   justify-content: space-around;
   padding: 10px;
 }
@@ -1504,6 +1586,7 @@ input:focus {
 }
 
 .my-listings {
+  padding: 20px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -1755,6 +1838,7 @@ input:focus {
 .create-listing-wrapper h1 {
   font-size: 2rem;
   font-weight: 500;
+  padding: 20px 0;
 }
 
 .create-listing-data {
