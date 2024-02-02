@@ -497,6 +497,14 @@
     text-align: center;
   }
 
+  .filter {
+    width: 400px;
+  }
+
+  .filter-price {
+    flex-direction: column;
+  }
+
 }
 
 @media (max-width: 470px) {
@@ -730,6 +738,16 @@
 
   .seller-detail-right p {
     width: 90%;
+  }
+
+  .filter {
+    overflow-x: hidden;
+    width: 350px;
+    padding: 0;
+  }
+
+  .filter-heading {
+    padding: 0 10px;
   }
 
 }
