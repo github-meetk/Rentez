@@ -347,7 +347,7 @@
 }
 
 .home-info-section1 {
-  margin-top: 150px;
+  margin-top: 50px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -2337,6 +2337,14 @@ hr {
   cursor: pointer;
 }
 
+/* About Page   */
+
+.about-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  overflow: clip;
+}
+
 .about-hero-wrapper {
   width: 100%;
   background: var(--hero-section-background);
@@ -2351,6 +2359,7 @@ hr {
   font-size: 5rem;
   font-weight: 900;
   padding-top: 50px;
+  text-align: center;
 }
 
 .about-hero-wrapper p {
@@ -2402,7 +2411,8 @@ hr {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  padding: 50px 0;
+  /* height: 100vh; */
   background: url("./assets/background.webp");
 }
 
@@ -2429,6 +2439,7 @@ hr {
   font-weight: 100;
   color: var(--secondary-dark-color);
   padding-bottom: 30px;
+  text-align: center;
 }
 
 .contact-form input {
@@ -2562,6 +2573,7 @@ hr {
 .plan-heading {
   font-size: 5rem;
   color: var(--light-color);
+  text-align: center;
 }
 
 .pricing-discount {

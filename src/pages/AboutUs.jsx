@@ -65,6 +65,7 @@ const AboutUs = () => {
   return (
     <div>
       <Navbar />
+      <div className="about-wrapper">
       <div className="about-hero-wrapper">
         <h1>Welcome to Rentez</h1>
         <p>
@@ -155,7 +156,7 @@ const AboutUs = () => {
             <button className="special-btn" type="submit">Send Message</button>
         </form>
       </div>
-      
+      </div>
       <Footer />
     </div>
   );
