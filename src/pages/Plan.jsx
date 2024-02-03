@@ -32,9 +32,9 @@ const Plan = () => {
 
   const [field, setField] = useState(tab[0].name);
 
-  const handleBuyCourse = (plan) => {
+  const handleBuyCourse = (plan, planType) => {
     if (token) {
-      buyCourse(token, plan, user, navigate)
+      buyCourse(token, plan, planType, user, navigate)
       return
     }
     setConfirmationModal({
@@ -86,9 +86,9 @@ const Plan = () => {
             </p>
             {
               field === "Monthly" ? (
-                <button className="special-btn" onClick={() => handleBuyCourse(499)}>Get Started</button>
+                <button className="special-btn" onClick={() => handleBuyCourse(499, 'Standard')}>Get Started</button>
               ) : (
-                <button className="special-btn" onClick={() => handleBuyCourse(4999)}>Get Started</button>
+                <button className="special-btn" onClick={() => handleBuyCourse(4999 , 'Standard')}>Get Started</button>
               )
             }
           </div>
@@ -117,9 +117,9 @@ const Plan = () => {
             </p>
             {
               field === "Monthly" ? (
-                <button className="special-btn" onClick={() => handleBuyCourse(999)}>Get Started</button>
+                <button className="special-btn" onClick={() => handleBuyCourse(999, 'Premium')}>Get Started</button>
               ) : (
-                <button className="special-btn" onClick={() => handleBuyCourse(10999)}>Get Started</button>
+                <button className="special-btn" onClick={() => handleBuyCourse(10999, 'Premium')}>Get Started</button>
               )
             }
           </div>
@@ -148,9 +148,9 @@ const Plan = () => {
             </p>
             {
               field === "Monthly" ? (
-                <button className="special-btn" onClick={ () => handleBuyCourse(1499)}>Get Started</button>
+                <button className="special-btn" onClick={ () => handleBuyCourse(1499, 'Gold')}>Get Started</button>
               ) : (
-                <button className="special-btn" onClick={ () => handleBuyCourse(13999)}>Get Started</button>
+                <button className="special-btn" onClick={ () => handleBuyCourse(13999, 'Gold')}>Get Started</button>
               )
             }
           </div>

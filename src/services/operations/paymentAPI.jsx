@@ -22,7 +22,7 @@ function loadScript(src) {
 }
 
 
-export async function buyCourse(token, plan, userDetails, navigate) {
+export async function buyCourse(token, plan, planType, userDetails, navigate) {
     const toastId = toast.loading("Loading...");
     try{
         //load the script
@@ -47,21 +47,21 @@ export async function buyCourse(token, plan, userDetails, navigate) {
         //options
         const options = {
             key: process.env.RAZORPAY_KEY,
-            currency: orderResponse.data.data.currency,
+            currency: `${orderResponse.data.data.currency}`,
             amount: orderResponse.data.data.amount,
-            order_id:orderResponse.data.data.id,
+            order_id:`${orderResponse.data.data.id}`,
             name:"Rentez",
             description: "Thank You for Purchasing the Subscription",
-            image:rzpLogo,
+            image:`${rzpLogo}`,
             prefill: {
-                name: userDetails?.firstName + " " + userDetails?.lastName,
-                email: userDetails?.email,
+                name: `${userDetails?.firstName}`,
+                email: `${userDetails?.email}`,
             },
             handler: function(response) {
                 //send successful wala mail
                 sendPaymentSuccessEmail(response, orderResponse.data.data.amount,token );
                 //verifyPayment
-                verifyPayment({...response, plan}, token, navigate);
+                verifyPayment({...response, plan, planType}, token, navigate);
             }
         }
         //miss hogya tha 
