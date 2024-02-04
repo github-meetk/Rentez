@@ -20,6 +20,7 @@ import { getAllProperty } from "../services/operations/propertyAPI";
 import Card from "../components/Card";
 import { useSelector } from "react-redux";
 import Subscibe from "../components/Subscibe";
+import Feeatured from "../components/Feeatured";
 
 const Home = () => {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -131,39 +132,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="featured-section-wrapper">
-            <div className="featured-section-heading">
-              <h1>Featured Properties</h1>
-              <div>
-                <Link
-                  className="featured-section-explore-link"
-                  to={"/properties"}
-                >
-                  Explore All
-                </Link>
-                <FaArrowRightLong />
-              </div>
-            </div>
-            <div className="featured-section-cards">
-              {properties?.map((property, index) => {
-                return (
-                  <Card
-                    key={index}
-                    propertyId={property._id}
-                    img={property.thumbnail}
-                    bhk={property.bhk}
-                    bath={property.bathrooms}
-                    size={property.size}
-                    price={property.price}
-                    pricePer={property.pricePer}
-                    city={property.city}
-                    state={property.state}
-                    type={property.propertyType}
-                  />
-                );
-              })}
-            </div>
-          </div>
+          <Feeatured/>
 
           <div className="home-info-section-wrapper">
             <div className="home-info-section1">
