@@ -200,35 +200,16 @@
   text-align: center;
 }
 
-/* .hero-section-box button {
-  background-color: rgba(345, 255, 255, 0.1);
-  color: var(--light-color);
-  font-weight: 500;
-  font-size: 1.5rem;
-  padding: 10px 20px;
-  margin: auto;
-  border: none;
-  border-radius: 10px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  cursor: pointer;
-}
-
-.hero-section-box button:hover {
-  color: var(--special-color);
-  background-color: rgba(345, 255, 255, 0.9);
-  transition: 0.5s ease;
-} */
 
 .ui-btn {
-  width: 55%;
   color: var(--light-color);
   margin: auto;
-  font-family: 'Poppins', sans-serif;
+  font-family: inherit;
+  font-size: 25px;
+  padding: 10px 25px;
   position: relative;
   display: flex;
-  gap: 5px;
+  gap: 10px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
@@ -255,14 +236,14 @@
 }
 
 .ui-btn span {
-  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
   text-align: center;
   text-decoration: none;
-  padding: 10px 5px;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 500;
-  letter-spacing: 0.3em;
   z-index: 20;
   transition: all 0.3s ease-in-out;
 }

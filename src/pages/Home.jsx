@@ -70,8 +70,8 @@ const Home = () => {
                     typesetting industry.
                   </p>
                   <button className="ui-btn">
-                    <span>BUTTON</span>
-                    <FaArrowRightLong />
+                    <span>Get Started</span>
+                    <span><FaArrowRightLong /></span>
                   </button>
                 </div>
               </div>
