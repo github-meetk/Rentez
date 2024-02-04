@@ -873,6 +873,7 @@
 
   .seller-detail-right p {
     width: 90%;
+    text-align: center;
   }
 
   .filter {
