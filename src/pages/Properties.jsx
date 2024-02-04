@@ -49,6 +49,7 @@ const Properties = () => {
       document.querySelector(".filter-select").value = value;
     }
     setLoading(false);
+    // eslint-disable-next-line
   }, [filterData]);
 
   return (

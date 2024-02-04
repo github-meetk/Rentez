@@ -17,6 +17,7 @@ const Mylistings = () => {
   useEffect(() => {
       fetchApi();
     setLoading(false);
+    // eslint-disable-next-line
   }, []);
 
   return (
