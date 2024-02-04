@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import image1 from "../assets/objcet_1.png";
 import image2 from "../assets/object_2.png";
 import image3 from "../assets/object_3.png";
@@ -14,10 +13,8 @@ import no2 from "../assets/no2.svg";
 import no3 from "../assets/no3.svg";
 import no4 from "../assets/no4.svg";
 import Footer from "../components/Footer";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { getAllProperty } from "../services/operations/propertyAPI";
-import Card from "../components/Card";
 import { useSelector } from "react-redux";
 import Subscibe from "../components/Subscibe";
 import Feeatured from "../components/Feeatured";
@@ -25,19 +22,9 @@ import Feeatured from "../components/Feeatured";
 const Home = () => {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 
-  const [properties, setProperties] = useState([]);
   const { loading } = useSelector((state) => state.auth);
 
   const navigate = useNavigate();
-
-  const api = async () => {
-    const response = await getAllProperty();
-    const result = response.slice(0, 6);
-    setProperties(result);
-  };
-  useEffect(() => {
-    api();
-  }, []);
 
   return (
     <>
