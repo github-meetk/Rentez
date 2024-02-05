@@ -575,10 +575,13 @@
   opacity: 0.6;
   transition: opacity 0.2s ease-in-out;
   cursor: pointer;
+  scale: 1;
+  transition: all 0.2s ease-in-out;
 }
 
 .footer-logos span:hover {
   opacity: 1;
+  scale: 1.2;
 }
 
 /* Signup page */
