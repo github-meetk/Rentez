@@ -115,6 +115,7 @@
   clip-path : circle(150vw at 50% calc(100% - 150vw - 20vw));
 }
 
+
 .hero-section-wrapper-shadow {
   filter: drop-shadow(-10px 30px 60px #a973df);
   user-select: none;
@@ -275,6 +276,18 @@
   user-select: none;
   width: 80%;
   margin: 30px auto auto;
+  scale: .8;
+  opacity: 0.4;
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
 }
 
 .steps-section {
