@@ -1282,9 +1282,7 @@ input:focus {
 .card-wrap {
   width: 30%;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10px 0 0;
 }
 
 .slider-btn {
@@ -1326,21 +1324,30 @@ input:focus {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  transition: box-shadow .3s ease-in-out;
+  scale: 1;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .card:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  scale: 1.01;
 }
 
 .card-img {
   width: 100%;
   height: 50%;
+  overflow: hidden;
 }
 
 .card-img img {
   width: 100%;
   height: 100%;
+  scale: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.card:hover .card-img img {
+  scale: 1.05;
 }
 
 .card-info {
