@@ -362,7 +362,7 @@
   border-radius: 20px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
   opacity: 0.4;
-  transform: translate(0px, 40px) scaleX(0.9);
+  transform: translate(0px, 40px) scaleX(0.85);
   animation: trans-up linear forwards;
   animation-timeline: view();
   animation-range: entry;
@@ -428,15 +428,22 @@
 
 .home-info-section-left1 {
   width: 45%;
-  /* height: ; */
   display: flex;
   flex-direction: column;
   gap: 30px;
   align-items:flex-start;
   padding: 40px 0;
+  transform: translate(-30px);
+  animation: swipe-right linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
 }
 
-
+@keyframes swipe-right {
+  to {
+    transform: translate(30px);
+  }
+}
 
 .home-info-section-left1 button:hover {
   background: var(--hero-section-background);
@@ -460,6 +467,16 @@
   /* height: 500px; */
   border-radius: 20px;
   background-size: cover;
+  transform: translate(30px);
+  animation: swipe-left linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+@keyframes swipe-left {
+  to {
+    transform: translate(-30px);
+  }
 }
 
 .home-info-section2 {
@@ -476,6 +493,10 @@
   gap: 20px;
   align-items:flex-start;
   padding: 40px 0;
+  transform: translate(30px);
+  animation: swipe-left linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
 }
 
 .special-btn {
@@ -514,6 +535,10 @@
   width: 45%;
   background-size: cover;
   border-radius: 20px;
+  transform: translate(-30px);
+  animation: swipe-right linear forwards;
+  animation-timeline: view();
+  animation-range: entry;
 }
 
 .home-info-section-left2 p {
