@@ -1,5 +1,5 @@
 import React from 'react'
-import ss from "../assets/ss.png"
+import ss from "../assets/download.png"
 import { useNavigate } from 'react-router-dom'
 
 const Subscibe = () => {
