@@ -31,7 +31,7 @@ const cartSlice = createSlice({
       localStorage.setItem("cart", JSON.stringify(state.cart))
       localStorage.setItem("totalItems", JSON.stringify(state.totalItems))
       // show toast
-      toast.success("Course added to cart")
+      toast.success("Course added to Wishlist")
     },
     removeFromList: (state, action) => {
       const propertyId = action.payload
@@ -53,6 +53,8 @@ const cartSlice = createSlice({
       // Update to localstorage
       localStorage.removeItem("cart")
       localStorage.removeItem("totalItems")
+
+      toast.success("Wishlist Reset Successfully")
     },
   },
 })

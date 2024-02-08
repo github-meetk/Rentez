@@ -1,14 +1,24 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Card from "./Card";
+import { resetList } from "../slices/cartSlice";
 
 const Wishlist = () => {
   const { cart, totalItems } = useSelector((state) => state.cart);
+  const dispatch = useDispatch()
+
+  const handleReset = () => {
+      dispatch(resetList())
+  }
   return (
     <div className="my-listings-wrapper">
       {totalItems > 0 ? (
         <>
-          <h1>Wishlist</h1>
+          <div className="wishlist-heading">
+            <h1>Wishlist</h1>
+            <button onClick={handleReset}>Reset</button>
+          </div>
+          
           <div className="my-listings">
             {cart?.map((property, index) => {
               return (
