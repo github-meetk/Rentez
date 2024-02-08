@@ -8,7 +8,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteProperty } from "../services/operations/propertyAPI";
 import ConfirmationModal from "./ConfirmationModal";
 import toast from "react-hot-toast";
-import { addToList } from "../slices/cartSlice";
+import { addToList, removeFromList } from "../slices/cartSlice";
+import { FcLikePlaceholder } from "react-icons/fc";
+import { FcLike } from "react-icons/fc";
 
 const Card = ({
   img,
@@ -24,13 +26,13 @@ const Card = ({
   isSeller = false,
 }) => {
   const { token } = useSelector((state) => state.auth);
+  const { cart } = useSelector((state) => state.cart);
   const [confirmationModal, setConfirmationModal] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-
   const card = {
-    thumbnail : img,
+    thumbnail: img,
     city,
     state,
     bhk,
@@ -42,21 +44,28 @@ const Card = ({
     propertyId,
   };
   const handleAddToList = () => {
-    if(token){
-    dispatch(addToList(card));
+    if (token) {
+      cart.some((item) => item.propertyId === propertyId)
+        ? (dispatch(removeFromList(propertyId)))
+        : (dispatch(addToList(card)))
+    } else {
+      toast.error("Login Required!!");
     }
-    else{
-      toast.error("Login Required!!")
-    }
-}
+  };
 
   return (
     <div className="card">
       <div className="card-img">
         <img src={img} alt="" />
-        
+        <button className="wishlist-btn" onClick={handleAddToList}>
+          {cart.some((item) => item.propertyId === propertyId) ? (
+            <FcLike />
+          ) : (
+            <FcLikePlaceholder />
+          )}
+        </button>
       </div>
-      <button onClick={handleAddToList}>Add</button>
+
       <div className="card-info">
         <div className="card-price">
           ₹{price}
