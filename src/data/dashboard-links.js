@@ -26,4 +26,10 @@ export const sidebarLinks = [
     path: "/dashboard/settings",
     icon: "VscSettingsGear",
   },
+  {
+    id: 6,
+    name: "Wishlist",
+    path: "/dashboard/wishlist",
+    icon: "VscSettingsGear",
+  },
 ];

@@ -16,7 +16,7 @@ const cartSlice = createSlice({
   reducers: {
     addToList: (state, action) => {
       const property = action.payload
-      const index = state.cart.findIndex((item) => item._id === property._id)
+      const index = state.cart.findIndex((item) => item.propertyId === property.propertyId)
 
       if (index >= 0) {
         // If the course is already in the cart, do not modify the quantity

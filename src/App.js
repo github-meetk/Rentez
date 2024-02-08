@@ -20,6 +20,7 @@ import Properties from "./pages/Properties";
 import DetailProperty from "./pages/DetailProperty";
 import Plan from "./pages/Plan";
 import AboutUs from "./pages/AboutUs";
+import Wishlist from "./components/Wishlist";
 
 function App() {
   return (
@@ -80,6 +81,7 @@ function App() {
           <Route path="/dashboard/edit" element={<EditProfile />} />
 
           <Route path="/dashboard/change-password" element={<ChangePassword />} />
+          <Route path="/dashboard/wishlist" element={<Wishlist />} /> 
         </Route>
 
         <Route path="/properties" element={<Properties />} />
