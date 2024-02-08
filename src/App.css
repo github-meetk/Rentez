@@ -162,8 +162,7 @@
   color: var(--light-color);
   transform: translate(0px, 20px);
   animation: swipe-up linear forwards;
-  /* animation-delay: 1s; */
-  animation-duration: .5s;
+  animation-duration: .3s;
 }
 
 @keyframes swipe-up {
