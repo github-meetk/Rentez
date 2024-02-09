@@ -1257,7 +1257,7 @@ input:focus {
 
 .navlink {
   text-decoration: none;
-  color: whitesmoke;
+  color: white;
   font-size: 1.1rem;
   font-weight : lighter;
   cursor: pointer;
