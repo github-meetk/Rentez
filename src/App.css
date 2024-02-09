@@ -3044,23 +3044,46 @@ hr {
   text-align: center;
 }
 
-.subscription-section-wrapper button{
-  width: fit-content;
-  padding: 10px 35px;
-  font-size: 1.2rem;
-  font-weight: 400;
-  background: linear-gradient(90deg,#ffd02c,#ff9e2c);
-  color: black;
-  border: none;
-  border-radius: 5px;
+.subscribe-btn {
   cursor: pointer;
-  scale: 1;
-  transition: all 0.2s ease-in-out;
+  position: relative;
+  padding: 10px 24px;
+  font-size: 18px;
+  color: #ffd02c;
+  border: 2px solid #ffd02c;
+  border-radius: 34px;
+  background-color: transparent;
+  font-weight: 400;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  overflow: hidden;
 }
 
-.subscription-section-wrapper button:hover {
-  background: linear-gradient(90deg,#ff9e2c,#ffd02c);
-  scale: 0.95;
+.subscribe-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,#ffd02c,#ff9e2c);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.subscribe-btn:hover::before {
+  scale: 3;
+}
+
+.subscribe-btn:hover {
+  color: white;
+  scale: 1.1;
+  box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
+}
+
+.subscribe-btn:active {
+  scale: 1;
 }
 
 .ss {

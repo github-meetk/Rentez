@@ -7,7 +7,7 @@ const Subscibe = () => {
   return (
     <div className="subscription-section-wrapper">
         <h1>Get started with Rentez</h1>
-        <button onClick={() => navigate("/plan")}>Subscribe</button>
+        <button className='subscribe-btn' onClick={() => navigate("/plan")}>Subscribe</button>
         <div className="ss"><img src={ss} alt='' ></img></div>
     </div>
   )
