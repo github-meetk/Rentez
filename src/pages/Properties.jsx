@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-// import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { getAllProperty } from "../services/operations/propertyAPI";
 import Card from "../components/Card";
 import { useSelector } from "react-redux";
 import FilterModal from "../components/FilterModal";
-import { LuListFilter } from "react-icons/lu";
 import { ImSearch } from "react-icons/im";
 import NavbarLight from "../components/NavbarLight";
 

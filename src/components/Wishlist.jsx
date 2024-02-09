@@ -16,7 +16,7 @@ const Wishlist = () => {
         <>
           <div className="wishlist-heading">
             <h1>Wishlist</h1>
-            <button onClick={handleReset}>Reset</button>
+            <button className='delete-profile-button' onClick={handleReset}>clear</button>
           </div>
           
           <div className="my-listings">
