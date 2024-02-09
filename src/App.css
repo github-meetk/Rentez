@@ -1133,6 +1133,40 @@ input:focus {
   cursor: pointer;
 }
 
+.navlink-light {
+  position: relative;
+  border: none;
+  background: none;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.navlink-light:focus,
+.navlink-light:hover {
+  color: var(--primary-dark-color);
+}
+
+.navlink-light:focus:after,
+.navlink-light:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.navlink-light:after {
+  content: "";
+  pointer-events: none;
+  bottom: -5px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-dark-color);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
 .nav-button-login-light {
   min-width: 95px;
   padding: 8px 20px;
@@ -1181,6 +1215,54 @@ input:focus {
 
 /* Navbar Section  */
 
+.navlink {
+  font-size: 18px;
+  color: #e1e1e1;
+  /* font-family: inherit; */
+  /* font-weight: 800; */
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  /* text-transform: uppercase; */
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.navlink:focus,
+.navlink:hover {
+  color: #fff;
+}
+
+.navlink:focus:after,
+.navlink:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.navlink:after {
+  content: "";
+  pointer-events: none;
+  bottom: -5px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.navlink {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1.1rem;
+  font-weight : lighter;
+  cursor: pointer;
+}
+
 .navbar-wrapper {
   position:sticky;
   top: 0px;
@@ -1228,14 +1310,6 @@ input:focus {
   align-items: center;
   gap: 70px;
   height: 100%;
-}
-
-.navlink {
-  text-decoration: none;
-  color: white;
-  font-size: 1.1rem;
-  font-weight : lighter;
-  cursor: pointer;
 }
 
 .navbar-buttons {

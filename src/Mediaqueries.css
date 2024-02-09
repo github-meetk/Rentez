@@ -28,7 +28,6 @@
     max-width: 1440px;
     margin: auto;
   }
-
 }
 
 @media (max-width: 1100px) {
@@ -73,11 +72,22 @@
     transition: 0.2s ease-in-out;
   }
 
+  .navlink:focus,
+  .navlink:hover {
+    color: var(--primary-dark-color);
+  }
+
+  .navlink:after {
+    background-color: var(--primary-dark-color);
+    bottom: -3px;
+  }
+
   .navbar-links.active {
     left: 0;
   }
 
-  .navlink, .navlink-light {
+  .navlink,
+  .navlink-light {
     font-size: 1.4rem;
     color: var(--primary-dark-color);
   }
@@ -300,7 +310,7 @@
   /* Dashboard   */
 
   .nav-dashboard-wrapper {
-    display:flex;
+    display: flex;
     flex-direction: column;
     gap: 30px;
     align-items: center;
@@ -348,7 +358,7 @@
     gap: 20px;
   }
 
-  .create-listing-wrapper  {
+  .create-listing-wrapper {
     width: 70%;
   }
 
@@ -363,7 +373,6 @@
   .change-password-wrapper {
     width: 90%;
   }
-
 }
 
 @media (max-width: 770px) {
@@ -379,7 +388,8 @@
     padding: 8px 20px;
   }
 
-  .navlink, .navlink-light {
+  .navlink,
+  .navlink-light {
     font-size: 18px;
   }
 
@@ -534,7 +544,7 @@
   .property-details-heading h1 {
     font-size: 35px;
   }
-  
+
   .property-details h3 {
     font-size: 20px;
   }
@@ -542,7 +552,7 @@
   .property-details p {
     font-size: 20px;
   }
-  
+
   .property-details-section-right {
     width: 100%;
   }
@@ -584,9 +594,9 @@
     width: 90%;
   }
 
-  .create-listing-wrapper  {
+  .create-listing-wrapper {
     width: 95%;
-  } 
+  }
 
   .create-listing-wrapper h1 {
     font-size: 30px;
@@ -605,7 +615,7 @@
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .edit-profile-picture img {
     margin: auto;
   }
@@ -619,7 +629,7 @@
   .edit-profile-details-column {
     width: 80%;
   }
-  
+
   .edit-profile-detail-buttons {
     justify-content: center;
   }
@@ -639,7 +649,6 @@
   .change-password-data div {
     width: 80%;
   }
-
 }
 
 @media (max-width: 470px) {
@@ -898,7 +907,7 @@
     font-weight: 500;
   }
 
-  .create-listing-wrapper  {
+  .create-listing-wrapper {
     width: 100%;
     padding: 30px 30px;
   }
@@ -925,6 +934,5 @@
 
   .change-password-data div {
     width: 100%;
-  } 
-
+  }
 }

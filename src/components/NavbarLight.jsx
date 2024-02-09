@@ -54,14 +54,14 @@ const NavbarLight = () => {
         <div id="nav" className="navbar-links">
           {NavbarLinks.map((nav, index) => {
             return (
-              <Link
+              <button
                 style={matchRoute(nav.path) ? currentNav[0] : currentNav[1]}
                 key={index}
                 className="navlink-light"
-                to={nav.path}
+                onClick={() => navigate(nav.path)}
               >
                 {nav.title}
-              </Link>
+              </button>
             );
           })}
           <Link

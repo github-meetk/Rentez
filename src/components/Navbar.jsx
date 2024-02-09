@@ -74,9 +74,9 @@ const Navbar = () => {
         <div id="nav" className="navbar-links">
           {NavbarLinks.map((nav, index) => {
             return (
-              <Link style={matchRoute(nav.path) ? (curr) : (currentNav[2])} key={index} className="navlink" to={nav.path}>
+              <button style={matchRoute(nav.path) ? (curr) : (currentNav[2])} key={index} className="navlink" onClick={() => navigate(nav.path)}>
                 {nav.title}
-              </Link>
+              </button>
             );
           })}
           <Link 
