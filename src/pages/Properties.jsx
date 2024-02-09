@@ -26,26 +26,24 @@ const Properties = () => {
 
   const filterHandler = (value) => {
     let data = [...properties];
-    console.log(data)
-    if(data.length > 0){
-      if(value === 'lth'){
-        const result = data.sort((a,b) => a.price - b.price);
+    console.log(data);
+    if (data.length > 0) {
+      if (value === "lth") {
+        const result = data.sort((a, b) => a.price - b.price);
         setProperties(result);
-      }
-      else if(value === 'htl'){
-        const result = data.sort((a,b) => b.price - a.price);
-      setProperties(result);
-      }
-      else{
+      } else if (value === "htl") {
+        const result = data.sort((a, b) => b.price - a.price);
+        setProperties(result);
+      } else {
         setProperties(data);
       }
     }
-  }
+  };
 
   useEffect(() => {
     setLoading(true);
     api();
-    if(document.querySelector(".filter-select")){
+    if (document.querySelector(".filter-select")) {
       document.querySelector(".filter-select").value = value;
     }
     setLoading(false);
@@ -56,7 +54,7 @@ const Properties = () => {
     <>
       <NavbarLight />
 
-      <div className="properties-section-wrapper"> 
+      <div className="properties-section-wrapper">
         {loading ? (
           <span className="loader"></span>
         ) : (
@@ -75,21 +73,29 @@ const Properties = () => {
                     })
                   }
                 >
-                  <LuListFilter />
+                  <button class="setting-btn">
+                    <span class="bar bar1"></span>
+                    <span class="bar bar2"></span>
+                    <span class="bar bar1"></span>
+                  </button>
                   Filters
                 </button>
               </div>
             </div>
 
             <div className="properties-sort-section">
-                  <h2>Explore all property</h2>
-                  <div>
-                    <select className="filter-select" defaultValue={value} onChange={(e) => filterHandler(e.target.value)}>
-                      <option value="featured">Sort by : Featured</option>
-                      <option value="lth">Price : Low to High</option>
-                      <option value="htl">Price : High to Low</option>
-                    </select>
-                  </div>
+              <h2>Explore all property</h2>
+              <div>
+                <select
+                  className="filter-select"
+                  defaultValue={value}
+                  onChange={(e) => filterHandler(e.target.value)}
+                >
+                  <option value="featured">Sort by : Featured</option>
+                  <option value="lth">Price : Low to High</option>
+                  <option value="htl">Price : High to Low</option>
+                </select>
+              </div>
             </div>
             {properties.map((property, index) => {
               return (
