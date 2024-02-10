@@ -146,7 +146,7 @@ exports.getSellerListings = async (req, res) => {
             seller: sellerId,
         }).sort("createdAt");
 
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
             data: Listings,
         })

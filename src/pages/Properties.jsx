@@ -63,7 +63,7 @@ const Properties = () => {
                   <ImSearch />
                   Search rental properties according to your choice
                 </h2>
-                <button
+                <div
                   className="filter-btn"
                   onClick={() =>
                     setFilterModal({
@@ -71,13 +71,13 @@ const Properties = () => {
                     })
                   }
                 >
-                  <button class="setting-btn">
-                    <span class="bar bar1"></span>
-                    <span class="bar bar2"></span>
-                    <span class="bar bar1"></span>
+                  <button className="setting-btn">
+                    <span className="bar bar1"></span>
+                    <span className="bar bar2"></span>
+                    <span className="bar bar1"></span>
                   </button>
                   Filters
-                </button>
+                </div>
               </div>
             </div>
 

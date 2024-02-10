@@ -5,7 +5,7 @@ import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteProperty } from "../services/operations/propertyAPI";
+import { createWishlist, deleteProperty, deleteWishlist } from "../services/operations/propertyAPI";
 import ConfirmationModal from "./ConfirmationModal";
 import toast from "react-hot-toast";
 import { addToList, removeFromList } from "../slices/cartSlice";
@@ -31,23 +31,27 @@ const Card = ({
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const card = {
-    thumbnail: img,
-    city,
-    state,
-    bhk,
-    size,
-    bath,
-    price,
-    pricePer,
-    type,
-    propertyId,
-  };
-  const handleAddToList = () => {
+  const handleAddToList = async () => {
     if (token) {
-      cart.some((item) => item.propertyId === propertyId)
-        ? (dispatch(removeFromList(propertyId)))
-        : (dispatch(addToList(card)))
+      if (cart?.some((item) => item?.propertyId === propertyId)) {
+        await deleteWishlist(token, propertyId);
+        dispatch(removeFromList(propertyId));
+      } else {
+        const result = await createWishlist(token, propertyId);
+        const card = {
+          thumbnail: result.data.propertyDetails.thumbnail,
+          city: result.data.propertyDetails.city,
+          state: result.data.propertyDetails.state,
+          bhk: result.data.propertyDetails.bhk,
+          size: result.data.propertyDetails.size,
+          bath: result.data.propertyDetails.bathrooms,
+          price: result.data.propertyDetails.price,
+          pricePer: result.data.propertyDetails.pricePer,
+          type: result.data.propertyDetails.propertyType,
+          propertyId: propertyId,
+        };
+        dispatch(addToList(card));
+      }
     } else {
       toast.error("Login Required!!");
     }
@@ -58,7 +62,7 @@ const Card = ({
       <div className="card-img">
         <img src={img} alt="" />
         <button className="wishlist-btn" onClick={handleAddToList}>
-          {cart.some((item) => item.propertyId === propertyId) ? (
+          {cart?.some((item) => item?.propertyId === propertyId) ? (
             <FcLike />
           ) : (
             <FcLikePlaceholder />

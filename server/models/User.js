@@ -37,6 +37,12 @@ const userSchema = new mongoose.Schema({
             ref : "Property"
         }
     ],
+    wishlist : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : "Property"
+        }
+    ],
     subscriptionExpires : {
         type: Date,
         default : new Date(Date.now()),

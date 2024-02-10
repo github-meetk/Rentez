@@ -2,13 +2,16 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "./Card";
 import { resetList } from "../slices/cartSlice";
+import { clearoutWishlist } from "../services/operations/propertyAPI";
 
 const Wishlist = () => {
   const { cart, totalItems } = useSelector((state) => state.cart);
+  const { token } = useSelector((state) => state.auth);
   const dispatch = useDispatch()
 
-  const handleReset = () => {
+  const handleReset = async() => {
       dispatch(resetList())
+      await clearoutWishlist(token);
   }
   return (
     <div className="my-listings-wrapper">
@@ -24,16 +27,16 @@ const Wishlist = () => {
               return (
                 <Card
                   key={index}
-                  propertyId={property.propertyId}
-                  img={property.thumbnail}
-                  bhk={property.bhk}
-                  bath={property.bathrooms}
-                  size={property.size}
-                  price={property.price}
-                  pricePer={property.pricePer}
-                  city={property.city}
-                  state={property.state}
-                  type={property.propertyType}
+                  propertyId={property?.propertyId}
+                  img={property?.thumbnail}
+                  bhk={property?.bhk}
+                  bath={property?.bathrooms}
+                  size={property?.size}
+                  price={property?.price}
+                  pricePer={property?.pricePer}
+                  city={property?.city}
+                  state={property?.state}
+                  type={property?.propertyType}
                 />
               );
             })}

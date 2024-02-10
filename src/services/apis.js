@@ -28,7 +28,11 @@ export const propertyEndpoints = {
   CREATE_LISTING_API: BASE_URL + "/property/createListing",
   GET_PROPERTY_DETAIL_API: BASE_URL + "/property/getPropertyDetail",
   DELETE_LISTING_API: BASE_URL + "/property/deleteListing",
-  NOTIFY_SELLER_API : BASE_URL + "/property/notifySeller"
+  NOTIFY_SELLER_API : BASE_URL + "/property/notifySeller",
+  CREATE_WISHLIST : BASE_URL + "/property/createWishlist",
+  DELETE_WISHLIST : BASE_URL + "/property/deleteList",
+  GET_WISHLIST : BASE_URL + "/property/getWishlist",
+  CLEAR_WISHLIST : BASE_URL + "/property/clearWishlist"
 }
 
 // RATINGS AND REVIEWS
