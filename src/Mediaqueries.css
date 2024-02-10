@@ -171,14 +171,8 @@
     margin-top: 50px;
   }
 
-  .featured-section-wrapper {
-    padding-top: 0;
+  .slider-container {
     width: 90%;
-  }
-
-  .home-info-section-wrapper {
-    width: 90%;
-    gap: 100px;
   }
 
   .home-info-section1 {
@@ -189,12 +183,18 @@
     font-size: 1.8rem;
   }
 
+  .home-info-section-left1, .home-info-section-left2 {
+    animation: none;
+  }
+
   .home-info-section-right1 {
     width: 50%;
+    animation: none;
   }
 
   .home-info-section-right2 {
     width: 50%;
+    animation: none;
   }
 
   .footer-wrapper {
@@ -408,8 +408,8 @@
     width: 95%;
   }
 
-  .featured-section-wrapper {
-    display: none;
+  .slider-container {
+    width: 95%;
   }
 
   .steps-section {
@@ -707,10 +707,6 @@
 
   .number {
     width: 80%;
-  }
-
-  .featured-section-wrapper {
-    display: none;
   }
 
   .home-info-section-wrapper {

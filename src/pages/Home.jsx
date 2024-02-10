@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
 import Subscibe from "../components/Subscibe";
-import Feeatured from "../components/Feeatured";
+import Featured from "../components/Featured";
 
 const Home = () => {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -119,7 +119,7 @@ const Home = () => {
             </div>
           </div>
 
-          <Feeatured/>
+          <Featured/>
 
           <div className="home-info-section-wrapper">
             <div className="home-info-section1">
