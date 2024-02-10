@@ -1470,6 +1470,12 @@ input:focus {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  scale: 1;
+  transition: all .2s ease-in-out;
+}
+
+.wishlist-btn:hover {
+  scale: 1.1;
 }
 
 
