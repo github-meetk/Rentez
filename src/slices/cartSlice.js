@@ -16,10 +16,10 @@ const cartSlice = createSlice({
   reducers: {
     addToList: (state, action) => {
       const property = action.payload;
-      const index = state.cart?.findIndex(
+      const index = state.cart.findIndex(
         (item) => item?.propertyId === property.propertyId
       );
-
+      console.log(index)
       if (index >= 0) {
         // If the course is already in the cart, do not modify the quantity
         toast.error("Course already added in Wishlist");
@@ -31,7 +31,6 @@ const cartSlice = createSlice({
 
       localStorage.setItem("cart", JSON.stringify(state.cart));
       localStorage.setItem("totalItems", JSON.stringify(state.totalItems));
-      toast.success("Course added to Wishlist");
     },
     removeFromList: (state, action) => {
       const propertyId  = action.payload;
@@ -44,8 +43,6 @@ const cartSlice = createSlice({
       // Update to localstorage
       localStorage.setItem("cart", JSON.stringify(state.cart));
       localStorage.setItem("totalItems", JSON.stringify(state.totalItems));
-      // show toast
-      toast.success("Course removed from Wishlist");
       }
     },
     resetList: (state) => {

@@ -123,6 +123,8 @@ export function logout(navigate) {
     dispatch(setUser(null))
     localStorage.removeItem("token")
     localStorage.removeItem("user")
+    localStorage.removeItem("cart")
+    localStorage.removeItem("totalItems")
     toast.success("Logged Out")
     navigate("/")
   }

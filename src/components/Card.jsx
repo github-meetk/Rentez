@@ -51,6 +51,7 @@ const Card = ({
           propertyId: propertyId,
         };
         dispatch(addToList(card));
+        // toast.success("Course added to Wishlist");
       }
     } else {
       toast.error("Login Required!!");

@@ -365,9 +365,9 @@ exports.createWishlist = async (req, res) => {
 
 exports.getUserWishlist = async (req, res) => {
   try {
-    const { userId } = req.user;
+    const userId = req.user.id;
 
-    const List = await User.findOne({userId}).populate("wishlist").exec()
+    const List = await User.findOne({_id : userId}).populate("wishlist").exec()
 
     return res.status(200).json({
       success: true,

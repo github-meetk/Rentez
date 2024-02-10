@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import "./Mediaqueries.css"
+import "./Mediaqueries.css";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -21,8 +21,43 @@ import DetailProperty from "./pages/DetailProperty";
 import Plan from "./pages/Plan";
 import AboutUs from "./pages/AboutUs";
 import Wishlist from "./components/Wishlist";
+import { useEffect } from "react";
+import { getWishlist } from "./services/operations/propertyAPI";
+import { useDispatch, useSelector } from "react-redux";
+import { addToList } from "./slices/cartSlice";
 
 function App() {
+  const { token } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
+  const api = async () => {
+    if (!localStorage.getItem("cart")) {
+      if (token) {
+        const result = await getWishlist(token);
+        const properties = result?.wishlist;
+        properties?.forEach((result) => {
+          const card = {
+            thumbnail: result?.thumbnail,
+            city: result?.city,
+            state: result?.state,
+            bhk: result?.bhk,
+            size: result?.size,
+            bath: result?.bathrooms,
+            price: result?.price,
+            pricePer: result?.pricePer,
+            type: result?.propertyType,
+            propertyId: result?._id,
+          };
+          dispatch(addToList(card));
+        });
+      }
+    }
+  };
+
+  useEffect(() => {
+    api();
+    // eslint-disable-next-line
+  }, [token]);
   return (
     <div>
       <Routes>
@@ -80,12 +115,15 @@ function App() {
 
           <Route path="/dashboard/edit" element={<EditProfile />} />
 
-          <Route path="/dashboard/change-password" element={<ChangePassword />} />
-          <Route path="/dashboard/wishlist" element={<Wishlist />} /> 
+          <Route
+            path="/dashboard/change-password"
+            element={<ChangePassword />}
+          />
+          <Route path="/dashboard/wishlist" element={<Wishlist />} />
         </Route>
 
         <Route path="/properties" element={<Properties />} />
-        <Route path="/property/:propertyId" element={<DetailProperty /> } /> 
+        <Route path="/property/:propertyId" element={<DetailProperty />} />
         <Route path="/plan" element={<Plan />} />
         <Route path="/aboutus" element={<AboutUs />} />
       </Routes>
