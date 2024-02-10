@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Card from "./Card";
 import { resetList } from "../slices/cartSlice";
 import { clearoutWishlist } from "../services/operations/propertyAPI";
+import toast from "react-hot-toast";
 
 const Wishlist = () => {
   const { cart, totalItems } = useSelector((state) => state.cart);
@@ -12,6 +13,7 @@ const Wishlist = () => {
   const handleReset = async() => {
       dispatch(resetList())
       await clearoutWishlist(token);
+      toast.success("Wishlist Reset Successfully");
   }
   return (
     <div className="my-listings-wrapper">

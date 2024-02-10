@@ -4,6 +4,7 @@ import { setLoading, setToken } from "../../slices/authSlice"
 import { setUser } from "../../slices/profileSlice"
 import { apiConnector } from "../apiconnector"
 import { endpoints } from "../apis"
+import { resetList } from "../../slices/cartSlice"
 
 const {
   SENDOTP_API,
@@ -121,6 +122,7 @@ export function logout(navigate) {
   return (dispatch) => {
     dispatch(setToken(null))
     dispatch(setUser(null))
+    dispatch(resetList())
     localStorage.removeItem("token")
     localStorage.removeItem("user")
     localStorage.removeItem("cart")
