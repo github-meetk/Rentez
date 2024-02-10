@@ -105,9 +105,8 @@
   }
   .hero-section-wrapper {
     clip-path: none;
-    height: min-content;
-    /* background: url("./assets//background.webp"); */
-    padding-bottom: 100px;
+    height: max-content;
+    padding-bottom: 50px;
   }
 
   .hero-section-heading {
@@ -128,7 +127,7 @@
     font-size: 1.8rem;
   }
 
-  .hero-section-box button {
+  .hero-section-box button span {
     font-size: 1.3rem;
   }
 
@@ -185,16 +184,19 @@
 
   .home-info-section-left1, .home-info-section-left2 {
     animation: none;
+    transform: translate(0px);
   }
 
   .home-info-section-right1 {
     width: 50%;
     animation: none;
+    transform: translate(0px);
   }
 
   .home-info-section-right2 {
     width: 50%;
     animation: none;
+    transform: translate(0px);
   }
 
   .footer-wrapper {
@@ -392,6 +394,7 @@
   .navlink-light {
     font-size: 18px;
   }
+
 
   .hero-section-heading {
     padding: 0 20px;
@@ -684,12 +687,22 @@
     padding: 5px 10px;
   }
 
+  .hero-section-wrapper {
+    padding-bottom: 20px;
+  }
+
   .hero-section-heading {
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  .hero-section-para {
+    font-size: 15px;
+    line-height: normal;
   }
 
   .hero-section-box h1 {
-    font-size: 26px;
+    font-size: 20px;
     padding-bottom: 30px;
   }
 
