@@ -1909,6 +1909,7 @@ input:focus {
 }
 
 .edit-profile-details-column-data input, select {
+  outline: #000;
   user-select: none;
   font-size: medium;
   padding: 15px 0;
@@ -2039,6 +2040,7 @@ input:focus {
 }
 
 .create-listing-data label input, textarea, select {
+  outline:#000;
   width: 100%;
   user-select: none;
   font-size: large;
