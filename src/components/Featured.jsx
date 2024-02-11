@@ -63,12 +63,13 @@ const Featured = () => {
     <div className="slider-container">
       <div className="featured-section-heading">
         <h1>Featured Properties</h1>
-        <div>
-          <Link className="featured-section-explore-link" to={"/properties"}>
-            Explore All
-          </Link>
-          <FaArrowRightLong />
-        </div>
+        <Link to={"/properties"} className="cta">
+          <span>Explore all</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5" />
+            <polyline points="8 1 12 5 8 9" />
+          </svg>
+        </Link>
       </div>
       <Slider
         ref={(slider) => {
