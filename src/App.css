@@ -21,6 +21,88 @@
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
+.loaderr {
+  position: relative;
+  width: 340px;
+  height: 420px;
+  border-radius:15px;
+  margin-top: 60px;
+  border: none;
+  background-color: #e3e3e3;
+  overflow: hidden;
+}
+
+.loaderr:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(110deg, rgba(227, 227, 227, 0) 0%, rgba(227, 227, 227, 0) 40%, rgba(227, 227, 227, 0.5) 50%, rgba(227, 227, 227, 0) 60%, rgba(227, 227, 227, 0) 100%);
+  animation: gradient-animation_2 1.2s linear infinite;
+}
+
+.loaderr .wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.loaderr .wrapper > div {
+  background-color: #ffffff8c;
+}
+
+.loaderr .circle {
+  width: 100%;
+  height: 50%;
+  
+}
+
+.loaderr .line-1 {
+  position: absolute;
+  top: 225px;
+  left: 20px;
+  height: 40px;
+  width: 50%;
+}
+
+.loaderr .line-2 {
+  position: absolute;
+  top: 290px;
+  left: 20px;
+  height: 20px;
+  width: 80%;
+}
+
+.loaderr .line-3 {
+  position: absolute;
+  top: 320px;
+  left: 20px;
+  height: 20px;
+  width: 80%;
+}
+
+.loaderr .line-4 {
+  position: absolute;
+  top: 360px;
+  left: 20px;
+  height: 45px;
+  width: 90%;
+  border-radius:10px;
+}
+
+@keyframes gradient-animation_2 {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 .loading {
   margin: auto;
   width: 48px;
@@ -1819,8 +1901,6 @@ input:focus {
   background-color: white;
   border-radius: 20px;
 }
-
-
 
 .my-profile-additional-details h2 {
   font-size: xx-large;

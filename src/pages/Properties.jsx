@@ -10,6 +10,8 @@ import NavbarLight from "../components/NavbarLight";
 const Properties = () => {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 
+  const scheleton = [0, 1, 2, 3, 4, 5];
+
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filterModal, setFilterModal] = useState(null);
@@ -54,7 +56,19 @@ const Properties = () => {
 
       <div className="properties-section-wrapper">
         {loading ? (
-          <span className="loader"></span>
+          scheleton.map((card, index) => {
+            return (
+              <div key={index} className="loaderr">
+                <div className="wrapper">
+                  <div className="circle" />
+                  <div className="line-1" />
+                  <div className="line-2" />
+                  <div className="line-3" />
+                  <div className="line-4" />
+                </div>
+              </div>
+            );
+          })
         ) : (
           <>
             <div className="properties-filter-section-wrapper">
