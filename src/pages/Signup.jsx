@@ -89,7 +89,7 @@ const Signup = () => {
       <img className="imge3" src={image3} alt="" />
       <img className="imge4" src={image4} alt="" />
       {loading ? (
-        <span className="loader"></span>
+        <div class="loading-bar">Loading</div>
       ) : (
         <div className="signup-box">
           <img src={logo} alt=""></img>

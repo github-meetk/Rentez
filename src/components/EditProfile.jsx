@@ -96,7 +96,7 @@ const EditProfile = () => {
             !loading ? (
               <button className='profile-edit-button' onClick={handleClick}> Change </button>
             ) : saveloading? (
-              <span className='loader'></span>
+              <span className='loading'></span>
             ) : (
               <button className='profile-edit-button' onClick={handleFileUpload}>save</button>
             )

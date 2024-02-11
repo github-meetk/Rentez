@@ -55,7 +55,7 @@ const VerifyEmail = () => {
       <img className="imge4" src={image4} alt="" />
       {
         loading ? (
-          <span className="loader"></span>
+          <div class="loading-bar">Loading</div>
         ) : (
           <div className="verify-email-box">
         <img src={logo} alt=""></img>
