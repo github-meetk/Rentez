@@ -1489,11 +1489,16 @@ input:focus {
 
 .featured-section-heading {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 50px 0px;
 }
 
 .cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   text-decoration: none;
   position: relative;
   padding: 12px 18px;
@@ -1525,13 +1530,10 @@ input:focus {
 }
 
 .cta svg {
-  position: relative;
-  top: 0;
-  margin-left: 10px;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke: #234567;
+  stroke: var(--primary-dark-color);
   stroke-width: 2;
   transform: translateX(-5px);
   transition: all 0.3s ease;
@@ -1614,6 +1616,13 @@ input:focus {
 .wishlist-heading {
   display: flex;
   justify-content: space-between;
+}
+
+.wishlist-empty {
+  margin: auto;
+  color: gray;
+  font-weight: 500;
+  font-size: 35px;
 }
 
 /* Card  */

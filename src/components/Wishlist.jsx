@@ -45,7 +45,7 @@ const Wishlist = () => {
           </div>
         </>
       ) : (
-        <h1 style={{margin: "auto", color: "gray"}}>Your Wishlist is Empty</h1>
+        <h2 className="wishlist-empty">Your Wishlist is Empty</h2>
       )}
     </div>
   );

@@ -722,6 +722,10 @@
     width: 80%;
   }
 
+  .featured-section-heading h1 {
+    font-size: 20px;
+  }
+
   .home-info-section-wrapper {
     gap: 0px;
   }
@@ -821,16 +825,18 @@
   }
 
   .about-vision-wrapper h1 {
-    font-size: 45px;
+    font-size: 35px;
     padding-top: 30px;
   }
 
   .about-hero-wrapper p {
     width: 90%;
+    font-size: 15px;
   }
 
   .about-vision-wrapper p {
     width: 90%;
+    font-size: 15px;
   }
 
   .about-vision-wrapper img {
@@ -843,6 +849,12 @@
 
   .about-benefit-left h1 {
     font-size: 25px;
+    width: 100%;
+  }
+
+  .about-benefit-left li {
+    font-size: 15px;
+    line-height: 30px;
   }
 
   .contact-form {
@@ -943,5 +955,11 @@
 
   .change-password-data div {
     width: 100%;
+  }
+
+  /* Wishlist   */
+
+  .wishlist-empty {
+    font-size: 20px;
   }
 }
