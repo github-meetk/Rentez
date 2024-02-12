@@ -6,7 +6,9 @@ const {
   updateProfile,
   getAllUserDetails,
   updateDisplayPicture,
-  getSellerListings
+  getSellerListings,
+  getRatingsAndreviews,
+  createRatingAndReview
 } = require("../controllers/Profile")
 
 // ********************************************************************************************************
@@ -20,5 +22,9 @@ router.put("/updateDisplayPicture", auth, updateDisplayPicture)
 
 // Get Enrolled Courses
 router.get("/getSellerListings",auth, isSeller, getSellerListings)
+
+// Rating And Review 
+router.get("/getRatingsAndReviews", getRatingsAndreviews)
+router.post("/createRatingAndReview", auth, createRatingAndReview)
 
 module.exports = router
