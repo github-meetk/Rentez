@@ -2308,6 +2308,7 @@ input:focus {
 }
 
 .modal-button-1 {
+  cursor: pointer;
   font-size: larger;
   padding: 10px 20px;
   color: white;
@@ -2317,6 +2318,7 @@ input:focus {
 }
 
 .modal-button-2 {
+  cursor: pointer;
   font-size: larger;
   padding: 10px 20px;
   background-color: white;
@@ -2765,7 +2767,7 @@ input:focus {
   width: fit-content;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
+  border: 2px solid var(--special-color);
   border-radius: 10px;
   padding: 10px 20px;
 }
@@ -2774,7 +2776,7 @@ input:focus {
   width: 100%;
   display: flex;
   align-items: flex-start;
-  color: var(--special-color);
+  color: var(--primary-dark-color);
 }
 
 .property-details div span {
@@ -2818,7 +2820,7 @@ input:focus {
   text-align: center;
   font-size: 2rem;
   font-weight: 500;
-  color: var(--special-color);
+  color: var(--primary-dark-color);
 }
 
 .seller-info {
@@ -2876,7 +2878,7 @@ input:focus {
 
 .property-details-section-right h1 {
   font-size: 2.5rem;
-  color: var(--special-color);
+  color: var(--primary-dark-color);
   font-weight: 500;
 }
 
@@ -3438,4 +3440,46 @@ hr {
 
 .pricing-btn:hover {
   background: var(--hero-section-background);
+}
+
+/* Rating And Review Modal   */
+
+.review-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px 30px;
+}
+
+.review-box h2 {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.review, .rating-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rating {
+  display: flex;
+}
+
+.review-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
 }

@@ -6,9 +6,11 @@ import {
   notifySeller,
 } from "../services/operations/propertyAPI";
 import { useParams } from "react-router-dom";
+import ReviewModal from "../components/ReviewModal";
 
 const DetailProperty = () => {
-  document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+  const [reviewModal, setReviewModal] = useState(null);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -26,9 +28,9 @@ const DetailProperty = () => {
     }));
   };
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = async(e) => {
     e.preventDefault();
-    notifySeller(detail?.seller?.email, email, fullName, contactNumber, msg);
+    await notifySeller(detail?.seller?.email, email, fullName, contactNumber, msg);
     // navigate("/");
     setFormData({
       email: "",
@@ -36,6 +38,10 @@ const DetailProperty = () => {
       contactNumber: "",
       msg: "",
     });
+
+    setReviewModal({
+      cancelBtnHandler: () => setReviewModal(null),
+    })
   };
 
   const { propertyId } = useParams();
@@ -188,6 +194,7 @@ const DetailProperty = () => {
         </div>
       </div>
       <Footer />
+      {reviewModal && <ReviewModal modalData={reviewModal} />}
     </>
   );
 };

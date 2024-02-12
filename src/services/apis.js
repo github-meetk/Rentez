@@ -12,7 +12,9 @@ export const endpoints = {
 // PROFILE ENDPOINTS
 export const profileEndpoints = {
   GET_USER_DETAILS_API: BASE_URL + "/profile/getUserDetails",
-  GET_SELLERS_LISTINGS: BASE_URL + "/profile/getSellerListings" 
+  GET_SELLERS_LISTINGS: BASE_URL + "/profile/getSellerListings" ,
+  GET_REVIEWS: BASE_URL + "/profile/getRatingsAndReviews",
+  CREATE_REVIEWS : BASE_URL + "/profile/createRatingAndReview"
 }
 
 // STUDENTS ENDPOINTS
