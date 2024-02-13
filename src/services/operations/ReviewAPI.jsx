@@ -28,7 +28,7 @@ export const getAllReviews= async() => {
         if(!response.data.success){
             throw new Error("Could Not fetch Ratings And Reviews")
         }
-        result = response;
+        result = response?.data?.RatingsAndReviews;
     } catch (error) {
         console.log(error);
     }

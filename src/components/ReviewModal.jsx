@@ -27,7 +27,9 @@ const ReviewModal = ({ modalData }) => {
         toast.error("Please Login first")
         return
     }
-    createReview(token, { ...formData.review, rating });
+
+    formData.rating = rating
+    createReview(token, formData);
     toast.success("Thank you for your precious time")
   };
 
@@ -50,7 +52,7 @@ const ReviewModal = ({ modalData }) => {
             const ratingValue = i + 1;
 
             return (
-              <label>
+              <label key={i}>
                 <input
                 style={{display: "none"}}
                   type="radio"

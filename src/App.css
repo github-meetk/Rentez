@@ -3483,3 +3483,81 @@ hr {
   cursor: pointer;
   transition: color 200ms;
 }
+
+/* Review Section  */
+
+.review-section-wrapper {
+  width: 100%;
+  background-color: #e4e5e9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0px;
+  gap: 20px;
+}
+
+.review-section-wrapper h2 {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.review-section-card {
+  padding: 30px 0;
+  width: 500px;
+  border-radius: 20px;
+  margin: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.review-section-card h3 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.review-img {
+  width: 200px;
+  height: 200px;
+  margin: 10px 0 20px;
+  border-radius: 100px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.review-img img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+
+.review-section-p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: gray;
+  gap: 10px;
+}
+
+.review-section-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.review-section-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.review-section-buttons button:hover {
+  background-color: whitesmoke;
+}

@@ -18,13 +18,27 @@ import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
 import Subscibe from "../components/Subscibe";
 import Featured from "../components/Featured";
+import ReviewCard from "../components/ReviewCard";
+import { useEffect, useState } from "react";
+import { getAllReviews } from "../services/operations/ReviewAPI";
 
 const Home = () => {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 
   const { loading } = useSelector((state) => state.auth);
+  const[review, setReview] = useState([]);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const api = async() => {
+      const result = await getAllReviews();
+      console.log(result)
+      setReview(result);
+    }
+
+    api()
+  },[])
 
   return (
     <>
@@ -156,6 +170,10 @@ const Home = () => {
             </div>
           </div>
           <Subscibe />
+          <div className="review-section-wrapper">
+            <h2>Our Customers</h2>
+            {review.length > 0 && <ReviewCard review={review} />}
+          </div>
           <Footer />
         </div>
       )}
