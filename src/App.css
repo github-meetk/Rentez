@@ -3512,6 +3512,7 @@ hr {
   flex-direction: column;
   gap: 15px;
   align-items: center;
+  word-wrap: break-word;
 }
 
 .review-section-card h3 {
