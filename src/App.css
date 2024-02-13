@@ -3471,6 +3471,7 @@ hr {
 
 .rating {
   display: flex;
+  margin: auto;
 }
 
 .review-buttons {

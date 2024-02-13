@@ -962,4 +962,14 @@
   .wishlist-empty {
     font-size: 20px;
   }
+
+  /* Review Section   */ 
+
+  .review-box {
+    width: 90%;
+  }
+
+  .review-section-card {
+    width: 95%;
+  }
 }
