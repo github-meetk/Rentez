@@ -2962,7 +2962,6 @@ input:focus {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid black;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -2995,6 +2994,7 @@ input:focus {
   background-color: white;
   position: sticky;
   top: 0px;
+  z-index: 1;
 }
 
 .filter-heading h2 {
