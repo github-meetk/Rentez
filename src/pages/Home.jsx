@@ -169,11 +169,12 @@ const Home = () => {
               <div className="home-info-section-right2"></div>
             </div>
           </div>
-          <Subscibe />
           <div className="review-section-wrapper">
             <h2>Our Customers</h2>
             {review.length > 0 && <ReviewCard review={review} />}
           </div>
+          <Subscibe />
+          
           <Footer />
         </div>
       )}

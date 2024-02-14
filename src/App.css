@@ -563,7 +563,7 @@
   display: flex;
   flex-direction: column;
   gap: 150px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 
 .home-info-section1 {
@@ -3493,7 +3493,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0px;
+  padding: 0px 0px 50px;
   gap: 20px;
 }
 
