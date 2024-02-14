@@ -110,7 +110,7 @@ const Plan = () => {
               <TiTick />  Budget-friendly option
             </p>
             <p>
-              <TiTick />  List up to 20 properties
+              <TiTick />  List up to 50 properties
             </p>
             <p>
               <TiTick />  Essential features included
@@ -141,7 +141,7 @@ const Plan = () => {
               <TiTick />  Budget-friendly option
             </p>
             <p>
-              <TiTick />  List up to 20 properties
+              <TiTick />  List unlimited properties
             </p>
             <p>
               <TiTick />  Essential features included

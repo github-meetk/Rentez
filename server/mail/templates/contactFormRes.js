@@ -73,8 +73,7 @@ exports.contactUsEmail = (
     
     <body>
         <div class="container">
-            <a href=""><img class="logo"
-                    src="../../assets/rentez-svg.svg" alt="Rentez Logo"></a>
+        <a href="https://ibb.co/tqX5DQH"><img class="logo" src="https://i.ibb.co/dPgyDjf/Rentez.png" alt="Rentez" border="0"></a>
             <div class="message">Contact Form Confirmation</div>
             <div class="body">
                 <p>Dear ${firstName} ${lastName},</p>
