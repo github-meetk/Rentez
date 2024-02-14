@@ -3489,7 +3489,7 @@ hr {
 
 .review-section-wrapper {
   width: 100%;
-  background-color: #e4e5e9;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3513,6 +3513,7 @@ hr {
   gap: 15px;
   align-items: center;
   word-wrap: break-word;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .review-section-card h3 {
