@@ -42,7 +42,7 @@ const ReviewModal = ({ modalData }) => {
   }, []);
 
   return (
-    <div className="modal-wrapper">
+    <div className="review-modal-wrapper">
       <div className="review-box">
         <h2>Rate and Review</h2>
         <div className="rating-container">

@@ -1638,12 +1638,7 @@ input:focus {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  scale: 1;
   transition: 0.2s ease-in-out;
-}
-
-.card:hover {
-  scale: 1.01;
 }
 
 .card-img {
@@ -3486,6 +3481,16 @@ hr {
 }
 
 /* Review Section  */
+
+.review-modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(20px);
+  z-index: 3;
+}
 
 .review-section-wrapper {
   width: 100%;
