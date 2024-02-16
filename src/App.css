@@ -462,7 +462,10 @@
   gap: 50px;
 }
 
-.step img {
+.step-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
   width: 70px;
   height: 70px;

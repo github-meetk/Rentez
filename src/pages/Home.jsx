@@ -3,10 +3,6 @@ import image2 from "../assets/object_2.png";
 import image3 from "../assets/object_3.png";
 import image4 from "../assets/object_4.png";
 import { FaArrowRightLong } from "react-icons/fa6";
-import step1 from "../assets/step1.svg";
-import step2 from "../assets/step2.svg";
-import step3 from "../assets/step3.svg";
-import step4 from "../assets/step4.svg";
 import house1 from "../assets/benefit.avif";
 import no1 from "../assets/no1.svg";
 import no2 from "../assets/no2.svg";
@@ -26,19 +22,19 @@ const Home = () => {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
 
   const { loading } = useSelector((state) => state.auth);
-  const[review, setReview] = useState([]);
+  const [review, setReview] = useState([]);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    const api = async() => {
+    const api = async () => {
       const result = await getAllReviews();
-      console.log(result)
+      console.log(result);
       setReview(result);
-    }
+    };
 
-    api()
-  },[])
+    api();
+  }, []);
 
   return (
     <>
@@ -73,7 +69,9 @@ const Home = () => {
                   </p>
                   <button className="ui-btn">
                     <span>Get Started</span>
-                    <span><FaArrowRightLong /></span>
+                    <span>
+                      <FaArrowRightLong />
+                    </span>
                   </button>
                 </div>
               </div>
@@ -83,25 +81,54 @@ const Home = () => {
             <div className="steps-section">
               <div className="steps-section-left">
                 <div className="step">
-                  <img src={step1} alt="Img"></img>
+                  <div className="step-img">
+                    <lord-icon
+                      src="https://cdn.lordicon.com/kkvxgpti.json"
+                      trigger="loop"
+                      delay={100}
+                      style={{ width: 45, height: 45 }}
+                    ></lord-icon>
+                  </div>
+
                   <h3>Search your location</h3>
                 </div>
                 <div className="step-line"></div>
 
                 <div className="step">
-                  <img src={step2} alt="Img"></img>
+                  <div className="step-img">
+                    <lord-icon
+                      src="https://cdn.lordicon.com/cnpvyndp.json"
+                      trigger="loop"
+                      delay={1000}
+                      style={{ width: 45, height: 45 }}
+                    ></lord-icon>
+                  </div>
                   <h3>Visit Appointment</h3>
                 </div>
                 <div className="step-line"></div>
 
                 <div className="step">
-                  <img src={step3} alt="Img"></img>
+                  <div className="step-img">
+                    <lord-icon
+                      src="https://cdn.lordicon.com/ciawvzjk.json"
+                      trigger="loop"
+                      delay={1000}
+                      style={{ width: 45, height: 45 }}
+                    ></lord-icon>
+                  </div>
                   <h3>Get your dream house</h3>
                 </div>
                 <div className="step-line"></div>
 
                 <div className="step">
-                  <img src={step4} alt="Img"></img>
+                  <div className="step-img">
+                    <lord-icon
+                      src="https://cdn.lordicon.com/utpmnzxz.json"
+                      trigger="loop"
+                      delay={1000}
+                      style={{ width: 45, height: 45 }}
+                    ></lord-icon>
+                  </div>
                   <h3>Enjoy your Appointment</h3>
                 </div>
               </div>
@@ -133,7 +160,7 @@ const Home = () => {
             </div>
           </div>
 
-          <Featured/>
+          <Featured />
 
           <div className="home-info-section-wrapper">
             <div className="home-info-section1">
@@ -174,7 +201,7 @@ const Home = () => {
             {review.length > 0 && <ReviewCard review={review} />}
           </div>
           <Subscibe />
-          
+
           <Footer />
         </div>
       )}
