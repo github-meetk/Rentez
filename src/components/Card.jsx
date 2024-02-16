@@ -5,12 +5,14 @@ import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
-import { createWishlist, deleteProperty, deleteWishlist } from "../services/operations/propertyAPI";
+import {
+  createWishlist,
+  deleteProperty,
+  deleteWishlist,
+} from "../services/operations/propertyAPI";
 import ConfirmationModal from "./ConfirmationModal";
 import toast from "react-hot-toast";
 import { addToList, removeFromList } from "../slices/cartSlice";
-import { FcLikePlaceholder } from "react-icons/fc";
-import { FcLike } from "react-icons/fc";
 
 const Card = ({
   img,
@@ -64,9 +66,19 @@ const Card = ({
         <img src={img} alt="" />
         <button className="wishlist-btn" onClick={handleAddToList}>
           {cart?.some((item) => item?.propertyId === propertyId) ? (
-            <FcLike />
+            <lord-icon
+              src="https://cdn.lordicon.com/ulnswmkk.json"
+              trigger="hover"
+              colors="primary:#e83a30"
+              style={{ width: 35, height: 35 }}
+            ></lord-icon>
           ) : (
-            <FcLikePlaceholder />
+            <lord-icon
+              src="https://cdn.lordicon.com/ulnswmkk.json"
+              trigger="hover"
+              colors="primary:#f49cc8"
+              style={{ width: 35, height: 35 }}
+            ></lord-icon>
           )}
         </button>
       </div>
