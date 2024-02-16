@@ -1934,6 +1934,10 @@ input:focus {
 }
 
 .profile-edit-button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
   font-size: medium;
   padding: 10px 40px;
   border-radius: 10px;

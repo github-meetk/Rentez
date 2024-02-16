@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
-import { PiUploadSimpleBold } from "react-icons/pi";
 import { createListings } from "../services/operations/propertyAPI";
 
 const ListProperty = () => {
@@ -12,11 +11,11 @@ const ListProperty = () => {
 
   const handleFileClick = () => {
     fileInputRef.current.click();
-  }
+  };
 
   const handlePhotosClick = () => {
     photosInputRef.current.click();
-  }
+  };
 
   const [formData, setFormData] = useState({
     propertyType: "",
@@ -44,7 +43,7 @@ const ListProperty = () => {
     }));
     setPropertyTypeSelected(!!value);
   };
-  
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({
@@ -52,7 +51,7 @@ const ListProperty = () => {
       [name]: value,
     }));
   };
-  
+
   const handleFileChange = (e) => {
     const { name, files } = e.target;
     setFormData((prevFormData) => ({
@@ -61,7 +60,7 @@ const ListProperty = () => {
     }));
     toast.success("Thumbnail Uploaded");
   };
-  
+
   const handlePhotosChange = (e) => {
     const { name, files } = e.target;
     setFormData((prevFormData) => ({
@@ -70,7 +69,6 @@ const ListProperty = () => {
     }));
     toast.success("Photos Uploaded");
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -233,13 +231,40 @@ const ListProperty = () => {
             </label>
             <label className="custom-file-upload">
               Thumbnail:
-              <button type="button" onClick={handleFileClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Thumbnail Image</button>
-              <input type="file" ref={fileInputRef} id="inp" name="thumbnail" onChange={handleFileChange} />
-              
+              <button
+                type="button"
+                onClick={handleFileClick}
+                className="profile-edit-button"
+              >
+                <lord-icon
+                  src="https://cdn.lordicon.com/smwmetfi.json"
+                  trigger="loop"
+                  style={{ width: 25, height: 25 }}
+                ></lord-icon>
+                Upload Thumbnail Image
+              </button>
+              <input
+                type="file"
+                ref={fileInputRef}
+                id="inp"
+                name="thumbnail"
+                onChange={handleFileChange}
+              />
             </label>
             <label className="custom-file-upload">
               Photos:
-              <button type="button" onClick={handlePhotosClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Other Photos</button>
+              <button
+                type="button"
+                onClick={handlePhotosClick}
+                className="profile-edit-button"
+              >
+                <lord-icon
+                  src="https://cdn.lordicon.com/smwmetfi.json"
+                  trigger="loop"
+                  style={{ width: 25, height: 25 }}
+                ></lord-icon>
+                Upload Other Photos
+              </button>
               <input
                 type="file"
                 id="inp"
@@ -248,7 +273,6 @@ const ListProperty = () => {
                 multiple
                 onChange={handlePhotosChange}
               />
-              
             </label>
             <button className="special-btn" type="submit">
               Submit
