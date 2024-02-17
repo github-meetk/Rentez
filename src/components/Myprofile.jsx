@@ -5,13 +5,17 @@ import { LuMail } from "react-icons/lu";
 
 const Myprofile = () => {
   const { user } = useSelector((state) => state.profile);
-  // console.log(user);
+
+  const isSubscribed = new Date (user.subscriptionExpires).getTime() > new Date(Date.now()).getTime();
 
   return (
     <div className="my-profile-wrapper">
       <h1>My profile</h1>
       <div className="my-profile-details">
         <div className="my-profile-main">
+          {
+            isSubscribed ? (<div className="subscribed">Subscribed</div>) : (<div className="not-subscribed">Not Subscribed</div>)
+          }
           <img src={user.image} alt="" />
           <div className="my-profile-main-details">
             <h2>{user?.accountType}</h2>

@@ -1897,6 +1897,7 @@ input:focus {
 }
 
 .my-profile-main {
+  position: relative;
   margin: auto;
   margin-top: 30px;
   padding: 30px;
@@ -1909,6 +1910,22 @@ input:focus {
   /* border: 3px solid black; */
   border-radius: 20px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  overflow: hidden;
+}
+
+.subscribed {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 40px;
+  right: -80px;
+  transform: rotate(45deg);
+  color: var(--light-color);
+  background-color: gold;
+  padding: 10px;
+  width: 300px;
+  font-weight: 500;
 }
 
 .my-profile-main img {
