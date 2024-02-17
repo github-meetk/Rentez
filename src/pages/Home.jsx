@@ -29,7 +29,6 @@ const Home = () => {
   useEffect(() => {
     const api = async () => {
       const result = await getAllReviews();
-      console.log(result);
       setReview(result);
     };
 

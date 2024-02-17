@@ -38,7 +38,7 @@ const Wishlist = () => {
                   pricePer={property?.pricePer}
                   city={property?.city}
                   state={property?.state}
-                  type={property?.propertyType}
+                  type={property?.type}
                 />
               );
             })}
