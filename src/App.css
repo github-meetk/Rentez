@@ -374,11 +374,12 @@
 }
 
 .hero-section-box {
+  border: none;
   padding: 30px;
   width: 40%;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: transparent;
   border-radius: 20px;
   color: var(--secondary-dark-color);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
