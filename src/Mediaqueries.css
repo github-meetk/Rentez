@@ -920,6 +920,10 @@
 
   /* Dashboard   */
 
+  .my-profile-plan {
+    display: none;
+  }
+
   .my-profile-wrapper {
     width: 100%;
     padding: 10px 0;
