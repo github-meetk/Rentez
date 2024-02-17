@@ -17,9 +17,11 @@ const Myprofile = () => {
       <h1>My profile</h1>
       <div className="my-profile-details">
         <div className="my-profile-main">
-          {isSubscribed ? (
+          {isSubscribed && user?.accountType === "Seller" && (
             <div className="subscribed">Subscribed</div>
-          ) : (
+          )
+          }
+          {!isSubscribed && user?.accountType === "Seller" &&(
             <div className="not-subscribed">
               You are Not Subscribed yet !!
               <Link
