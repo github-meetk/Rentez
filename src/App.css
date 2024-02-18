@@ -3238,6 +3238,10 @@ hr {
   font-weight: 900;
   padding-top: 50px;
   text-align: center;
+  opacity: 0;
+  transform: translate(0px, 20px);
+  animation: swipe-up ease-out forwards;
+  animation-duration: 0.5s;
 }
 
 .about-hero-wrapper p {
@@ -3247,10 +3251,29 @@ hr {
   font-weight: lighter;
   line-height: 2;
   text-align: center;
+  opacity: 0;
+  transform: translate(0px, 20px);
+  animation: swipe-up ease-out forwards;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
 }
 
 .about-hero-wrapper img {
   width: 100%;
+  opacity: 0;
+  animation: swipe-upp ease-out forwards;
+  animation-duration: 0.5s;
+  animation-delay: 0.4s;
+}
+
+@keyframes swipe-upp {
+  0%{
+    transform: translate(0px, 30px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
 }
 
 .about-vision-wrapper {
