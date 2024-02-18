@@ -3475,11 +3475,28 @@ hr {
   font-size: 5rem;
   color: var(--light-color);
   text-align: center;
+  opacity: 0;
+  transform: translate(0px, 20px);
+  animation: swipe-up ease-out forwards;
+  animation-duration: 0.5s;
+}
+
+.tab-plan {
+  opacity: 0;
+  transform: translate(0px, 20px);
+  animation: swipe-up ease-out forwards;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
 }
 
 .pricing-discount {
   font-weight: 500;
   color: yellow;
+  opacity: 0;
+  transform: translate(0px, 20px);
+  animation: swipe-up ease-out forwards;
+  animation-duration: 0.5s;
+  animation-delay: 0.3s;
 }
 
 .pricing-cards {
@@ -3500,6 +3517,11 @@ hr {
   padding: 30px 30px;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  opacity: 0;
+  transform: translate(0px, 20px);
+  animation: swipe-up ease-out forwards;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .pricing-card h3 {
@@ -3523,6 +3545,7 @@ hr {
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: all .5s ease-in-out;
 }
 
 .price-card h2 {

@@ -58,7 +58,7 @@ const Plan = () => {
         <img className="img3" src={image3} alt="" />
         <img className="img4" src={image4} alt="" />
         <h1 className="plan-heading">Switch to Rentez</h1>
-        <Tab field={field} setField={setField} tab={tab} />
+        <div className="tab-plan"><Tab field={field} setField={setField} tab={tab} /></div>
         <p className="pricing-discount">Save 15% with yearly</p>
         <div className="pricing-cards">
           <div className="pricing-card">
