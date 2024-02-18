@@ -1016,6 +1016,9 @@
   left: -150px;
   z-index: 2;
   opacity: 0.7;
+  animation: swipe-up-down linear;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
 
 .imge2 {
@@ -1024,6 +1027,9 @@
   left: 150px;
   z-index: 1;
   opacity: 0.5;
+  animation: swipe-down-up linear;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
 
 .imge3 {
@@ -1032,6 +1038,9 @@
   right: -200px;
   z-index: 2;
   opacity: 0.5;
+  animation: swipe-up-down linear;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
 
 .imge4 {
@@ -1040,6 +1049,9 @@
   right: 180px;
   z-index: 1;
   opacity: 0.5;
+  animation: swipe-down-up linear;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
 
 /* Login Page Section  */
