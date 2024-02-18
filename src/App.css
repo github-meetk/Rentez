@@ -347,14 +347,11 @@
   flex-direction: column;
   align-items: center;
   color: var(--light-color);
-  transform: translate(0px, 20px);
-  animation: swipe-up linear forwards;
-  animation-duration: 0.3s;
 }
 
 @keyframes swipe-up {
   from {
-    opacity: 0.4;
+    opacity: 0;
   }
   to {
     transform: translate(0px, -20px);
@@ -367,6 +364,10 @@
   margin-top: 80px;
   font-size: 4rem;
   line-height: normal;
+  opacity: 0;
+  transform: translate(0px, 20px);
+  animation: swipe-up ease-out forwards;
+  animation-duration: 0.5s;
 }
 
 .hero-section-para {
@@ -376,6 +377,11 @@
   text-align: center;
   margin-block: 35px;
   line-height: 40px;
+  opacity: 0;
+  transform: translate(0px, 20px);
+  animation: swipe-up ease-out forwards;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
 }
 
 .hero-section-box {
@@ -389,6 +395,11 @@
   color: var(--secondary-dark-color);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  transform: translate(0px, 20px);
+  opacity: 0;
+  animation: swipe-up ease-out forwards;
+  animation-duration: 0.5s;
+  animation-delay: .3s;
 }
 
 .hero-section-box h1 {
