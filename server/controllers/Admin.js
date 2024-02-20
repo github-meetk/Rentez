@@ -57,7 +57,6 @@ exports.getAdminDetails = async (req, res) => {
             data,
             message:"Admin data Fetched!!"
           });
-       
     } catch (error) {
       return res.status(500).json({
         success: false,
