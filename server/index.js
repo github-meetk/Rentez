@@ -6,6 +6,7 @@ const profileRoutes = require("./routes/Profile");
 const paymentRoutes = require("./routes/Payment");
 const propertyRoutes = require("./routes/Property")
 const contactUsRoute = require("./routes/ContactUs");
+const adminRoutes = require("./routes/Admin");
 const database = require("./config/database");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
@@ -42,6 +43,7 @@ app.use("/api/v1/profile", profileRoutes);
 app.use("/api/v1/property", propertyRoutes);
 app.use("/api/v1/payment", paymentRoutes);
 app.use("/api/v1/reach", contactUsRoute);
+app.use("/api/v1/admin", adminRoutes);
 
 //def route
 
