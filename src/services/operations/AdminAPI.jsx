@@ -1,6 +1,6 @@
 import { apiConnector } from "../apiconnector";
-
-const { GET_ALL_DETAILS} = adminEndpoints;
+import {adminEndpoint} from "../apis";
+const { GET_ALL_DETAILS } = adminEndpoint;
 
 export const getAllDetails = async(token) => {
     try {

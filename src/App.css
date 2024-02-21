@@ -3745,3 +3745,78 @@ hr {
 .review-section-buttons button:hover {
   background-color: whitesmoke;
 }
+
+/* Admin Page  */
+
+.admin-wrapper {
+  width: 100%;
+  height: 95vh;
+}
+
+.admin {
+  width: 97%;
+  height: 90%;
+  margin: 30px auto;
+  border-radius: 30px;
+  background-color: #f9f4ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin h1 {
+  margin-block: 10px;
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--special-color);
+}
+
+.admin-main-display {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #f9f4ff;
+}
+
+.admin-box{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px 20px;
+  min-width: 250px;
+  border-radius: 15px;
+}
+
+.admin-box-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  background-color: #f9f4ff;
+}
+
+.admin-box-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 30px;
+  font-weight: 500;
+  align-items: center;
+}
+
+.admin-box-right p {
+  font-size: 15px;
+  font-weight: 100;
+  color: var(--secondary-dark-color);
+}
+
+.admin-other-display {
+  margin: 50px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
