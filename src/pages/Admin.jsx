@@ -4,11 +4,71 @@ import icon1 from "../assets/icon-1.png";
 import icon2 from "../assets/icon-2.png";
 import icon3 from "../assets/icon-3.png";
 import icon4 from "../assets/icon-4.png";
-import Chart from 'chart.js/auto';
-
+import { Doughnut } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
 const Admin = () => {
   const [details, setDetails] = useState();
+  ChartJS.register(ArcElement, Tooltip, Legend);
+
+  const userSplitData = {
+    labels: ['Customer', 'Seller'],
+    datasets: [
+      {
+        data: [details?.customers, details?.sellers],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  const sellerSubscriptionSplitData = {
+    labels: ['purchased plan', 'not purchased plan'],
+    datasets: [
+      {
+        data: [details?.sellers, details?.totalSubscription],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+  const propertiesSplitData = {
+    labels: ['Flat', 'Bunglow', 'Villa', 'Farmhouse', 'Land'],
+    datasets: [
+      {
+        data: [details?.flat, details?.bunglow, details?.villa, details?.farmhouse, details?.land],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
 
   useEffect(() => {
     const api = async () => {
@@ -86,52 +146,10 @@ const Admin = () => {
             </div>
           </div>
         </div>
-        <div className="admin-other-display">
-          <div className="admin-box">
-            <div className="admin-box-left">
-              <img src={icon1} alt="group" />
-            </div>
-            <div className="admin-box-right">
-              {details?.flat}
-              <p>no. of flat</p>
-            </div>
-          </div>
-          <div className="admin-box">
-            <div className="admin-box-left">
-              <img src={icon1} alt="group" />
-            </div>
-            <div className="admin-box-right">
-              {details?.bunglow}
-              <p>no. of bunglow</p>
-            </div>
-          </div>
-          <div className="admin-box">
-            <div className="admin-box-left">
-              <img src={icon1} alt="group" />
-            </div>
-            <div className="admin-box-right">
-              {details?.villa}
-              <p>no. of villa</p>
-            </div>
-          </div>
-          <div className="admin-box">
-            <div className="admin-box-left">
-              <img src={icon1} alt="group" />
-            </div>
-            <div className="admin-box-right">
-              {details?.farmhouse}
-              <p>no. of farmhouse</p>
-            </div>
-          </div>
-          <div className="admin-box">
-            <div className="admin-box-left">
-              <img src={icon1} alt="group" />
-            </div>
-            <div className="admin-box-right">
-              {details?.land}
-              <p>no. of land</p>
-            </div>
-          </div>
+        <div className="admin-charts">
+          <div className="charts"><Doughnut width={500} height={500} data={userSplitData} /></div>
+          <div className="charts"><Doughnut width={500} height={500} data={sellerSubscriptionSplitData} /></div>
+          <div className="charts"><Doughnut width={500} height={500} data={propertiesSplitData} /></div>
         </div>
       </div>
     </div>
