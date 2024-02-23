@@ -3773,6 +3773,7 @@ hr {
 .admin-main-display {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   background-color: #f9f4ff;
 }
@@ -3785,6 +3786,7 @@ hr {
   padding: 30px 20px;
   min-width: 250px;
   border-radius: 15px;
+  margin-block: 10px;
 }
 
 .admin-box-left {
@@ -3821,10 +3823,10 @@ hr {
 }
 
 .admin-charts {
-  height: 500px;
   width: 100%;
   padding: 50px 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 }
