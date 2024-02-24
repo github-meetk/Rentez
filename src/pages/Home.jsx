@@ -67,7 +67,7 @@ const Home = () => {
                     typesetting industry.
                   </p>
                   <button className="ui-btn">
-                    <span>Get Started</span>
+                    <span onClick={() => navigate("/properties")}>Get Started</span>
                     <span>
                       <FaArrowRightLong />
                     </span>
