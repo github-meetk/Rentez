@@ -1,16 +1,4 @@
 @media (min-width: 1700px) {
-  .properties-section-wrapper {
-    width: 70%;
-    gap: 50px;
-  }
-
-  .properties-filter-section-wrapper {
-    margin: 50px auto 0;
-  }
-
-  .properties-sort-section {
-    padding: 0;
-  }
 
   .img1, .img2, .img3, .img4 {
     scale: 1.2;
@@ -66,6 +54,19 @@
     height: 500px;
   }
 
+  .properties-section-wrapper {
+    width: 70%;
+    gap: 50px;
+  }
+
+  .properties-filter-section-wrapper {
+    margin: 50px auto 0;
+  }
+
+  .properties-sort-section {
+    padding: 0;
+  }
+
 
   /* .plan-section-wrapper {
     margin: auto;
@@ -78,7 +79,7 @@
   } */
 
   .detail-property-wrapper {
-    max-width: 1340px;
+    max-width: 1400px;
     margin: auto;
   }
 
