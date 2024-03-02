@@ -342,6 +342,7 @@
 }
 
 .hero-section {
+  gap: 20px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -504,7 +505,7 @@
 .steps-section {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-top: -200px;
   padding: 100px 0;
@@ -677,7 +678,7 @@
 .home-info-section-right1 {
   background-image: url("./assets/house2.png");
   width: 45%;
-  /* height: 500px; */
+  height: 500px;
   border-radius: 20px;
   background-size: cover;
   transform: translate(30px);
@@ -746,6 +747,7 @@
 .home-info-section-right2 {
   background-image: url("./assets/house3.png");
   width: 45%;
+  height: 500px;
   background-size: cover;
   border-radius: 20px;
   transform: translate(-30px);

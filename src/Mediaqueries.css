@@ -1,33 +1,82 @@
-@media (min-width: 1440px) {
+@media (min-width: 1700px) {
   .properties-section-wrapper {
     margin: auto;
     max-width: 1440px;
   }
 
-  .container {
-    margin: auto;
-    max-width: 1440px;
+  .img1, .img2, .img3, .img4 {
+    scale: 1.2;
   }
 
-  .plan-section-wrapper {
-    margin: auto;
-    max-width: 1440px;
+  .img1 {
+    bottom: 400px;
+    left: -100px;
+    opacity: 0.5;
   }
 
-  .about-wrapper {
+  .img2 {
+    bottom: 700px;
+  }
+
+  .img3 {
+    right: -200px;
+    top: -150px;
+  }
+
+  .img4 {
+    right: 200px;
+    top: 150px;
+  }
+
+  .hero-section {
+    gap: 70px;
+  }
+
+  .hero-section-heading {
+    font-size: 5rem;
+  }
+
+  .hero-section-para {
+    width: 50%;
+    font-size: 1.6rem;
+  }
+
+  .hero-section-box {
+    scale: 1.2;
+  }
+
+  .steps-section-left {
+    gap: 20px;
+  }
+
+  .home-info-section1, .home-info-section2 {
+    justify-content: space-around;
+  }
+
+  .home-info-section-right1 , .home-info-section-right2{
+    width: 500px;
+    height: 500px;
+  }
+
+  /* .plan-section-wrapper {
     margin: auto;
     max-width: 1440px;
-  }
+  } */
+
+  /* .about-wrapper {
+    margin: auto;
+    max-width: 1440px;
+  } */
 
   .detail-property-wrapper {
     max-width: 1340px;
     margin: auto;
   }
 
-  .dashboard-wrapper {
+  /* .dashboard-wrapper {
     max-width: 1440px;
     margin: auto;
-  }
+  } */
 }
 
 @media (max-width: 1100px) {
