@@ -1,7 +1,15 @@
 @media (min-width: 1700px) {
   .properties-section-wrapper {
-    margin: auto;
-    max-width: 1440px;
+    width: 70%;
+    gap: 50px;
+  }
+
+  .properties-filter-section-wrapper {
+    margin: 50px auto 0;
+  }
+
+  .properties-sort-section {
+    padding: 0;
   }
 
   .img1, .img2, .img3, .img4 {
@@ -57,6 +65,7 @@
     width: 500px;
     height: 500px;
   }
+
 
   /* .plan-section-wrapper {
     margin: auto;
