@@ -5,12 +5,16 @@ import {
   getPropertyDetail,
   notifySeller,
 } from "../services/operations/propertyAPI";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ReviewModal from "../components/ReviewModal";
+import ConfirmationModal from "../components/ConfirmationModal";
+import { useSelector } from "react-redux";
 
 const DetailProperty = () => {
-
+  const navigate = useNavigate();
+  const {token} = useSelector((state) => state.auth);
   const [reviewModal, setReviewModal] = useState(null);
+  const [confirmationModal, setConfirmationModal] = useState(null)
 
   const [formData, setFormData] = useState({
     email: "",
@@ -28,9 +32,25 @@ const DetailProperty = () => {
     }));
   };
 
-  const handleOnSubmit = async(e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
-    await notifySeller(detail?.seller?.email, email, fullName, contactNumber, msg);
+    if(!token){
+      setConfirmationModal({
+        text1: "You are not logged in!",
+        text2: "Please login to Purchase Course.",
+        btn1Text: "Login",
+        btn2Text: "Cancel",
+        btn1Handler: () => navigate("/login"),
+        btn2Handler: () => setConfirmationModal(null),
+      })
+    }else{
+    await notifySeller(
+      detail?.seller?.email,
+      email,
+      fullName,
+      contactNumber,
+      msg
+    );
     // navigate("/");
     setFormData({
       email: "",
@@ -41,7 +61,8 @@ const DetailProperty = () => {
 
     setReviewModal({
       cancelBtnHandler: () => setReviewModal(null),
-    })
+    });
+  }
   };
 
   const { propertyId } = useParams();
@@ -195,6 +216,7 @@ const DetailProperty = () => {
       </div>
       <Footer />
       {reviewModal && <ReviewModal modalData={reviewModal} />}
+      {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
     </>
   );
 };
