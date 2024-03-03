@@ -67,20 +67,17 @@
     padding: 0;
   }
 
-
-  /* .plan-section-wrapper {
-    margin: auto;
-    max-width: 1440px;
-  } */
-
-  /* .about-wrapper {
-    margin: auto;
-    max-width: 1440px;
-  } */
-
   .detail-property-wrapper {
     max-width: 1400px;
     margin: auto;
+  }
+
+  .plan-section-wrapper {
+    height: 100vh;
+  }
+
+  .pricing-cards {
+    width: 1300px;
   }
 
   /* .dashboard-wrapper {
