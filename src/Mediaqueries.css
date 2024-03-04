@@ -776,6 +776,7 @@
 
   .nav-button-dark {
     padding: 5px 10px;
+    display: none;
   }
 
   .nav-button-signup-light {
@@ -786,6 +787,10 @@
     padding-bottom: 20px;
   }
 
+  .hero-section {
+    gap: 20px;
+  }
+
   .hero-section-heading {
     font-size: 25px;
     font-weight: 500;
@@ -793,7 +798,12 @@
 
   .hero-section-para {
     font-size: 15px;
+    margin-block: 20px;
     line-height: normal;
+  }
+
+  .hero-section-box {
+    width: 90%;
   }
 
   .hero-section-box h1 {
