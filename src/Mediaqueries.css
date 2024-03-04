@@ -815,12 +815,19 @@
     display: none;
   }
 
+  .step-img {
+    width: 50px;
+    height: 50px;
+    box-shadow: none;
+    border: 1px solid black;
+  }
+
   .steps-section-left {
     width: 100%;
   }
 
   .step h3 {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .number {
@@ -873,6 +880,14 @@
   .subscription-section-wrapper h1 {
     padding: 0 10px;
     font-size: 35px;
+  }
+
+  .ss {
+    width: 100%;
+  }
+
+  .ss img {
+    width: 100%;
   }
 
   .profile-img {
