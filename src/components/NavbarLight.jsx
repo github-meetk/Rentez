@@ -64,21 +64,23 @@ const NavbarLight = () => {
               </button>
             );
           })}
-          <Link
-            className="navlink-light nav-logout"
-            onClick={() =>
-              setConfirmationModal({
-                text1: "Are you sure?",
-                text2: "You will be logged out of your account.",
-                btn1Text: "Logout",
-                btn2Text: "Cancel",
-                btn1Handler: () => dispatch(logout(navigate)),
-                btn2Handler: () => setConfirmationModal(null),
-              })
-            }
-          >
-            Logout
-          </Link>
+          {token !== null && (
+            <Link
+              className="navlink-light nav-logout"
+              onClick={() =>
+                setConfirmationModal({
+                  text1: "Are you sure?",
+                  text2: "You will be logged out of your account.",
+                  btn1Text: "Logout",
+                  btn2Text: "Cancel",
+                  btn1Handler: () => dispatch(logout(navigate)),
+                  btn2Handler: () => setConfirmationModal(null),
+                })
+              }
+            >
+              Logout
+            </Link>
+          )}
           <div className="nav-dashboard-wrapper">
             {location.pathname.split("/")[1] === "dashboard" && (
               <Link className="nav-dashboard">Dashboard</Link>
