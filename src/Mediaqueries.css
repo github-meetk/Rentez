@@ -574,6 +574,10 @@
     width: 100%;
   }
 
+  .properties-filter-section svg {
+    display: none;
+  }
+
   /* Auth   */
 
   .auth-box,

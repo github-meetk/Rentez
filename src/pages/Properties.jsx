@@ -74,7 +74,7 @@ const Properties = () => {
             <div className="properties-filter-section-wrapper">
               <div className="properties-filter-section">
                 <h2>
-                  <ImSearch />
+                  <ImSearch/>
                   Search rental properties according to your choice
                 </h2>
                 <div
