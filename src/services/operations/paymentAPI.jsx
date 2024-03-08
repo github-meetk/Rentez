@@ -39,9 +39,10 @@ export async function buyCourse(token, plan, planType, userDetails, navigate) {
                                 {
                                     Authorization: `Bearer ${token}`,
                                 })
-
         if(!orderResponse.data.success) {
-            throw new Error(orderResponse.data.message);
+            toast.error(orderResponse.data.message);
+            toast.dismiss(toastId);
+            return
         }
         console.log("PRINTING orderResponse", orderResponse);
         //options
