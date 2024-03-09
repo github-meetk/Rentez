@@ -98,10 +98,10 @@ const Featured = () => {
         })}
       </Slider>
       <div className="slider-btn">
-        <button className="button" onClick={previous}>
+        <button onClick={previous}>
           <FaArrowLeftLong />
         </button>
-        <button className="button" onClick={next}>
+        <button onClick={next}>
           <FaArrowRightLong />
         </button>
       </div>
