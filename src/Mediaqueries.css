@@ -1034,12 +1034,22 @@
   }
 
   .property-details {
+    padding: 10px 20px;
     box-shadow: none;
     background-color: whitesmoke;
   }
 
   .property-details-heading h1 {
     font-size: 25px;
+  }
+
+  .property-details-price h1 {
+    font-size: 30px;
+  }
+
+  .property-details-price h1 span {
+    font-size: 15px;
+    color: var(--secondary-dark-color);
   }
 
   .property-details h2 {
@@ -1081,6 +1091,15 @@
   .property-details-section-right {
     box-shadow: none;
     background-color: whitesmoke;
+    padding: 10px 0;
+  }
+
+  .property-details-section-right h1 {
+    font-size: 30px;
+  }
+
+  .property-details-section-right input {
+    width: 95%;
   }
 
   /* Dashboard   */

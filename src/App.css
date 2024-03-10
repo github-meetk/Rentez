@@ -1683,6 +1683,7 @@ input:focus {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   transition: .2s ease-in-out;
+  cursor: pointer;
 }
 
 .slider-btn button:hover {
@@ -2914,12 +2915,16 @@ select {
 }
 
 .property-details h3 {
-  font-weight: 200;
+  font-weight: 500;
   font-size: 1.3rem;
 }
 
-.property-details p {
+.property-details h3 span, .property-details p span {
   font-weight: 100;
+}
+
+.property-details p {
+  font-weight: 500;
   font-size: 1.3rem;
 }
 
@@ -3006,6 +3011,7 @@ select {
   font-size: 2.5rem;
   color: var(--primary-dark-color);
   font-weight: 500;
+  text-align: center;
 }
 
 .property-details-section-right input {

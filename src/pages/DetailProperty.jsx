@@ -127,16 +127,16 @@ const DetailProperty = () => {
                   </h1>{" "}
                   <p>Rent</p>
                 </div>
-                <h3>Total Rooms : {detail?.bhk}</h3>
-                <h3>Total Bathrooms : {detail?.bathrooms}</h3>
+                <h3>Total Rooms : <span>{detail?.bhk}</span></h3>
+                <h3>Total Bathrooms : <span>{detail?.bathrooms}</span></h3>
                 <h3>
-                  Listed at : {new Date(detail?.createdAt).toDateString()}
+                  Listed at : <span>{new Date(detail?.createdAt).toDateString()}</span>
                 </h3>
                 <p>
-                  Address : {detail?.address} {detail?.city} {detail?.state}{" "}
-                  {detail?.pincode}
+                  Address : <span>{detail?.address} {detail?.city} {detail?.state}{" "}
+                  {detail?.pincode}</span>
                 </p>
-                <p> Description : {detail?.description}</p>
+                <p> Description : <span>{detail?.description}</span></p>
               </div>
 
               <div className="seller-details">
