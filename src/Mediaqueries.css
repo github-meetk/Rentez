@@ -470,6 +470,10 @@
     padding: 8px 20px;
   }
 
+  .navlink-light:after, .navlink:after {
+    display: none;
+  }
+
   .navlink,
   .navlink-light {
     font-size: 18px;
