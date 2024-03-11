@@ -147,6 +147,11 @@
     color: var(--primary-dark-color);
   }
 
+  .navlink-light:after {
+    background-color: var(--primary-dark-color);
+    bottom: -3px;
+  }
+
   .img1,
   .img2,
   .img3,
