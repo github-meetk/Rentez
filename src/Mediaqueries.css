@@ -907,6 +907,16 @@
     border: 3px solid var(--special-color);
   }
 
+  /* Footer  */
+
+  .footer-wrapper {
+    width: 100%;
+  }
+
+  .footer-logos {
+    gap: 20px;
+  }
+
   /* Properties PAge   */
 
   .properties-filter-section-wrapper {
