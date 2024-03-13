@@ -2451,6 +2451,11 @@ select {
   color: black;
   border: none;
   border-radius: 10px;
+  transition: background-color .3s ease-in-out;
+}
+
+.modal-button-2:hover {
+  background-color: whitesmoke;
 }
 
 /* Propeties Page  */
