@@ -2477,7 +2477,8 @@ select {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color: white;
+  background: transparent;
+  backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 20px 30px;
 }
