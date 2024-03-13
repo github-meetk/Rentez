@@ -1858,6 +1858,8 @@ input:focus {
   display: none;
 }
 
+/* Sidebar  */
+
 .sidebar-wrapper {
   padding: 50px 0;
   min-width: 220px;
