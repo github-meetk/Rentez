@@ -957,6 +957,22 @@
     width: 90%;
   }
 
+  .signup-box input {
+    width: 90%;
+  }
+
+  .signup-button button {
+    width: 90%;
+  }
+
+  .signup-box {
+    padding: 20px 0;
+  }
+
+  .eye-signup {
+    right: 50px;
+  }
+
   /* Plan  */
 
   .plan-heading {
