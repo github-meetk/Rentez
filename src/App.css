@@ -1333,6 +1333,7 @@ input:focus {
   top: 0px;
   width: 100%;
   height: 70px;
+  background-color: var(--light-color);
   z-index: 3;
   user-select: none;
 }
