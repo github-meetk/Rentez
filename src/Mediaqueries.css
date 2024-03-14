@@ -973,6 +973,19 @@
     right: 50px;
   }
 
+  .forgot-password-box form {
+    width: 90%;
+  }
+
+  .verify-email-box p {
+    width: 90%;
+  }
+
+  .otp-input {
+    width: 40px;
+    height: 40px;
+  }
+
   /* Plan  */
 
   .plan-heading {
