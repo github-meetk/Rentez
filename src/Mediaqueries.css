@@ -1137,6 +1137,7 @@
   .filter {
     overflow-x: hidden;
     width: 350px;
+    height: 90vh;
     padding: 0;
   }
 
