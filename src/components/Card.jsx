@@ -61,7 +61,7 @@ const Card = ({
   };
 
   return (
-    <div className="card">
+    <div className="card" onClick={() => navigate(`/property/${propertyId}`)}>
       <div className="card-img">
         <img src={img} alt="" />
         <button className="wishlist-btn" onClick={handleAddToList}>
