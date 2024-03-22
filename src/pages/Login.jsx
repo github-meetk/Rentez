@@ -33,7 +33,6 @@ const Login = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     dispatch(login(email, password, navigate));
-    navigate("/");
   };
   return (
     <div className="auth-wrapper">
