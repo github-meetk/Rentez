@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/rentez-svg.svg";
 import { login } from "../services/operations/authAPI";
@@ -10,6 +10,8 @@ import image3 from "../assets/object_3.png";
 import image4 from "../assets/object_4.png";
 
 const Login = () => {
+
+  const { loading } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
@@ -39,7 +41,11 @@ const Login = () => {
       <img className="imge2" src={image2} alt="" />
       <img className="imge3" src={image3} alt="" />
       <img className="imge4" src={image4} alt="" />
-      <div className="auth-box">
+      {
+        loading ? (
+          <div class="loading-bar">Loading</div>
+        ) : (
+          <div className="auth-box">
         <form onSubmit={handleOnSubmit} className="login" autoComplete="off">
           <img src={logo} alt="" />
           <h2>Log in</h2>
@@ -84,6 +90,8 @@ const Login = () => {
           </div>
         </form>
       </div>
+        )
+      }
     </div>
   );
 };
