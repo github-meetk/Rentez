@@ -930,6 +930,7 @@
 }
 
 .eye-signup {
+  cursor: pointer;
   position: absolute;
   right: 120px;
   top: 8px;
