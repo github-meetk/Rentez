@@ -1114,6 +1114,7 @@ input:focus {
 }
 
 .eye-login {
+  cursor: pointer;
   position: absolute;
   top: 18px;
   right: 20px;
