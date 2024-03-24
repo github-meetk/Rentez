@@ -988,6 +988,11 @@
     height: 40px;
   }
 
+  .update-password-box form {
+    width: 90%;
+    margin: 0 auto;
+  }
+
   /* Plan  */
 
   .plan-heading {
