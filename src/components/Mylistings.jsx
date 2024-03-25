@@ -11,57 +11,54 @@ const Mylistings = () => {
   const scheleton = [0, 1, 2, 3, 4, 5];
 
   const fetchApi = async () => {
-    // setLoading(true)
+    setLoading(true);
     const response = await getSellersListings(token);
     setListings(response);
+    setLoading(false);
   };
 
   useEffect(() => {
-      fetchApi();
-    setLoading(false);
+    fetchApi();
     // eslint-disable-next-line
   }, []);
 
   return (
     <div className="my-listings-wrapper">
-          <h1>My Listings</h1>
-          <div className="my-listings">
-            {
-              loading ? (scheleton.map((card, index) => {
-                return (
-                  <div key={index} className="loaderr">
-                    <div className="wrapper">
-                      <div className="circle" />
-                      <div className="line-1" />
-                      <div className="line-2" />
-                      <div className="line-3" />
-                      <div className="line-4" />
-                    </div>
+      <h1>My Listings</h1>
+      <div className="my-listings">
+        {loading
+          ? scheleton.map((card, index) => {
+              return (
+                <div key={index} className="loaderr">
+                  <div className="wrapper">
+                    <div className="circle" />
+                    <div className="line-1" />
+                    <div className="line-2" />
+                    <div className="line-3" />
+                    <div className="line-4" />
                   </div>
-                );
-              })): (
-                listings?.map((property, index) => {
-                  return (
-                    <Card
-                      key={index}
-                      isSeller="true"
-                      propertyId={property._id}
-                      img={property.thumbnail}
-                      bhk={property.bhk}
-                      bath={property.bathrooms}
-                      size={property.size}
-                      price={property.price}
-                      pricePer={property.pricePer}
-                      city={property.city}
-                      state={property.state}
-                      type={property.propertyType}
-                    />
-                  );
-                })
-              )
-            }
-            
-          </div>
+                </div>
+              );
+            })
+          : listings?.map((property, index) => {
+              return (
+                <Card
+                  key={index}
+                  isSeller="true"
+                  propertyId={property._id}
+                  img={property.thumbnail}
+                  bhk={property.bhk}
+                  bath={property.bathrooms}
+                  size={property.size}
+                  price={property.price}
+                  pricePer={property.pricePer}
+                  city={property.city}
+                  state={property.state}
+                  type={property.propertyType}
+                />
+              );
+            })}
+      </div>
     </div>
   );
 };
