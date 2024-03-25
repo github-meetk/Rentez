@@ -20,7 +20,7 @@ const Properties = () => {
   const api = async () => {
     const response = await getAllProperty(filterData);
     setProperties(response);
-    if(response.length !== 0){
+    if (response.length !== 0) {
       setLoading(false);
     }
   };
@@ -46,15 +46,14 @@ const Properties = () => {
       setLoading(true);
       await api();
     };
-  
+
     fetchData(); // Call the fetchData function
-  
+
     if (document.querySelector(".filter-select")) {
       document.querySelector(".filter-select").value = value;
     }
     // eslint-disable-next-line
   }, [filterData]);
-  
 
   return (
     <>
@@ -62,25 +61,25 @@ const Properties = () => {
 
       <div className="properties-section-wrapper">
         {loading ? (
-          <>
-          {Array.from({ length: 6 }).map((_, index) => (
-            <div className="loaderr" key={index}>
-              <div className="wrapper">
-                <div className="circle"></div>
-                <div className="line-1"></div>
-                <div className="line-2"></div>
-                <div className="line-3"></div>
-                <div className="line-4"></div>
+          <div style={{ marginTop: "60px", display: "flex", flexWrap: "wrap" }}>
+            {Array.from({ length: 6 }).map((_, index) => (
+              <div className="loaderr" key={index}>
+                <div className="wrapper">
+                  <div className="circle"></div>
+                  <div className="line-1"></div>
+                  <div className="line-2"></div>
+                  <div className="line-3"></div>
+                  <div className="line-4"></div>
+                </div>
               </div>
-            </div>
-          ))}
-        </>
+            ))}
+          </div>
         ) : (
           <>
             <div className="properties-filter-section-wrapper">
               <div className="properties-filter-section">
                 <h2>
-                  <ImSearch/>
+                  <ImSearch />
                   Search rental properties according to your choice
                 </h2>
                 <div
