@@ -13,7 +13,9 @@ export const getAllProperty = async(filterData) => {
         if(!response.data.success){
             throw new Error("Could Not fetch Featured Properties")
         }
-        result = response.data.data;
+
+          result = response.data.data;
+        
     } catch (error) {
         console.log(error);
     }

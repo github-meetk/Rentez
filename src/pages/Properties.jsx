@@ -20,6 +20,9 @@ const Properties = () => {
   const api = async () => {
     const response = await getAllProperty(filterData);
     setProperties(response);
+    if(response.length !== 0){
+      setLoading(false);
+    }
   };
 
   const filterHandler = (value) => {
@@ -39,14 +42,19 @@ const Properties = () => {
   };
 
   useEffect(() => {
-    setLoading(true);
-    api();
+    const fetchData = async () => {
+      setLoading(true);
+      await api();
+    };
+  
+    fetchData(); // Call the fetchData function
+  
     if (document.querySelector(".filter-select")) {
       document.querySelector(".filter-select").value = value;
     }
-    setLoading(false);
     // eslint-disable-next-line
   }, [filterData]);
+  
 
   return (
     <>
