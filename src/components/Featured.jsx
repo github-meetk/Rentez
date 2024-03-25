@@ -10,6 +10,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 
 const Featured = () => {
   const [properties, setProperties] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   let sliderRef = useRef(null);
   const next = () => {
@@ -20,9 +21,11 @@ const Featured = () => {
   };
 
   const api = async () => {
+    setLoading(true);
     const response = await getAllProperty();
     const result = response.slice(0, 6);
     setProperties(result);
+    if (result.length !== 0) setLoading(false);
   };
   useEffect(() => {
     api();
@@ -71,40 +74,65 @@ const Featured = () => {
           </svg>
         </Link>
       </div>
-      <Slider
-        ref={(slider) => {
-          sliderRef = slider;
-        }}
-        {...settings}
-      >
-        {properties?.map((property, index) => {
-          return (
+      {loading ? (
+        <Slider
+          ref={(slider) => {
+            sliderRef = slider;
+          }}
+          {...settings}
+        >
+          {Array.from({ length: 3 }).map((_, index) => (
             <div key={index} className="card-wrap">
-              <Card
-                key={index}
-                propertyId={property._id}
-                img={property.thumbnail}
-                bhk={property.bhk}
-                bath={property.bathrooms}
-                size={property.size}
-                price={property.price}
-                pricePer={property.pricePer}
-                city={property.city}
-                state={property.state}
-                type={property.propertyType}
-              />
+              <div className="loaderr" key={index}>
+                <div className="wrapper">
+                  <div className="circle"></div>
+                  <div className="line-1"></div>
+                  <div className="line-2"></div>
+                  <div className="line-3"></div>
+                  <div className="line-4"></div>
+                </div>
+              </div>
             </div>
-          );
-        })}
-      </Slider>
-      <div className="slider-btn">
-        <button onClick={previous}>
-          <FaArrowLeftLong />
-        </button>
-        <button onClick={next}>
-          <FaArrowRightLong />
-        </button>
-      </div>
+          ))}
+        </Slider>
+      ) : (
+        <>
+          <Slider
+            ref={(slider) => {
+              sliderRef = slider;
+            }}
+            {...settings}
+          >
+            {properties?.map((property, index) => {
+              return (
+                <div key={index} className="card-wrap">
+                  <Card
+                    key={index}
+                    propertyId={property._id}
+                    img={property.thumbnail}
+                    bhk={property.bhk}
+                    bath={property.bathrooms}
+                    size={property.size}
+                    price={property.price}
+                    pricePer={property.pricePer}
+                    city={property.city}
+                    state={property.state}
+                    type={property.propertyType}
+                  />
+                </div>
+              );
+            })}
+          </Slider>
+          <div className="slider-btn">
+            <button onClick={previous}>
+              <FaArrowLeftLong />
+            </button>
+            <button onClick={next}>
+              <FaArrowRightLong />
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -27,7 +27,8 @@
   width: 340px;
   height: 420px;
   border-radius: 15px;
-  margin-top: 60px;
+  margin:auto;
+  margin-bottom: 60px;
   border: none;
   background-color: #e3e3e3;
   overflow: hidden;
