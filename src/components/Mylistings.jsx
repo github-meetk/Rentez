@@ -8,8 +8,6 @@ const Mylistings = () => {
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const scheleton = [0, 1, 2, 3, 4, 5];
-
   const fetchApi = async () => {
     setLoading(true);
     const response = await getSellersListings(token);
@@ -27,19 +25,17 @@ const Mylistings = () => {
       <h1>My Listings</h1>
       <div className="my-listings">
         {loading
-          ? scheleton.map((card, index) => {
-              return (
-                <div key={index} className="loaderr">
-                  <div className="wrapper">
-                    <div className="circle" />
-                    <div className="line-1" />
-                    <div className="line-2" />
-                    <div className="line-3" />
-                    <div className="line-4" />
-                  </div>
+          ? Array.from({ length: 6 }).map((_, index) => (
+              <div className="loaderr" key={index}>
+                <div className="wrapper">
+                  <div className="circle"></div>
+                  <div className="line-1"></div>
+                  <div className="line-2"></div>
+                  <div className="line-3"></div>
+                  <div className="line-4"></div>
                 </div>
-              );
-            })
+              </div>
+            ))
           : listings?.map((property, index) => {
               return (
                 <Card
