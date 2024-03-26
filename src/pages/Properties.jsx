@@ -12,6 +12,7 @@ const Properties = () => {
 
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [noData, setNoData] = useState(false);
   const [filterModal, setFilterModal] = useState(null);
   const value = "featured";
 
@@ -23,8 +24,10 @@ const Properties = () => {
     console.log(filterData);
     if (response.length !== 0) {
       setLoading(false);
+      setNoData(false);
     } else if (filterData !== null) {
       setLoading(false);
+      setNoData(true);
     }
   };
 
@@ -103,20 +106,27 @@ const Properties = () => {
               </div>
             </div>
 
-            <div className="properties-sort-section">
-              <h2>Explore all property</h2>
-              <div>
-                <select
-                  className="filter-select"
-                  defaultValue={value}
-                  onChange={(e) => filterHandler(e.target.value)}
-                >
-                  <option value="featured">Sort by : Featured</option>
-                  <option value="lth">Price : Low to High</option>
-                  <option value="htl">Price : High to Low</option>
-                </select>
+            {!noData && (
+              <div className="properties-sort-section">
+                <h2>Explore all property</h2>
+                <div>
+                  <select
+                    className="filter-select"
+                    defaultValue={value}
+                    onChange={(e) => filterHandler(e.target.value)}
+                  >
+                    <option value="featured">Sort by : Featured</option>
+                    <option value="lth">Price : Low to High</option>
+                    <option value="htl">Price : High to Low</option>
+                  </select>
+                </div>
               </div>
-            </div>
+            )}
+            {noData && (
+              <div style={{ fontSize: "40px", fontWeight: "400" }}>
+                Not Available
+              </div>
+            )}
             {properties.map((property, index) => {
               return (
                 <Card
