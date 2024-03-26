@@ -20,7 +20,10 @@ const Properties = () => {
   const api = async () => {
     const response = await getAllProperty(filterData);
     setProperties(response);
+    console.log(filterData);
     if (response.length !== 0) {
+      setLoading(false);
+    } else if (filterData !== null) {
       setLoading(false);
     }
   };
