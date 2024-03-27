@@ -4,6 +4,8 @@ import Card from "./Card";
 import { useSelector } from "react-redux";
 
 const Mylistings = () => {
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
+
   const { token } = useSelector((state) => state.auth);
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
