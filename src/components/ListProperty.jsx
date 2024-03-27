@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { createListings } from "../services/operations/propertyAPI";
 
 const ListProperty = () => {
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
   const { token } = useSelector((state) => state.auth);
 
   const fileInputRef = useRef(null);
