@@ -7,6 +7,7 @@ import { changePassword } from "../services/operations/SettingApi";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
 const ChangePassword = () => {
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
   const { token } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
@@ -83,8 +84,18 @@ const ChangePassword = () => {
           {errors.newPassword && <p>Please enter your New Password.</p>}
         </div>
         <div className="change-password-buttons">
-          <button type="button" className="profile-edit-button back-button" onClick={() => navigate("/dashboard/settings")}> <FaArrowLeftLong />Back</button>
-          <button className="special-btn" type="submit">Save</button>
+          <button
+            type="button"
+            className="profile-edit-button back-button"
+            onClick={() => navigate("/dashboard/settings")}
+          >
+            {" "}
+            <FaArrowLeftLong />
+            Back
+          </button>
+          <button className="special-btn" type="submit">
+            Save
+          </button>
         </div>
       </form>
     </div>
