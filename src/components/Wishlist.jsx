@@ -6,24 +6,27 @@ import { clearoutWishlist } from "../services/operations/propertyAPI";
 import toast from "react-hot-toast";
 
 const Wishlist = () => {
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
   const { cart, totalItems } = useSelector((state) => state.cart);
   const { token } = useSelector((state) => state.auth);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const handleReset = async() => {
-      dispatch(resetList())
-      await clearoutWishlist(token);
-      toast.success("Wishlist Reset Successfully");
-  }
+  const handleReset = async () => {
+    dispatch(resetList());
+    await clearoutWishlist(token);
+    toast.success("Wishlist Reset Successfully");
+  };
   return (
     <div className="my-listings-wrapper">
       {totalItems > 0 ? (
         <>
           <div className="wishlist-heading">
             <h1>Wishlist</h1>
-            <button className='delete-profile-button' onClick={handleReset}>clear</button>
+            <button className="delete-profile-button" onClick={handleReset}>
+              clear
+            </button>
           </div>
-          
+
           <div className="my-listings">
             {cart?.map((property, index) => {
               return (
