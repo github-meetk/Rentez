@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const Myprofile = () => {
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
+
   const { user } = useSelector((state) => state.profile);
 
   const isSubscribed =
@@ -19,15 +21,11 @@ const Myprofile = () => {
         <div className="my-profile-main">
           {isSubscribed && user?.accountType === "Seller" && (
             <div className="subscribed">Subscribed</div>
-          )
-          }
-          {!isSubscribed && user?.accountType === "Seller" &&(
+          )}
+          {!isSubscribed && user?.accountType === "Seller" && (
             <div className="not-subscribed">
               You are Not Subscribed yet !!
-              <Link
-                className="my-profile-plan"
-                to={"/plan"}
-              >
+              <Link className="my-profile-plan" to={"/plan"}>
                 Please get a plan <FaArrowRightLong />
               </Link>
             </div>
