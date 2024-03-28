@@ -19,7 +19,7 @@ const Myprofile = () => {
       <h1>My profile</h1>
       <div className="my-profile-details">
         <div className="my-profile-main">
-          {isSubscribed && user?.accountType === "Seller" && (
+          {/* {isSubscribed && user?.accountType === "Seller" && (
             <div className="subscribed">Subscribed</div>
           )}
           {!isSubscribed && user?.accountType === "Seller" && (
@@ -29,7 +29,7 @@ const Myprofile = () => {
                 Please get a plan <FaArrowRightLong />
               </Link>
             </div>
-          )}
+          )} */}
           <img src={user.image} alt="" />
           <div className="my-profile-main-details">
             <h2>{user?.accountType}</h2>
