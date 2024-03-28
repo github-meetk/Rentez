@@ -188,7 +188,6 @@ const Home = () => {
                 <h4>✓ Find excellent deals</h4>
                 <h4>✓ Friendly UI & Fast support</h4>
                 <h4>✓ Secure payment system</h4>
-                {/* <button>Get Started</button> */}
               </div>
               <div className="home-info-section-right2"></div>
             </div>
