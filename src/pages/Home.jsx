@@ -55,19 +55,18 @@ const Home = () => {
                   Find a perfect property <br></br> Where you'll love to live.
                 </h1>
                 <p className="hero-section-para">
-                  We helps businesses customize, automate and scale up their ad
-                  production and delivery.
+                  Elevate Your Lifestyle! Rent Smart Rent Online, Unlock the
+                  Door to Your Ideal Home Today
                 </p>
                 <div className="hero-section-box">
                   <h1>
                     Simple & easy way to find <br /> your dream Appointment
                   </h1>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing <br /> and
-                    typesetting industry.
-                  </p>
+                  <p>Your Rental Journey Starts Here: Find, Click, Move In!</p>
                   <button className="ui-btn">
-                    <span onClick={() => navigate("/properties")}>Get Started</span>
+                    <span onClick={() => navigate("/properties")}>
+                      Get Started
+                    </span>
                     <span>
                       <FaArrowRightLong />
                     </span>
