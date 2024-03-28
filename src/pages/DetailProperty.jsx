@@ -13,6 +13,7 @@ const DetailProperty = () => {
   const { token } = useSelector((state) => state.auth);
   const [reviewModal, setReviewModal] = useState(null);
   const [confirmationModal, setConfirmationModal] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const { propertyId } = useParams();
   const [images, setImages] = useState([]);
@@ -21,6 +22,7 @@ const DetailProperty = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const response = await getPropertyDetail(propertyId);
       if (response && response.photos) {
         const newImages = [response.thumbnail, ...response.photos];
@@ -28,6 +30,7 @@ const DetailProperty = () => {
         setActiveImage(newImages[0]);
         setDetail(response);
       }
+      setLoading(false);
     };
 
     fetchData();
@@ -38,95 +41,103 @@ const DetailProperty = () => {
     <>
       <NavbarLight />
       <div className="detail-property-bg">
-        <div className="detail-property-wrapper">
-          <div className="property-image-section">
-            <div className="active-image">
-              <img src={activeImg} alt="" />
-            </div>
-            <div className="non-active-images">
-              {images.map((image, index) => {
-                return (
-                  <img
-                    style={
-                      activeImg === image
-                        ? { border: "3px solid #6B53FF" }
-                        : { border: "none" }
-                    }
-                    key={index}
-                    src={image}
-                    alt=""
-                    onClick={() => setActiveImage(image)}
-                  />
-                );
-              })}
-            </div>
+        {loading ? (
+          <div className="spinner-loader-wrapper">
+            <div className="spinner" />
           </div>
-          <div className="property-details-section">
-            <div className="property-details-section-left">
-              <div className="property-details">
-                <div className="property-details-heading">
-                  <h1>Property Information : </h1>
+        ) : (
+          <>
+            <div className="detail-property-wrapper">
+              <div className="property-image-section">
+                <div className="active-image">
+                  <img src={activeImg} alt="" />
                 </div>
-                <h2>
-                  {detail?.size} Sqft {detail?.propertyType}
-                </h2>
-                <div className="property-details-price">
-                  <h1>
-                    {detail?.price} <span>/ {detail?.pricePer}</span>
-                  </h1>{" "}
-                  <p>Rent</p>
+                <div className="non-active-images">
+                  {images.map((image, index) => {
+                    return (
+                      <img
+                        style={
+                          activeImg === image
+                            ? { border: "3px solid #6B53FF" }
+                            : { border: "none" }
+                        }
+                        key={index}
+                        src={image}
+                        alt=""
+                        onClick={() => setActiveImage(image)}
+                      />
+                    );
+                  })}
                 </div>
-                <h3>
-                  Total Rooms : <span>{detail?.bhk}</span>
-                </h3>
-                <h3>
-                  Total Bathrooms : <span>{detail?.bathrooms}</span>
-                </h3>
-                <h3>
-                  Listed at :{" "}
-                  <span>{new Date(detail?.createdAt).toDateString()}</span>
-                </h3>
-                <p>
-                  Address :{" "}
-                  <span>
-                    {detail?.address} {detail?.city} {detail?.state}{" "}
-                    {detail?.pincode}
-                  </span>
-                </p>
-                <p>
-                  {" "}
-                  Description : <span>{detail?.description}</span>
-                </p>
               </div>
-
-              <div className="seller-details">
-                <h1>Seller Information</h1>
-                <div className="seller-info">
-                  <div className="seller-detail-left">
-                    <img src={detail?.seller?.image} alt="" />
-                  </div>
-                  <div className="seller-detail-right">
+              <div className="property-details-section">
+                <div className="property-details-section-left">
+                  <div className="property-details">
+                    <div className="property-details-heading">
+                      <h1>Property Information : </h1>
+                    </div>
                     <h2>
-                      {detail?.seller?.firstName} {detail?.seller?.lastName}
+                      {detail?.size} Sqft {detail?.propertyType}
                     </h2>
-                    <p>{detail?.seller?.email}</p>
-                    <p>{detail?.seller?.additionalDetails?.about}</p>
+                    <div className="property-details-price">
+                      <h1>
+                        {detail?.price} <span>/ {detail?.pricePer}</span>
+                      </h1>{" "}
+                      <p>Rent</p>
+                    </div>
+                    <h3>
+                      Total Rooms : <span>{detail?.bhk}</span>
+                    </h3>
+                    <h3>
+                      Total Bathrooms : <span>{detail?.bathrooms}</span>
+                    </h3>
+                    <h3>
+                      Listed at :{" "}
+                      <span>{new Date(detail?.createdAt).toDateString()}</span>
+                    </h3>
+                    <p>
+                      Address :{" "}
+                      <span>
+                        {detail?.address} {detail?.city} {detail?.state}{" "}
+                        {detail?.pincode}
+                      </span>
+                    </p>
+                    <p>
+                      {" "}
+                      Description : <span>{detail?.description}</span>
+                    </p>
                   </div>
+
+                  <div className="seller-details">
+                    <h1>Seller Information</h1>
+                    <div className="seller-info">
+                      <div className="seller-detail-left">
+                        <img src={detail?.seller?.image} alt="" />
+                      </div>
+                      <div className="seller-detail-right">
+                        <h2>
+                          {detail?.seller?.firstName} {detail?.seller?.lastName}
+                        </h2>
+                        <p>{detail?.seller?.email}</p>
+                        <p>{detail?.seller?.additionalDetails?.about}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="property-details-section-right">
+                  <InquiryForm
+                    token={token}
+                    setReviewModal={setReviewModal}
+                    setConfirmationModal={setConfirmationModal}
+                    sellerEmail={detail?.seller?.email}
+                  />
                 </div>
               </div>
             </div>
-            <div className="property-details-section-right">
-              <InquiryForm
-                token={token}
-                setReviewModal={setReviewModal}
-                setConfirmationModal={setConfirmationModal}
-                sellerEmail={detail?.seller?.email}
-              />
-            </div>
-          </div>
-        </div>
+            <Footer />
+          </>
+        )}
       </div>
-      <Footer />
       {reviewModal && <ReviewModal modalData={reviewModal} />}
       {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
     </>
