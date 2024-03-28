@@ -165,10 +165,9 @@ const Home = () => {
               <div className="home-info-section-left1">
                 <h1>Simple & easy way to find your dream Appointment</h1>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. In a free hour, when our power of choice
-                  is untrammelled and when nothing prevents our being able to do
-                  what we like best, every pleasure is to be welcomed.
+                  Experience Seamless Living: Rent Your Dream Home Online, Where
+                  Convenience Meets Comfort and Every Click Brings You Closer to
+                  Your Ideal Lifestyle!
                 </p>
                 <button
                   className="special-btn"
@@ -183,8 +182,8 @@ const Home = () => {
               <div className="home-info-section-left2">
                 <h1>Best rated host on popular rental sites</h1>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
+                  Make Your Move Rent with Confidence Experience the Future of
+                  Renting Today
                 </p>
                 <h4>✓ Find excellent deals</h4>
                 <h4>✓ Friendly UI & Fast support</h4>
