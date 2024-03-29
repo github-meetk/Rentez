@@ -59,7 +59,12 @@ const ListProperty = () => {
       ...prevFormData,
       [name]: files[0],
     }));
-    toast.success("Thumbnail Uploaded");
+    if (files.length === 1) {
+      toast.success("Thumbnail Uploaded");
+    }
+    if (files.length === 0) {
+      toast.success("Thumbnail Removed!!");
+    }
   };
 
   const handlePhotosChange = (e) => {
@@ -69,13 +74,19 @@ const ListProperty = () => {
         ...prevFormData,
         [name]: files[0],
       }));
+      toast.success(`1 photo uploaded`);
     } else {
       setFormData((prevFormData) => ({
         ...prevFormData,
         [name]: files,
       }));
     }
-    toast.success("Photos Uploaded");
+    if (files.length > 1) {
+      toast.success(`${files.length} photos uploaded`);
+    }
+    if (files.length === 0) {
+      toast.success("Photos Removed!!");
+    }
   };
 
   const handleSubmit = async (e) => {
