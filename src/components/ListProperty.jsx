@@ -2,10 +2,13 @@ import React, { useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { createListings } from "../services/operations/propertyAPI";
+import { IoIosCheckmarkCircle } from "react-icons/io";
 
 const ListProperty = () => {
   // document.body.scrollTop = document.documentElement.scrollTop = 0;
   const { token } = useSelector((state) => state.auth);
+  const [thumbnail, setThumbnail] = useState(false);
+  const [photos, setPhotos] = useState(false);
 
   const fileInputRef = useRef(null);
   const photosInputRef = useRef(null);
@@ -60,6 +63,7 @@ const ListProperty = () => {
       [name]: files[0],
     }));
     if (files.length === 1) {
+      setThumbnail(true);
       toast.success("Thumbnail Uploaded");
     }
     if (files.length === 0) {
@@ -74,14 +78,14 @@ const ListProperty = () => {
         ...prevFormData,
         [name]: files[0],
       }));
+      setPhotos(true);
       toast.success(`1 photo uploaded`);
-    } else {
+    } else if (files.length > 1) {
       setFormData((prevFormData) => ({
         ...prevFormData,
         [name]: files,
       }));
-    }
-    if (files.length > 1) {
+      setPhotos(true);
       toast.success(`${files.length} photos uploaded`);
     }
     if (files.length === 0) {
@@ -250,48 +254,82 @@ const ListProperty = () => {
             </label>
             <label className="custom-file-upload">
               Thumbnail:
-              <button
-                type="button"
-                onClick={handleFileClick}
-                className="profile-edit-button"
-              >
-                <lord-icon
-                  src="https://cdn.lordicon.com/smwmetfi.json"
-                  trigger="loop"
-                  style={{ width: 25, height: 25 }}
-                ></lord-icon>
-                Upload Thumbnail Image
-              </button>
-              <input
-                type="file"
-                ref={fileInputRef}
-                id="inp"
-                name="thumbnail"
-                onChange={handleFileChange}
-              />
+              {thumbnail ? (
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                  }}
+                >
+                  <IoIosCheckmarkCircle size={30} color="green" />
+                  Uploaded
+                </div>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    onClick={handleFileClick}
+                    className="profile-edit-button"
+                  >
+                    <lord-icon
+                      src="https://cdn.lordicon.com/smwmetfi.json"
+                      trigger="loop"
+                      style={{ width: 25, height: 25 }}
+                    ></lord-icon>
+                    Upload Thumbnail Image
+                  </button>
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    id="inp"
+                    name="thumbnail"
+                    onChange={handleFileChange}
+                  />
+                </>
+              )}
             </label>
             <label className="custom-file-upload">
               Photos:
-              <button
-                type="button"
-                onClick={handlePhotosClick}
-                className="profile-edit-button"
-              >
-                <lord-icon
-                  src="https://cdn.lordicon.com/smwmetfi.json"
-                  trigger="loop"
-                  style={{ width: 25, height: 25 }}
-                ></lord-icon>
-                Upload Other Photos
-              </button>
-              <input
-                type="file"
-                id="inp"
-                name="photos"
-                ref={photosInputRef}
-                multiple
-                onChange={handlePhotosChange}
-              />
+              {photos ? (
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                  }}
+                >
+                  <IoIosCheckmarkCircle size={30} color="green" />
+                  Uploaded
+                </div>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    onClick={handlePhotosClick}
+                    className="profile-edit-button"
+                  >
+                    <lord-icon
+                      src="https://cdn.lordicon.com/smwmetfi.json"
+                      trigger="loop"
+                      style={{ width: 25, height: 25 }}
+                    ></lord-icon>
+                    Upload Other Photos
+                  </button>
+                  <input
+                    type="file"
+                    id="inp"
+                    name="photos"
+                    ref={photosInputRef}
+                    multiple
+                    onChange={handlePhotosChange}
+                  />
+                </>
+              )}
             </label>
             <button className="special-btn" type="submit">
               Submit
