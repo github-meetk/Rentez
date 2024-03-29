@@ -46,7 +46,6 @@ exports.createListing = async (req, res) => {
     }
 
     const sellerDetails = await User.findById(userId);
-    console.log(sellerDetails);
     if (sellerDetails.accountType !== "Seller") {
       return res.status(404).json({
         success: false,
@@ -140,8 +139,15 @@ exports.createListing = async (req, res) => {
 
 exports.getAllListings = async (req, res) => {
   try {
-    const { propertyType, bhk, bathrooms, city, state, priceMin, priceMax } =
-      req.query;
+    const {
+      propertyType,
+      bhk,
+      bathrooms,
+      city,
+      state,
+      priceMin,
+      priceMax,
+    } = req.query;
 
     let queryObject = {};
 
@@ -169,9 +175,9 @@ exports.getAllListings = async (req, res) => {
     }
     // console.log(queryObject);
 
-    const properties = await Property.find(queryObject)
-      // .populate("seller")
-      // .exec();
+    const properties = await Property.find(queryObject);
+    // .populate("seller")
+    // .exec();
 
     return res.status(200).json({
       success: true,
@@ -330,11 +336,9 @@ exports.deleteWishlist = async (req, res) => {
 
 exports.createWishlist = async (req, res) => {
   try {
-    const {
-      propertyId,
-    } = req.body;
+    const { propertyId } = req.body;
 
-    const userId = req.user.id
+    const userId = req.user.id;
 
     const response = await User.findByIdAndUpdate(
       {
@@ -342,13 +346,13 @@ exports.createWishlist = async (req, res) => {
       },
       {
         $push: {
-          wishlist : propertyId,
+          wishlist: propertyId,
         },
       },
       { new: true }
     );
 
-    const propertyDetails = await Property.findOne({_id : propertyId})
+    const propertyDetails = await Property.findOne({ _id: propertyId });
 
     res.status(200).json({
       success: true,
@@ -367,7 +371,9 @@ exports.getUserWishlist = async (req, res) => {
   try {
     const userId = req.user.id;
 
-    const List = await User.findOne({_id : userId}).populate("wishlist").exec()
+    const List = await User.findOne({ _id: userId })
+      .populate("wishlist")
+      .exec();
 
     return res.status(200).json({
       success: true,
