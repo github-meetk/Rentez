@@ -262,6 +262,7 @@ const ListProperty = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     gap: "10px",
+                    userSelect: "none",
                   }}
                 >
                   <IoIosCheckmarkCircle size={30} color="green" />
@@ -301,6 +302,7 @@ const ListProperty = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     gap: "10px",
+                    userSelect: "none",
                   }}
                 >
                   <IoIosCheckmarkCircle size={30} color="green" />
