@@ -64,10 +64,17 @@ const ListProperty = () => {
 
   const handlePhotosChange = (e) => {
     const { name, files } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: files,
-    }));
+    if (files.length === 1) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: files[0],
+      }));
+    } else {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: files,
+      }));
+    }
     toast.success("Photos Uploaded");
   };
 
