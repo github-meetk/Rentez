@@ -513,17 +513,7 @@
   transform: translateY(30px);
   opacity: 0;
   transition: .5s ease-in-out;
-  /* animation: fade-in linear forwards;
-  animation-timeline: view();
-  animation-range: entry; */
 }
-/* 
-@keyframes fade-in {
-  to {
-    scale: 1;
-    opacity: 1;
-  }
-} */
 
 .steps-section-wrapper.fade-in {
   opacity: 1;
