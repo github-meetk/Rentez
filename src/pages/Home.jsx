@@ -15,24 +15,48 @@ import { useSelector } from "react-redux";
 import Subscibe from "../components/Subscibe";
 import Featured from "../components/Featured";
 import ReviewCard from "../components/ReviewCard";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getAllReviews } from "../services/operations/ReviewAPI";
 
 const Home = () => {
-  document.body.scrollTop = document.documentElement.scrollTop = 0;
-
   const { loading } = useSelector((state) => state.auth);
   const [review, setReview] = useState([]);
+
+  const [isVisible, setIsVisible] = useState(false);
+  const domRef = useRef();
 
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     const api = async () => {
       const result = await getAllReviews();
       setReview(result);
     };
 
     api();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    const currentRef = domRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
   }, []);
 
   return (
@@ -75,7 +99,10 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="steps-section-wrapper">
+          <div
+            className={`steps-section-wrapper ${isVisible ? "fade-in" : ""}`}
+            ref={domRef}
+          >
             <div className="steps-section">
               <div className="steps-section-left">
                 <div className="step">
