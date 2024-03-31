@@ -517,7 +517,7 @@
 
 .steps-section-wrapper.fade-in {
   opacity: 1;
-  transform: translateY(0px);
+  transform: translateY(-10px);
 }
 
 .steps-section {
@@ -593,12 +593,16 @@
   padding: 30px 0;
   border-radius: 20px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-  opacity: 0.4;
-  transform: translate(0px, 40px);
-  animation: trans-up linear forwards;
-  animation-timeline: view();
-  animation-range: entry;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.5s ease-in-out;
 }
+
+.numbers-section-wrapper.fade-in {
+  opacity: 1;
+  transform: translateY(-40px);
+}
+
 
 @keyframes trans-up {
   to {

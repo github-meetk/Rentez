@@ -25,6 +25,9 @@ const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef();
 
+  const [isVisible2, setIsVisible2] = useState(false);
+  const domRef2 = useRef();
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -47,14 +50,34 @@ const Home = () => {
       { threshold: 0.25 }
     );
 
+    const observer2 = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible2(true);
+            observer2.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
     const currentRef = domRef.current;
+    const currentRef2 = domRef2.current;
+
     if (currentRef) {
       observer.observe(currentRef);
+    }
+    if (currentRef2) {
+      observer2.observe(currentRef2);
     }
 
     return () => {
       if (currentRef) {
         observer.unobserve(currentRef);
+      }
+      if (currentRef2) {
+        observer.unobserve(currentRef2);
       }
     };
   }, []);
@@ -162,7 +185,10 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="numbers-section-wrapper">
+          <div
+            className={`numbers-section-wrapper ${isVisible2 ? "fade-in" : ""}`}
+            ref={domRef2}
+          >
             <div className="number">
               <img src={no4} alt="Img"></img>
               <h1>20K+</h1>
