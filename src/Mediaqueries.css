@@ -781,6 +781,11 @@
 }
 
 @media (max-width: 470px) {
+  .card {
+    width: 100%;
+    margin-inline: 0px;
+  }
+
   .nav-button-login-light {
     display: none;
   }
@@ -957,6 +962,10 @@
   .filter-select {
     font-size: 15px;
     padding: 10px 10px;
+  }
+
+  .properties-section-wrapper {
+
   }
 
   /* Auth  */
