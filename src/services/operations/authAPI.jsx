@@ -116,7 +116,7 @@ export function login(email, password, navigate) {
         localStorage.removeItem("user");
         localStorage.removeItem("cart");
         localStorage.removeItem("totalItems");
-      }, 1000 * 60 * 60 * 24 * 3);
+      }, 1000 * 60 * 60 * 24 * 10);
     } catch (error) {
       console.log("LOGIN API ERROR............", error);
       toast.error(error.response?.data.message);
