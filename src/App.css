@@ -726,9 +726,6 @@
   align-items: flex-start;
   padding: 40px 0;
   transform: translate(30px);
-  /* animation: swipe-left linear forwards;
-  animation-timeline: view();
-  animation-range: entry; */
 }
 
 .special-btn {
@@ -769,9 +766,6 @@
   background-size: cover;
   border-radius: 20px;
   transform: translate(-30px);
-  /* animation: swipe-right linear forwards;
-  animation-timeline: view();
-  animation-range: entry; */
 }
 
 .home-info-section-left2 p {
