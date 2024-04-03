@@ -31,6 +31,9 @@ const Home = () => {
   const [isVisible3, setIsVisible3] = useState(false);
   const domRef3 = useRef();
 
+  const [isVisible4, setIsVisible4] = useState(false);
+  const domRef4 = useRef();
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -77,9 +80,22 @@ const Home = () => {
       { threshold: 0.35 }
     );
 
+    const observer4 = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible4(true);
+            observer4.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+
     const currentRef = domRef.current;
     const currentRef2 = domRef2.current;
     const currentRef3 = domRef3.current;
+    const currentRef4 = domRef4.current;
 
     if (currentRef) {
       observer.observe(currentRef);
@@ -92,6 +108,10 @@ const Home = () => {
       observer3.observe(currentRef3);
     }
 
+    if (currentRef4) {
+      observer4.observe(currentRef4);
+    }
+
     return () => {
       if (currentRef) {
         observer.unobserve(currentRef);
@@ -102,6 +122,10 @@ const Home = () => {
 
       if (currentRef3) {
         observer.unobserve(currentRef3);
+      }
+
+      if (currentRef4) {
+        observer.unobserve(currentRef4);
       }
     };
   }, []);
@@ -258,7 +282,10 @@ const Home = () => {
               </div>
               <div className="home-info-section-right1"></div>
             </div>
-            <div className="home-info-section2">
+            <div
+              className={`home-info-section2 ${isVisible4 ? "fade-in" : ""}`}
+              ref={domRef4}
+            >
               <div className="home-info-section-left2">
                 <h1>Best rated host on popular rental sites</h1>
                 <p>

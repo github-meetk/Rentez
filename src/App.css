@@ -708,6 +708,14 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: .5s ease-in-out;
+}
+
+.home-info-section2.fade-in {
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 .home-info-section-left2 {
@@ -718,9 +726,9 @@
   align-items: flex-start;
   padding: 40px 0;
   transform: translate(30px);
-  animation: swipe-left linear forwards;
+  /* animation: swipe-left linear forwards;
   animation-timeline: view();
-  animation-range: entry;
+  animation-range: entry; */
 }
 
 .special-btn {
@@ -761,9 +769,9 @@
   background-size: cover;
   border-radius: 20px;
   transform: translate(-30px);
-  animation: swipe-right linear forwards;
+  /* animation: swipe-right linear forwards;
   animation-timeline: view();
-  animation-range: entry;
+  animation-range: entry; */
 }
 
 .home-info-section-left2 p {
