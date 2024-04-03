@@ -677,16 +677,6 @@
   gap: 30px;
   align-items: flex-start;
   padding: 40px 0;
-  /* transform: translate(-30px); */
-  /* animation: swipe-right linear forwards;
-  animation-timeline: view();
-  animation-range: entry; */
-}
-
-@keyframes swipe-right {
-  to {
-    transform: translate(30px);
-  }
 }
 
 .home-info-section-left1 button:hover {
@@ -711,16 +701,6 @@
   height: 500px;
   border-radius: 20px;
   background-size: cover;
-  /* transform: translate(30px); */
-  /* animation: swipe-left linear forwards;
-  animation-timeline: view();
-  animation-range: entry; */
-}
-
-@keyframes swipe-left {
-  to {
-    transform: translate(-30px);
-  }
 }
 
 .home-info-section2 {
