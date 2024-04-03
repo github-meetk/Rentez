@@ -28,6 +28,9 @@ const Home = () => {
   const [isVisible2, setIsVisible2] = useState(false);
   const domRef2 = useRef();
 
+  const [isVisible3, setIsVisible3] = useState(false);
+  const domRef3 = useRef();
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -62,8 +65,21 @@ const Home = () => {
       { threshold: 0.25 }
     );
 
+    const observer3 = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible3(true);
+            observer3.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+
     const currentRef = domRef.current;
     const currentRef2 = domRef2.current;
+    const currentRef3 = domRef3.current;
 
     if (currentRef) {
       observer.observe(currentRef);
@@ -72,12 +88,20 @@ const Home = () => {
       observer2.observe(currentRef2);
     }
 
+    if (currentRef3) {
+      observer3.observe(currentRef3);
+    }
+
     return () => {
       if (currentRef) {
         observer.unobserve(currentRef);
       }
       if (currentRef2) {
         observer.unobserve(currentRef2);
+      }
+
+      if (currentRef3) {
+        observer.unobserve(currentRef3);
       }
     };
   }, []);
@@ -214,7 +238,10 @@ const Home = () => {
           <Featured />
 
           <div className="home-info-section-wrapper">
-            <div className="home-info-section1">
+            <div
+              className={`home-info-section1 ${isVisible3 ? "fade-in" : ""}`}
+              ref={domRef3}
+            >
               <div className="home-info-section-left1">
                 <h1>Simple & easy way to find your dream Appointment</h1>
                 <p>

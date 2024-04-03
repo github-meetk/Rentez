@@ -659,7 +659,15 @@
   margin-top: 50px;
   width: 100%;
   display: flex;
+  transform: translateY(40px);
+  opacity: 0;
   justify-content: space-between;
+  transition: .5s ease-in-out;
+}
+
+.home-info-section1.fade-in {
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 .home-info-section-left1 {
@@ -669,10 +677,10 @@
   gap: 30px;
   align-items: flex-start;
   padding: 40px 0;
-  transform: translate(-30px);
-  animation: swipe-right linear forwards;
+  /* transform: translate(-30px); */
+  /* animation: swipe-right linear forwards;
   animation-timeline: view();
-  animation-range: entry;
+  animation-range: entry; */
 }
 
 @keyframes swipe-right {
@@ -703,10 +711,10 @@
   height: 500px;
   border-radius: 20px;
   background-size: cover;
-  transform: translate(30px);
-  animation: swipe-left linear forwards;
+  /* transform: translate(30px); */
+  /* animation: swipe-left linear forwards;
   animation-timeline: view();
-  animation-range: entry;
+  animation-range: entry; */
 }
 
 @keyframes swipe-left {
