@@ -256,6 +256,12 @@
   background: linear-gradient(to top, #ffffff 65%, #f4f4f4 100%);
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* homepage */
 
 .home-loader-wrapper {
