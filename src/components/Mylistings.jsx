@@ -57,6 +57,14 @@ const Mylistings = () => {
               );
             })}
       </div>
+      {listings.length === 0 && (
+        <h2
+          style={{ height: "100%", display: "flex", alignItems: "center" }}
+          className="wishlist-empty"
+        >
+          You don't have listings
+        </h2>
+      )}
     </div>
   );
 };
