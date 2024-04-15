@@ -27,8 +27,8 @@ const AboutUs = () => {
           <h1>Our Vision</h1>
           <img src={aboutVision} alt="" />
           <p>
-            In our vision, we see a world where finding the perfect property or
-            listing your space becomes a seamless and enjoyable experience.
+            We see a world where finding the perfect property or listing your
+            space becomes a seamless and enjoyable experience.
             <br />
             <br /> Rentez is not just a platform; it's a commitment to redefine
             how you rent, transforming the process into a journey of meaningful
