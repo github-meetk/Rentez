@@ -23,14 +23,14 @@ const ReviewModal = ({ modalData }) => {
   };
 
   const handleSubmit = () => {
-    if(!token){
-        toast.error("Please Login first")
-        return
+    if (!token) {
+      toast.error("Please Login first");
+      return;
     }
 
-    formData.rating = rating
+    formData.rating = rating;
     createReview(token, formData);
-    toast.success("Thank you for your precious time")
+    toast.success("Thank you for your precious time");
   };
 
   useEffect(() => {
@@ -46,37 +46,39 @@ const ReviewModal = ({ modalData }) => {
       <div className="review-box">
         <h2>Rate and Review</h2>
         <div className="rating-container">
-            Rating {hover || rating} out of 5
-            <div className="rating">
-          {[...Array(5)].map((star, i) => {
-            const ratingValue = i + 1;
+          Rating {hover || rating} out of 5
+          <div className="rating">
+            {[...Array(5)].map((star, i) => {
+              const ratingValue = i + 1;
 
-            return (
-              <label key={i}>
-                <input
-                style={{display: "none"}}
-                  type="radio"
-                  name="rating"
-                  value={ratingValue}
-                  onClick={() => setRating(ratingValue)}
-                />
-                <FaStar
-                  className="star"
-                  color={
-                    ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"
-                  }
-                  size={55}
-                  onMouseEnter={() => setHover(ratingValue)}
-                  onMouseLeave={() => setHover(null)}
-                />
-              </label>
-            );
-          })}
+              return (
+                <label key={i}>
+                  <input
+                    style={{ display: "none" }}
+                    required
+                    type="radio"
+                    name="rating"
+                    value={ratingValue}
+                    onClick={() => setRating(ratingValue)}
+                  />
+                  <FaStar
+                    className="star"
+                    color={
+                      ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"
+                    }
+                    size={55}
+                    onMouseEnter={() => setHover(ratingValue)}
+                    onMouseLeave={() => setHover(null)}
+                  />
+                </label>
+              );
+            })}
           </div>
         </div>
         <label className="review">
           Review
           <textarea
+            required
             value={review}
             name="review"
             onChange={handleChange}
