@@ -80,7 +80,7 @@ const AboutusForm = () => {
         ></input>
         <input
           required
-          type="text"
+          type="email"
           name="email"
           value={email}
           onChange={handleOnChange}
