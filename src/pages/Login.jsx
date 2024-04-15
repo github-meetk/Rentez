@@ -10,7 +10,6 @@ import image3 from "../assets/object_3.png";
 import image4 from "../assets/object_4.png";
 
 const Login = () => {
-
   const { loading } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -40,57 +39,55 @@ const Login = () => {
       <img className="imge2" src={image2} alt="" />
       <img className="imge3" src={image3} alt="" />
       <img className="imge4" src={image4} alt="" />
-      {
-        loading ? (
-          <div class="loading-bar">Loading</div>
-        ) : (
-          <div className="auth-box">
-        <form onSubmit={handleOnSubmit} className="login" autoComplete="off">
-          <img src={logo} alt="" />
-          <h2>Log in</h2>
-          <input
-            required
-            type="text"
-            name="email"
-            value={email}
-            onChange={handleOnChange}
-            placeholder="Email"
-          />
-          <div className="login-pass">
+      {loading ? (
+        <div class="loading-bar">Loading</div>
+      ) : (
+        <div className="auth-box">
+          <form onSubmit={handleOnSubmit} className="login" autoComplete="off">
+            <img src={logo} alt="" />
+            <h2>Log in</h2>
             <input
               required
-              type={showPassword ? "text" : "password"}
-              name="password"
-              value={password}
+              type="email"
+              name="email"
+              value={email}
               onChange={handleOnChange}
-              placeholder="Password"
+              placeholder="Email"
             />
-            <span
-              className="eye-login"
-              onClick={() => setShowPassword((prev) => !prev)}
-            >
-              {showPassword ? (
-                <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
-              ) : (
-                <AiOutlineEye fontSize={24} fill="#AFB2BF" />
-              )}
-            </span>
-          </div>
-          <div className="login-button">
-            <button className="special-btn" type="submit">
-              Log in
-            </button>
-            <Link className="login-button-link" to={"/signup"}>
-              No account?Sign up
-            </Link>
-            <Link className="login-button-link" to={"/forgot-password"}>
-              Forgot password?
-            </Link>
-          </div>
-        </form>
-      </div>
-        )
-      }
+            <div className="login-pass">
+              <input
+                required
+                type={showPassword ? "text" : "password"}
+                name="password"
+                value={password}
+                onChange={handleOnChange}
+                placeholder="Password"
+              />
+              <span
+                className="eye-login"
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                {showPassword ? (
+                  <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+                ) : (
+                  <AiOutlineEye fontSize={24} fill="#AFB2BF" />
+                )}
+              </span>
+            </div>
+            <div className="login-button">
+              <button className="special-btn" type="submit">
+                Log in
+              </button>
+              <Link className="login-button-link" to={"/signup"}>
+                No account?Sign up
+              </Link>
+              <Link className="login-button-link" to={"/forgot-password"}>
+                Forgot password?
+              </Link>
+            </div>
+          </form>
+        </div>
+      )}
     </div>
   );
 };

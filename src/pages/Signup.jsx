@@ -22,12 +22,12 @@ const Signup = () => {
 
   const tab = [
     {
-      name : "Customer",
+      name: "Customer",
     },
     {
-      name : "Seller"
-    }
-  ]
+      name: "Seller",
+    },
+  ];
 
   // student or instructor
   const [accountType, setAccountType] = useState(ACCOUNT_TYPE.CUSTOMER);
@@ -94,7 +94,7 @@ const Signup = () => {
         <div className="signup-box">
           <img src={logo} alt=""></img>
           <h2>Sign up</h2>
-          <Tab field={accountType} setField={setAccountType} tab={tab}/>
+          <Tab field={accountType} setField={setAccountType} tab={tab} />
           <form onSubmit={handleOnSubmit} autoComplete="off">
             <input
               required
@@ -116,7 +116,7 @@ const Signup = () => {
             ></input>
             <input
               required
-              type="text"
+              type="email"
               name="email"
               value={email}
               onChange={handleOnChange}
@@ -131,7 +131,10 @@ const Signup = () => {
                 onChange={handleOnChange}
                 placeholder="Password"
               ></input>
-              <span className="eye-signup" onClick={() => setShowPassword((prev) => !prev)}>
+              <span
+                className="eye-signup"
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
                 {showPassword ? (
                   <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
                 ) : (
@@ -148,7 +151,10 @@ const Signup = () => {
                 onChange={handleOnChange}
                 placeholder="Confirm Password"
               ></input>
-              <span className="eye-signup" onClick={() => setShowConfirmPassword((prev) => !prev)}>
+              <span
+                className="eye-signup"
+                onClick={() => setShowConfirmPassword((prev) => !prev)}
+              >
                 {showConfirmPassword ? (
                   <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
                 ) : (
@@ -157,8 +163,12 @@ const Signup = () => {
               </span>
             </div>
             <div className="signup-button">
-              <button className="special-btn" type="submit">Create Account</button>
-              <Link className="signup-button-link" to={"/login"}>Back to Login</Link>
+              <button className="special-btn" type="submit">
+                Create Account
+              </button>
+              <Link className="signup-button-link" to={"/login"}>
+                Back to Login
+              </Link>
             </div>
           </form>
         </div>
