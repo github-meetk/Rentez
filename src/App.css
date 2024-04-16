@@ -2544,7 +2544,7 @@ select {
 .bar {
   width: 50%;
   height: 2px;
-  background-color: rgb(229, 229, 229);
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2558,7 +2558,7 @@ select {
   background-color: rgb(126, 117, 255);
   position: absolute;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid black;
   transition: all 0.3s;
   box-shadow: 0px 0px 5px white;
 }
@@ -2580,15 +2580,16 @@ select {
   align-items: center;
   justify-content: center;
   gap: 15px;
-  width: 70%;
-  margin: auto;
-  background-color: black;
+  width: 80%;
+  padding: 50px 0;
+  margin: 30px auto;
+  background: whitesmoke;
   text-align: center;
   padding: 10px 0;
-  border: none;
-  border-radius: 10px;
+  border: 1px solid lightgray;
+  border-radius: 12px;
   font-size: large;
-  color: white;
+  color: black;
   cursor: pointer;
   scale: 1;
   transition: all 0.2s ease-in-out;

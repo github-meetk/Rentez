@@ -82,28 +82,28 @@ const Properties = () => {
           </div>
         ) : (
           <>
-            <div className="properties-filter-section-wrapper">
+            {/* <div className="properties-filter-section-wrapper">
               <div className="properties-filter-section">
                 <h2>
                   <ImSearch />
                   Search rental properties according to your choice
                 </h2>
-                <div
-                  className="filter-btn"
-                  onClick={() =>
-                    setFilterModal({
-                      cancelBtnHandler: () => setFilterModal(null),
-                    })
-                  }
-                >
-                  <button className="setting-btn">
-                    <span className="bar bar1"></span>
-                    <span className="bar bar2"></span>
-                    <span className="bar bar1"></span>
-                  </button>
-                  Filters
-                </div>
               </div>
+            </div> */}
+            <div
+              className="filter-btn"
+              onClick={() =>
+                setFilterModal({
+                  cancelBtnHandler: () => setFilterModal(null),
+                })
+              }
+            >
+              <button className="setting-btn">
+                <span className="bar bar1"></span>
+                <span className="bar bar2"></span>
+                <span className="bar bar1"></span>
+              </button>
+              Filters
             </div>
 
             {!noData && (
@@ -122,6 +122,7 @@ const Properties = () => {
                 </div>
               </div>
             )}
+
             {noData && (
               <div style={{ fontSize: "40px", fontWeight: "400" }}>
                 Not Available
