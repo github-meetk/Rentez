@@ -71,12 +71,13 @@ const InquiryForm = ({
         placeholder="Email"
       ></input>
       <input
+        type="tel"
+        pattern="[0-9]{10}"
         required
-        type="number"
         name="contactNumber"
         value={contactNumber}
         onChange={handleOnChange}
-        placeholder="Phone Number"
+        placeholder="Contact Number"
       />
       <input
         required
