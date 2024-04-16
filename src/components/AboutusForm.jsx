@@ -88,7 +88,8 @@ const AboutusForm = () => {
         ></input>
         <input
           required
-          type="number"
+          type="tel"
+          pattern="[0-9]{10}"
           name="phoneNo"
           value={phoneNo}
           onChange={handleOnChange}
