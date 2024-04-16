@@ -4,7 +4,6 @@ import { getAllProperty } from "../services/operations/propertyAPI";
 import Card from "../components/Card";
 import { useSelector } from "react-redux";
 import FilterModal from "../components/FilterModal";
-import { ImSearch } from "react-icons/im";
 import NavbarLight from "../components/NavbarLight";
 
 const Properties = () => {
@@ -82,14 +81,6 @@ const Properties = () => {
           </div>
         ) : (
           <>
-            {/* <div className="properties-filter-section-wrapper">
-              <div className="properties-filter-section">
-                <h2>
-                  <ImSearch />
-                  Search rental properties according to your choice
-                </h2>
-              </div>
-            </div> */}
             <div
               className="filter-btn"
               onClick={() =>
