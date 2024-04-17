@@ -17,9 +17,9 @@ const Admin = () => {
     datasets: [
       {
         data: [details?.customers, details?.sellers],
-        backgroundColor: ["rgba(127, 199, 217, 1)", "rgba(54, 84, 134, 1)"],
-        borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
-        borderWidth: 0,
+        backgroundColor: ["#8481DD", "#3C3D99"],
+        borderColor: ["white"],
+        borderWidth: 5,
       },
     ],
   };
@@ -32,9 +32,9 @@ const Admin = () => {
           details?.totalSubscription,
           details?.sellers - details?.totalSubscription,
         ],
-        backgroundColor: ["rgba(83, 24, 235, 0.7)", "white"],
-        borderColor: ["black", "blue"],
-        borderWidth: 1,
+        backgroundColor: ["#3C3D99", "#B2B0EA"],
+        borderColor: ["white"],
+        borderWidth: 5,
       },
     ],
   };
@@ -50,13 +50,14 @@ const Admin = () => {
           details?.land,
         ],
         backgroundColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
+          "#2A265F",
+          "#3C3D99",
+          "#5752D1",
+          "#8481DD",
+          "#B2B0EA",
         ],
-        borderWidth: 0,
+        borderColor: ["white"],
+        borderWidth: 5,
       },
     ],
   };
