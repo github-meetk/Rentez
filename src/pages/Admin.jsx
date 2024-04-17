@@ -97,64 +97,70 @@ const Admin = () => {
 
   return (
     <div className="admin-wrapper">
-      <div className="admin">
-        <h1>Dashboard</h1>
-        <div className="admin-main-display">
-          <div className="admin-box">
-            <div className="admin-box-left">
-              <img src={icon1} alt="group" />
+      {loading ? (
+        <div className="spinner-loader-wrapper">
+          <div className="spinner" />
+        </div>
+      ) : (
+        <div className="admin">
+          <h1>Dashboard</h1>
+          <div className="admin-main-display">
+            <div className="admin-box">
+              <div className="admin-box-left">
+                <img src={icon1} alt="group" />
+              </div>
+              <div className="admin-box-right">
+                {details?.users}
+                <p>total users</p>
+              </div>
             </div>
-            <div className="admin-box-right">
-              {details?.users}
-              <p>total users</p>
+            <div className="admin-box">
+              <div className="admin-box-left">
+                <img src={icon2} alt="group" />
+              </div>
+
+              <div className="admin-box-right">
+                {details?.amount} ₹<p>total revenue</p>
+              </div>
+            </div>
+            <div className="admin-box">
+              <div className="admin-box-left">
+                <img src={icon3} alt="group" />
+              </div>
+
+              <div className="admin-box-right">
+                {details?.properties}
+                <p>total properties</p>
+              </div>
+            </div>
+            <div className="admin-box">
+              <div className="admin-box-left">
+                <img src={icon4} alt="group" />
+              </div>
+
+              <div className="admin-box-right">
+                {trendingPlan}
+                <p>trending plan</p>
+              </div>
             </div>
           </div>
-          <div className="admin-box">
-            <div className="admin-box-left">
-              <img src={icon2} alt="group" />
+          <div className="admin-charts">
+            <div className="charts">
+              <Doughnut width={500} height={500} data={userSplitData} />
             </div>
-
-            <div className="admin-box-right">
-              {details?.amount} ₹<p>total revenue</p>
+            <div className="charts">
+              <Doughnut
+                width={500}
+                height={500}
+                data={sellerSubscriptionSplitData}
+              />
             </div>
-          </div>
-          <div className="admin-box">
-            <div className="admin-box-left">
-              <img src={icon3} alt="group" />
-            </div>
-
-            <div className="admin-box-right">
-              {details?.properties}
-              <p>total properties</p>
-            </div>
-          </div>
-          <div className="admin-box">
-            <div className="admin-box-left">
-              <img src={icon4} alt="group" />
-            </div>
-
-            <div className="admin-box-right">
-              {trendingPlan}
-              <p>trending plan</p>
+            <div className="charts">
+              <Doughnut width={500} height={500} data={propertiesSplitData} />
             </div>
           </div>
         </div>
-        <div className="admin-charts">
-          <div className="charts">
-            <Doughnut width={500} height={500} data={userSplitData} />
-          </div>
-          <div className="charts">
-            <Doughnut
-              width={500}
-              height={500}
-              data={sellerSubscriptionSplitData}
-            />
-          </div>
-          <div className="charts">
-            <Doughnut width={500} height={500} data={propertiesSplitData} />
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   );
 };
