@@ -4,59 +4,57 @@ import icon1 from "../assets/icon-1.png";
 import icon2 from "../assets/icon-2.png";
 import icon3 from "../assets/icon-3.png";
 import icon4 from "../assets/icon-4.png";
-import { Doughnut } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 const Admin = () => {
   const [details, setDetails] = useState();
   ChartJS.register(ArcElement, Tooltip, Legend);
+  const [loading, setLoading] = useState(true);
 
   const userSplitData = {
-    labels: ['Customer', 'Seller'],
+    labels: ["Customer", "Seller"],
     datasets: [
       {
         data: [details?.customers, details?.sellers],
-        backgroundColor: [
-          'rgba(127, 199, 217, 1)',
-          'rgba(54, 84, 134, 1)',
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-        ],
+        backgroundColor: ["rgba(127, 199, 217, 1)", "rgba(54, 84, 134, 1)"],
+        borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
         borderWidth: 0,
       },
     ],
   };
 
   const sellerSubscriptionSplitData = {
-    labels: ['purchased plan', 'not purchased plan'],
+    labels: ["purchased plan", "not purchased plan"],
     datasets: [
       {
-        data: [details?.sellers, details?.totalSubscription],
-        backgroundColor: [
-          'rgba(83, 24, 235, 0.7)',
-          'white',
+        data: [
+          details?.totalSubscription,
+          details?.sellers - details?.totalSubscription,
         ],
-        borderColor: [
-          'white',
-          'white',
-        ],
-        borderWidth: 0,
+        backgroundColor: ["rgba(83, 24, 235, 0.7)", "white"],
+        borderColor: ["black", "blue"],
+        borderWidth: 1,
       },
     ],
   };
   const propertiesSplitData = {
-    labels: ['Flat', 'Bunglow', 'Villa', 'Farmhouse', 'Land'],
+    labels: ["Flat", "Bunglow", "Villa", "Farmhouse", "Land"],
     datasets: [
       {
-        data: [details?.flat, details?.bunglow, details?.villa, details?.farmhouse, details?.land],
+        data: [
+          details?.flat,
+          details?.bunglow,
+          details?.villa,
+          details?.farmhouse,
+          details?.land,
+        ],
         backgroundColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
         ],
         borderWidth: 0,
       },
@@ -65,9 +63,11 @@ const Admin = () => {
 
   useEffect(() => {
     const api = async () => {
+      setLoading(true);
       const response = await getAllDetails();
       console.log(response.data.data);
       setDetails(response.data.data);
+      setLoading(false);
     };
 
     api();
@@ -140,9 +140,19 @@ const Admin = () => {
           </div>
         </div>
         <div className="admin-charts">
-          <div className="charts"><Doughnut width={500} height={500} data={userSplitData} /></div>
-          <div className="charts"><Doughnut width={500} height={500} data={sellerSubscriptionSplitData} /></div>
-          <div className="charts"><Doughnut width={500} height={500} data={propertiesSplitData} /></div>
+          <div className="charts">
+            <Doughnut width={500} height={500} data={userSplitData} />
+          </div>
+          <div className="charts">
+            <Doughnut
+              width={500}
+              height={500}
+              data={sellerSubscriptionSplitData}
+            />
+          </div>
+          <div className="charts">
+            <Doughnut width={500} height={500} data={propertiesSplitData} />
+          </div>
         </div>
       </div>
     </div>
