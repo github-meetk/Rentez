@@ -561,7 +561,7 @@ input::-webkit-inner-spin-button {
   height: 70px;
   background-color: white;
   border-radius: 35px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
 }
 
 .step h3 {
@@ -635,7 +635,7 @@ input::-webkit-inner-spin-button {
   height: 60px;
   padding: 10px;
   border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
 }
 
 .number h1 {
