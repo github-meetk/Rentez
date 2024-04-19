@@ -26,6 +26,7 @@ import { getWishlist } from "./services/operations/propertyAPI";
 import { useDispatch, useSelector } from "react-redux";
 import { addToList } from "./slices/cartSlice";
 import Admin from "./pages/Admin";
+import Addy from "./components/Addy";
 
 function App() {
   const { token } = useSelector((state) => state.auth);
@@ -116,14 +117,13 @@ function App() {
 
           <Route path="/dashboard/edit" element={<EditProfile />} />
 
-
           <Route
             path="/dashboard/change-password"
             element={<ChangePassword />}
           />
           <Route path="/dashboard/wishlist" element={<Wishlist />} />
         </Route>
-        <Route path="/admin-dashboard" element={<Admin />} />
+        <Route path="/admin-dashboard" element={<Addy />} />
         <Route path="/properties" element={<Properties />} />
         <Route path="/property/:propertyId" element={<DetailProperty />} />
         <Route path="/plan" element={<Plan />} />
