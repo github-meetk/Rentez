@@ -25,7 +25,6 @@ import { useEffect } from "react";
 import { getWishlist } from "./services/operations/propertyAPI";
 import { useDispatch, useSelector } from "react-redux";
 import { addToList } from "./slices/cartSlice";
-import Admin from "./pages/Admin";
 import Addy from "./components/Addy";
 
 function App() {

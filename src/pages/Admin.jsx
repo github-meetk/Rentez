@@ -66,7 +66,6 @@ const Admin = () => {
     const api = async () => {
       setLoading(true);
       const response = await getAllDetails();
-      console.log(response.data.data);
       setDetails(response.data.data);
       setLoading(false);
     };
