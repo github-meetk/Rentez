@@ -11,6 +11,7 @@ const Addy = () => {
     e.preventDefault();
     if (password === process.env.REACT_APP_ADMIN_PASS) {
       setAuthenticated(true);
+      setError("");
     } else {
       setError("Incorrect password");
     }
@@ -46,7 +47,7 @@ const Addy = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              {error && <p>{error}</p>}
+              {error && <p style={{ color: "red" }}>{error}</p>}
               <button type="submit" className="special-btn">
                 Login
               </button>
