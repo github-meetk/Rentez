@@ -46,7 +46,8 @@ const ReviewModal = ({ modalData }) => {
       <div className="review-box">
         <h2>Rate and Review</h2>
         <form
-          onSubmit={() => {
+          onSubmit={(e) => {
+            e.preventDefault();
             handleSubmit();
             modalData.cancelBtnHandler();
           }}
