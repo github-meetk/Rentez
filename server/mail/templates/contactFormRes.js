@@ -1,5 +1,5 @@
 exports.contactUsEmail = (
-    email,
+    // email,
     firstName,
     lastName,
     message,
@@ -81,7 +81,6 @@ exports.contactUsEmail = (
                 </p>
                 <p>Here are the details you provided:</p>
                 <p>Name: ${firstName} ${lastName}</p>
-                <p>Email: ${email}</p>
                 <p>Phone Number: ${phoneNo}</p>
                 <p>Message: ${message}</p>
                 <p>We appreciate your interest and will get back to you shortly. </p>
