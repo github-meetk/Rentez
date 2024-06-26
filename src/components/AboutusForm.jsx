@@ -7,12 +7,12 @@ const AboutusForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    email: "",
+    // email: "",
     phoneNo: "",
     message: "",
   });
 
-  const { firstName, lastName, email, phoneNo, message } = formData;
+  const { firstName, lastName, phoneNo, message } = formData;
 
   const handleOnChange = (e) => {
     setFormData((prevData) => ({
@@ -49,7 +49,7 @@ const AboutusForm = () => {
     setFormData({
       firstName: "",
       lastName: "",
-      email: "",
+      // email: "",
       phoneNo: "",
       message: "",
     });
@@ -78,14 +78,14 @@ const AboutusForm = () => {
           placeholder="Last Name"
           className="signup-lastname"
         ></input>
-        <input
+{/*         <input
           required
           type="email"
           name="email"
           value={email}
           onChange={handleOnChange}
           placeholder="Email"
-        ></input>
+        ></input> */}
         <input
           required
           type="tel"
